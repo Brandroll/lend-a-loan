@@ -6,9 +6,9 @@ export default function ContactGrid(props: any) {
       {props.contact_address.map((addr: any) => (
         <div key={Math.random()}>
           <div>
-            <Image height={400} alt="" src={addr.img} width={350} />
+            <Image height={400} alt="" src={addr.img} width={400} />
           </div>
-          <div className="py-8">
+          <div className="py-8 px-4 bg-white">
             <div>
               <p className="text-24px font-isidorasans_semi_bold">
                 {addr.location_title}

@@ -25,14 +25,14 @@ export default function Home(props: Props) {
 
       <Testinominal />
       <div className="max-w-site-full mx-auto mt-6 md:mt-16 text-center">
-        <Info />
+        <Info {...homePageData.acf.header} />
         <Pannel />
       </div>
-      <HomePageAdv />
+      <HomePageAdv {...homePageData.acf.comparison} />
 
       <AlternateGrid content={homePageData.acf.content} />
 
-      <AboveFooter content={homePageData.acf.grid} />
+      <AboveFooter {...homePageData.acf.above_footer} />
     </>
   );
 }

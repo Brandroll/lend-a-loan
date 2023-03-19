@@ -2,7 +2,7 @@ import SimpleHero from "@/components/Common/SimpleHero";
 import ContactGrid from "@/components/Contact/ContactGrid";
 import ContactForm from "@/components/Contact/Form";
 import YoastNextSeo from "@/components/UI/YoastNextSeo";
-import Image from "next/image";
+
 import React from "react";
 
 export default function ContactUsPage(props: any) {
@@ -12,8 +12,10 @@ export default function ContactUsPage(props: any) {
     <>
       <YoastNextSeo {...pageData.yoast_head_json} />
       <SimpleHero heading="Contact Us" subHeading=" " />
-      <div className="my-2">
-        <div className="max-w-site-full mx-auto">
+      <div className="mb-2">
+        <div className="h-60 border-b-8 border-brand-blue hidden md:block absolute w-full -z-40 bg-banner"></div>
+
+        <div className="max-w-site-full   mx-auto  p-4 lg:p-0 bg-g">
           <ContactGrid contact_address={pageData.acf.contact_address} />
         </div>
       </div>

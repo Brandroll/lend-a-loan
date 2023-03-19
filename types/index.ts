@@ -186,6 +186,29 @@ export interface HomePage {
       heading: string;
       content: string;
     }[];
+    header: {
+      content: string;
+      heading: string;
+    };
+    comparison: {
+      heading: string;
+      info: string;
+    };
+    above_footer: {
+      header: {
+        info: string;
+        header: string;
+      };
+      grid_1: {
+        heading: string;
+        info: string;
+      };
+      grid_2: {
+        heading: string;
+        info: string;
+      };
+    };
+
     clients: AcfImage[];
   };
   yoast_head_json: YoastSeoData;

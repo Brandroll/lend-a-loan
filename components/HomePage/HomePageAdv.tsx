@@ -38,16 +38,17 @@ const Adv = ({
     </div>
   );
 };
-export default function HomePageAdv() {
+export default function HomePageAdv({
+  heading,
+  info,
+}: {
+  heading?: string;
+  info?: string;
+}) {
   const data = [
     {
-      heading: `Compare with a Finance and Mortgage Broker
-      `,
-      info: `Going through a Finance and Mortgage Broker for your loans and mortgages has many benefits. At Lend A Loan our brokers have access to many lenders and can compare loans that meet your requirements. Our brokers will explain through each products using simple and easy to understand language. 
-
-      At Lend A Loan we are all about your needs and goals, ensuring we find a loan products that is the right for you. We are required by law to work in the best interest of our clients and only recommend products that are in our customers best interest. Which is why comparing with brokers is better than any comparison sites or going directly to the bank. 
-      
-      Finding a loan product with a Lend A Loan broker is simple and straight forward. Book an appointment today or request a callback and one of our Melbourne based Mortgage Brokers will be able to assist you with as simply as 1 2 3.  `,
+      heading,
+      info,
     },
   ];
   const adv = [
@@ -78,10 +79,8 @@ export default function HomePageAdv() {
   return (
     <div className="bg-gray-bg p-6 lg:p-12">
       <div className="max-w-site-full mx-auto">
-        <section className={`grid lg:grid-cols-${data.length} gap-8`}>
-          {data.map((d) => (
-            <Section {...d} />
-          ))}
+        <section className={`grid lg:grid-cols-1 gap-8`}>
+          <Section heading={heading ? heading : ""} info={info ? info : ""} />
         </section>
         <section className="grid md:grid-cols-4 md:my-16 md:gap-8">
           {adv.map((d) => (

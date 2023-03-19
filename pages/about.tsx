@@ -1,5 +1,6 @@
 import AlternateGrid from "@/components/Common/AlternateGrid";
 import SimpleHero from "@/components/Common/SimpleHero";
+import YoastNextSeo from "@/components/UI/YoastNextSeo";
 import React from "react";
 
 export default function About() {
@@ -37,6 +38,7 @@ export default function About() {
         heading="About Lend A Loan"
         subHeading="We are more than just a broker."
       />
+      {/* <YoastNextSeo {} /> */}
       <AlternateGrid content={content} />
       <section className="bg-gray-bg  ">
         <div className="max-w-site-full py-20 mx-auto">

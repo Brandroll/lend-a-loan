@@ -83,21 +83,22 @@ export default function ContactForm(props: any) {
       ...values,
       contact: selectedTime,
     };
-    console.log({ data });
-    const url = props.apiUrl ? "/api/" + props.apiUrl : "/api/contact";
-    // axios
-    //   .post(url, {
-    //     data: { ...values, contact: selectedTime },
-    //   })
-    //   .then((res) => {
-    //     if (res.data.message) {
-    //       toast.success(res.data.message);
-    //       setResetForm(resetValues);
-    //     }
-    //   })
-    //   .catch((err) => {
-    //     toast.error(err.response.data.error);
-    //   });
+
+    const url = "/api/contact";
+    axios
+      .post(url, {
+        data: { ...values, contact: selectedTime },
+      })
+      .then((res) => {
+        if (res.data.message) {
+          console.log({ f: res.data.message });
+          toast.success(res.data.message);
+          setResetForm(resetValues);
+        }
+      })
+      .catch((err) => {
+        toast.error(err.response.data.error);
+      });
   }
   return (
     <>

@@ -1,5 +1,5 @@
 import { useRouter } from "next/router";
-import { Routes } from "@/config/routes";
+
 import DrawerWrapper from "@/components/UI/Drawer/Drawer-wrapper";
 import { useAtom } from "jotai";
 import { drawerAtom } from "@/store/drawer-atom";
@@ -51,7 +51,10 @@ export default function MobileMainMenu() {
             {showSubItems &&
               subItems &&
               subItems.map((item) => (
-                <li className="flex text-black ml-4 cursor-pointer font-isidorasans_regular items-center py-3 px-5 text-sm font-semibold capitalize text-heading transition duration-200 hover:text-accent md:px-12">
+                <li
+                  onClick={() => handleClick(item.href)}
+                  className="flex text-black ml-4 cursor-pointer font-isidorasans_regular items-center py-3 px-5 text-sm font-semibold capitalize text-heading transition duration-200 hover:text-accent md:px-12"
+                >
                   {item.label}
                 </li>
               ))}

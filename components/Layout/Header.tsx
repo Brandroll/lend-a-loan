@@ -1,11 +1,11 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { useAtom } from "jotai";
 import { drawerAtom } from "@/store/drawer-atom";
-import { Routes } from "@/config/routes";
+
 import navLinks from "@/seed/headerLink";
 // import { useQuery } from "@apollo/client";
 // import { GET_HEADER_MENU } from "@/apollo/queries/headerMenu";
@@ -146,7 +146,7 @@ export default function Header() {
                 whileHover={{ scale: 1.1 }}
                 className="px-8 text-18px rounded-full py-3 bg-brand-blue text-white font-isidorasans_regular"
               >
-                Apply Now
+                Get Started Now
               </motion.button>
             </div>
           </div>

@@ -45,6 +45,7 @@ module.exports = {
         footer: "#171719",
         " dark": "#54595F",
         "footer-link": "#6A6A6D",
+        banner: "#171719",
       },
       maxWidth: {
         "site-full": "1200px",
