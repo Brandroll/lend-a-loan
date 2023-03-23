@@ -959,10 +959,19 @@ html {
   height: 100%;
   margin: 0;
   box-sizing: border-box;
-  /* padding: 15% 32px; */
+  padding: 18% 32px;
   line-height: 1.5;
   text-align: center;
-  /* padding: 10px; */
+  
+}
+.test-bg{
+  background: linear-gradient(to top, #F2F2F2 50%, #171719 50%);
+
+}
+.img-mask{
+  clip-path: polygon(22% 5%, 80% 5%, 99% 50%, 75% 95%, 24% 95%, 2% 50%);
+
+  width: 500px;
 }
 .adv-num{
   width: 50px;

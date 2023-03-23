@@ -9,14 +9,13 @@ export default function HomeLoanVideoHero() {
           type="video/mp4"
         />
       </video>
-      <div className="caption ">
-        <div className="cp-center">
-          <p className="text-3xl md:text-30px    font-isidorasans_semi_bold text-white">
+      <div className="caption flex flex-col justify-end md:block">
+        <div className="md:cp-center px-4 md:text-left lg:text-center lg:px-0">
+          <p className="text-24px  md:text-30px    font-isidorasans_semi_bold text-white">
             Start your home loan journey, with an expert lend a loan mortgage
             broker
           </p>
-
-          <div className="flex my-8 justify-center">
+          <div className="hidden md:flex my-8 justify-center  ">
             <motion.button
               whileHover={{ scale: 1.1 }}
               className="px-8 hover:bg-brand-blue hover:text-white border-2 border-brand-blue py-3 rounded-l-full font-isidorasans_regular text-16px text-brand-blue"
@@ -30,6 +29,20 @@ export default function HomeLoanVideoHero() {
               Book appointment
             </motion.button>
           </div>
+        </div>
+        <div className=" flex justify-center  md:hidden my-8  ">
+          <motion.button
+            whileHover={{ scale: 1.1 }}
+            className="px-8 hover:bg-brand-blue hover:text-white border-2 border-brand-blue py-3 rounded-l-full font-isidorasans_regular text-16px text-brand-blue"
+          >
+            Request a callback
+          </motion.button>
+          <motion.button
+            whileHover={{ scale: 1.1 }}
+            className="px-8 border-2 border-brand-blue py-3 bg-brand-blue rounded-r-full font-isidorasans_regular text-16px text-white hover:scale-125 delay-200"
+          >
+            Book appointment
+          </motion.button>
         </div>
       </div>
     </div>

@@ -5,10 +5,8 @@ import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { useAtom } from "jotai";
 import { drawerAtom } from "@/store/drawer-atom";
-
 import navLinks from "@/seed/headerLink";
-// import { useQuery } from "@apollo/client";
-// import { GET_HEADER_MENU } from "@/apollo/queries/headerMenu";
+
 interface NavLink {
   href: string;
   label: string;
@@ -16,6 +14,7 @@ interface NavLink {
 }
 export default function Header() {
   const router = useRouter();
+  const [currentSubMenu, setCurrentSubMenu] = useState<any>();
   const [isSubMenuOpen, setIsSubMenuOpen] = useState(false);
   //   const [navLinks, setNavLinks] = useState<NavLink[]>([]);
   const [_, setDrawerView] = useAtom(drawerAtom);
@@ -67,18 +66,20 @@ export default function Header() {
           <div className="lg:flex flex-col hidden items-end   justify-end">
             <div className="lg:flex hidden top-12 md:top-0 md:py-0 items-center bg-navbar w-full left-0 absolute md:relative justify-end gap-6">
               {navLinks &&
-                navLinks.map((i) => (
+                navLinks.map((i, idx) => (
                   <Link
                     key={Math.random()}
                     href={i.href}
                     onMouseOver={() => {
                       if (i.subItems && i.subItems.length > 0) {
                         setIsSubMenuOpen(true);
+                        setCurrentSubMenu(idx);
                       }
                     }}
                     onMouseLeave={() => {
                       if (i.subItems && i.subItems.length > 0) {
                         setIsSubMenuOpen(false);
+                        setCurrentSubMenu(null);
                       }
                     }}
                   >
@@ -130,7 +131,7 @@ export default function Header() {
                                       className="hover:text-white hover:bg-brand-blue p-2 px-6  "
                                       href={l.href}
                                     >
-                                      {l.label}
+                                      {l.label.toLowerCase()}
                                     </Link>
                                   </>
                                 ))}

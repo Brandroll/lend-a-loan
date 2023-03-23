@@ -11,12 +11,23 @@ export default function ContactUsPage(props: any) {
   return (
     <>
       <YoastNextSeo {...pageData.yoast_head_json} />
-      <SimpleHero heading="Contact Us" subHeading=" " />
-      <div className="mb-2">
-        <div className="h-60 border-b-8 border-brand-blue hidden md:block absolute w-full -z-40 bg-banner"></div>
-
-        <div className="max-w-site-full   mx-auto  p-4 lg:p-0 bg-g">
-          <ContactGrid contact_address={pageData.acf.contact_address} />
+      <div
+        className="py-8    md:py-24 px-4 lg:px-12"
+        style={{ backgroundColor: "#171719" }}
+      >
+        <div className="max-w-site-full mx-auto">
+          <h1 className="text-36px text-center text-brand-blue font-isidorasans_semi_bold">
+            Contact Us
+          </h1>
+        </div>
+      </div>
+      <div style={{ backgroundColor: "#F2F2F2" }} className="mb-8 ">
+        <div className="test-bg py-12">
+          <div className="max-w-site-full   mx-auto  p-4 lg:p-0 bg-g">
+            <div>
+              <ContactGrid contact_address={pageData.acf.contact_address} />
+            </div>
+          </div>
         </div>
       </div>
       <div className="max-w-site-full mx-auto">

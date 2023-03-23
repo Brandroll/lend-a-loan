@@ -8,6 +8,7 @@ import { HomePage, Project, Service } from "@/types";
 import Help from "@/components/HomeLoan/Help";
 import VideoHero from "@/components/Common/VideoHero";
 import HomeLoanVideoHero from "@/components/HomeLoan/HomeLoanVideoHero";
+import YoastNextSeo from "@/components/UI/YoastNextSeo";
 
 interface Props {
   homePageData: HomePage;
@@ -17,6 +18,8 @@ export default function Homeloans(props: Props) {
 
   return (
     <>
+      <YoastNextSeo {...homePageData.yoast_head_json} />
+
       <HomeLoanVideoHero />
       <Testinominal />
 

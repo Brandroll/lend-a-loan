@@ -65,11 +65,23 @@ export default function AlternateGrid({
             >
               {calc(i) === "even" ? (
                 <Fade right>
-                  <Image src={content.image} alt="" width={900} height={900} />
+                  <Image
+                    className="img-mask"
+                    src={content.image}
+                    alt=""
+                    width={900}
+                    height={900}
+                  />
                 </Fade>
               ) : (
                 <Fade left>
-                  <Image src={content.image} alt="" width={900} height={900} />
+                  <Image
+                    className="img-mask"
+                    src={content.image}
+                    alt=""
+                    width={900}
+                    height={900}
+                  />
                 </Fade>
               )}
             </div>

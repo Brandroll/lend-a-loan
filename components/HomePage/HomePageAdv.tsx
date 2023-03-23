@@ -25,7 +25,7 @@ const Adv = ({
 }) => {
   return (
     <div>
-      <div className="border-brand-blue mb-4  adv-num flex justify-center items-center  text-brand-blue text-35px font-isidorasans_semi_bold border-2    rounded-full">
+      <div className="border-brand-blue  w-12 h-12  flex justify-center items-center text-24px adv-num   text-brand-blue  font-isidorasans_semi_bold border-2    rounded-full">
         {num.toString()}
       </div>
       <h2
