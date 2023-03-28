@@ -4,19 +4,19 @@ export default [
     label: "Solutions",
     subItems: [
       {
-        href: "home-loans",
+        href: "/home-loans",
         label: "Home Loans ",
       },
       {
-        href: "private-finance",
+        href: "/private-finance",
         label: "Private Finance ",
       },
       {
-        href: "property-finance",
+        href: "/property-finance",
         label: "Property Finance   ",
       },
       {
-        href: "asset-finance",
+        href: "/asset-finance",
         label: "Asset Finance ",
       },
     ],
@@ -28,37 +28,46 @@ export default [
     label: "Calculators",
     subItems: [
       {
+        href: "/calculator/borrowing-power-calculator",
+        label: "Borrowing Power Calculator",
+      },
+      {
         href: "/calculator/stamp-duty-calculator/",
-        label: "STAMP DUTY CALCULATOR",
+        label: "Stamp Duty Calculator",
+      },
+
+      {
+        href: "/calculator/stamp-duty-calculator/",
+        label: "Stamp Duty Calculator",
       },
       {
         href: "/calculator/loan-repayment-calculator/",
-        label: "LOAN REPAYMENT CALCULATOR",
+        label: "Loan Repayment Calculator",
       },
       {
         href: "/calculator/mortgage-switching-calculator/",
-        label: "MORTGAGE SWITCHING CALCULATOR",
+        label: "Mortgage Switching Calculator",
       },
       {
         href: "/calculator/how-much-to-deposit-calculator/",
-        label: "HOW MUCH TO DEPOSIT CALCULATOR",
+        label: "How Much To Deposit Calculator",
       },
       {
         href: "/calculator/fortnightly-repayment-calculator",
-        label: "FORTNIGHTLY & WEEKLY REPAYMENT CALCULATOR",
+        label: "Fortnightly & Weekly Repayment Calculator",
       },
 
       {
         href: "/calculator/property-buying-cost-calculator",
-        label: "PROPERTY BUYING COST CALCULATOR",
+        label: "Property Buying Cost Calculator",
       },
       {
         href: "/calculator/property-selling-cost-calculator/",
-        label: "PROPERTY SELLING COST CALCULATOR",
+        label: "Property Selling Cost Calculator",
       },
       {
         href: "/calculator/income-annualisation-calculator/",
-        label: "INCOME ANNUALISATION CALCULATOR",
+        label: "Income Annualisation Calculator",
       },
     ],
   },

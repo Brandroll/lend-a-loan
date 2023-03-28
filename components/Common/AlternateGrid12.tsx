@@ -1,4 +1,3 @@
-import Fade from "react-reveal/Fade";
 import DOMPurify from "isomorphic-dompurify";
 import Image from "next/image";
 import WPHTMLContent from "../UI/WPHTMLContent";
@@ -66,13 +65,9 @@ export default function AlternateGrid12({
               } flex justify-center items-center `}
             >
               {calc(i) === "even" ? (
-                <Fade right>
-                  <Image src={content.image} alt="" width={900} height={900} />
-                </Fade>
+                <Image src={content.image} alt="" width={900} height={900} />
               ) : (
-                <Fade left>
-                  <Image src={content.image} alt="" width={900} height={900} />
-                </Fade>
+                <Image src={content.image} alt="" width={900} height={900} />
               )}
             </div>
             <div

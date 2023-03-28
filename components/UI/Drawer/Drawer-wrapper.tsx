@@ -10,9 +10,9 @@ const DrawerWrapper: React.FC = ({ children }: any) => {
 
   return (
     <div className="flex bg-white h-full flex-col">
-      <div className="fixed top-0  z-20 mb-4 flex w-full max-w-md items-center justify-between  p-5 md:mb-6">
+      <div className="fixed top-0  z-20 mb-8 flex w-full max-w-md items-center justify-between  px-5 pt-4 pb-6 md:mb-6">
         {/* <Logo className="w-24 md:w-auto" /> */}
-        {/* <Image alt="logo" src={"/imgs/logo.svg"} width={250} height={80} /> */}
+        <Image alt="logo" src={"/imgs/logo.svg"} width={200} height={100} />
 
         <button
           onClick={() => closeSidebar({ display: false, view: "" })}

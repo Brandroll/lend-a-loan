@@ -5,7 +5,7 @@ export default function Calculator(props: any) {
   return (
     <div className="max-w-site-full mx-auto">
       <YoastNextSeo {...pageData.yoast_head_json} />
-      <div className="my-32">
+      <div className="my-32 px-5 md:px-0">
         <iframe
           className="w-full "
           height={800}

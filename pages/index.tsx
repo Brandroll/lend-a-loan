@@ -24,15 +24,17 @@ export default function Home(props: Props) {
       <VideoHero />
 
       <Testinominal />
-      <div className="max-w-site-full mx-auto mt-6 md:mt-16 text-center">
-        <Info {...homePageData.acf.header} />
-        <Pannel />
+      <div className=" ">
+        <div className="max-w-site-full mx-auto mt-6 md:mt-16 text-center">
+          <Info {...homePageData.acf.header} />
+          <Pannel />
+        </div>
+        <HomePageAdv {...homePageData.acf.comparison} />
+
+        <AlternateGrid content={homePageData.acf.content} />
+
+        <AboveFooter {...homePageData.acf.above_footer} />
       </div>
-      <HomePageAdv {...homePageData.acf.comparison} />
-
-      <AlternateGrid content={homePageData.acf.content} />
-
-      <AboveFooter {...homePageData.acf.above_footer} />
     </>
   );
 }

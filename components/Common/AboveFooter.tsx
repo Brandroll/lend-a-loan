@@ -23,7 +23,7 @@ export default function AboveFooter({
   return (
     <div className=" bg-gray-bg text-18px py-5 font-isidorasans_regular px-4">
       <div className="max-w-site-full mx-auto">
-        <p className=" text-center text-30px md:mt-16 md:pt-12 font-isidorasans_semi_bold">
+        <p className=" text-center text-30px md:mt-16  font-isidorasans_semi_bold">
           {header.header ? header.header : ""}
         </p>
 

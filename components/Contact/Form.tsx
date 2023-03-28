@@ -108,7 +108,7 @@ export default function ContactForm(props: any) {
         resetValues={resetForm}
       >
         {({ register, formState: { errors } }) => (
-          <div className="grid grid-cols-2 py-4 font-isidorasans_medium    gap-8 font-normal">
+          <div className="grid grid-cols-2 py-16 font-isidorasans_medium    gap-8 font-normal">
             <Input
               label="First name"
               {...register("first_name")}
@@ -152,7 +152,7 @@ export default function ContactForm(props: any) {
               {...register("message")}
             />
 
-            <button className="py-2 uppercase px-8 bg-brand-blue rounded-3xl text-white max-w-fit">
+            <button className="py-2   px-8 bg-brand-blue rounded-3xl text-white max-w-fit">
               Submit
             </button>
           </div>
@@ -166,20 +166,20 @@ const TimeToContact = ({ setSelectedTime, selectedTime }: any) => {
   const time = ["Morning", "Noon", "Afternoon", "Evening", "Anytime"];
   return (
     <div className="grid grid-cols-3 md:grid-cols-5 gap-2 items-center">
-      {time.map((t, y) => (
-        <div className="flex gap-1 items-center" key={y}>
-          <input
-            type="radio"
-            value={t}
-            checked={selectedTime === t ? true : false}
-            onChange={(e) => setSelectedTime(t)}
-            id={t}
-          />
-          <label className="cursor-pointer" htmlFor={t}>
+      <select
+        value={selectedTime}
+        onChange={(e) => {
+          console.log(e);
+          setSelectedTime(e.target.value);
+        }}
+        className="py-4"
+      >
+        {time.map((t, y) => (
+          <option key={y} value={t}>
             {t}
-          </label>
-        </div>
-      ))}
+          </option>
+        ))}
+      </select>
     </div>
   );
 };

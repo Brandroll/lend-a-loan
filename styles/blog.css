@@ -20,7 +20,7 @@ html {
     margin: 0;
     min-height: 100%;
     /* padding-bottom: 50rem; */
-    padding-top:75px ;
+    padding-top:55px ;
     overflow-x: hidden;
   }
   
@@ -80,7 +80,7 @@ html {
   @media (max-width:768px) {
 
     .video-container{
-    max-height: 450px;
+    max-height: 620px;
     margin-top: 5px;
     }
     .hero-section {
@@ -966,10 +966,45 @@ html {
 }
 .test-bg{
   background: linear-gradient(to top, #F2F2F2 50%, #171719 50%);
+  position: relative;
 
 }
+.blue-line{
+  top:280px;
+  height: 10px;
+
+}
+
+.img-cont{
+  position: relative;
+}
+.img-svg-1{
+  top: 50px;
+  left: 0;
+}
+.img-svg-2{
+  bottom: 50px;
+  right: 0;
+}
+.img-svg{
+  position: absolute;
+  animation: test 1s infinite alternate-reverse;
+  
+}
+
+@keyframes test {
+  from{
+    transform: translateY(-10px);
+  }to{
+    transform: translateY(0px);
+
+  }
+  
+}
 .img-mask{
-  clip-path: polygon(22% 5%, 80% 5%, 99% 50%, 75% 95%, 24% 95%, 2% 50%);
+  /* clip-path: polygon(22% 5%, 80% 5%, 99% 50%, 75% 95%, 24% 95%, 2% 50%); */
+  border-radius: 128px 0;
+  position: relative;
 
   width: 500px;
 }

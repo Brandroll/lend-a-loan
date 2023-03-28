@@ -27,7 +27,7 @@ export default function Header() {
 
   return (
     <div className="  ">
-      <nav className=" w-full top-0 fixed shadow-2xl z-40    lg:py-3 p-6   lg:px-8     bg-white    ">
+      <nav className=" w-full top-0 fixed shadow-2xl z-40    lg:py-3 py-3 px-5   lg:px-8     bg-white    ">
         <div className="max-w-site-full mx-auto flex justify-between items-center">
           <Link className="lg:block hidden" href={"/"}>
             <Image alt="logo" src={"/imgs/logo.svg"} width={160} height={180} />
@@ -107,7 +107,8 @@ export default function Header() {
                           </svg>
                         )}
                       </p>
-                      {i.subItems &&
+                      {currentSubMenu === idx &&
+                        i.subItems &&
                         i.subItems?.length > 0 &&
                         isSubMenuOpen && (
                           <>
@@ -131,7 +132,7 @@ export default function Header() {
                                       className="hover:text-white hover:bg-brand-blue p-2 px-6  "
                                       href={l.href}
                                     >
-                                      {l.label.toLowerCase()}
+                                      {l.label}
                                     </Link>
                                   </>
                                 ))}

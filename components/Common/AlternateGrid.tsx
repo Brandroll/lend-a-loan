@@ -1,4 +1,3 @@
-import Fade from "react-reveal/Fade";
 import DOMPurify from "isomorphic-dompurify";
 import Image from "next/image";
 import WPHTMLContent from "../UI/WPHTMLContent";
@@ -53,6 +52,10 @@ export default function AlternateGrid({
 
 </svg>
 `;
+  function randomIntFromInterval(min: number, max: number) {
+    // min and max included
+    return Math.floor(Math.random() * (max - min + 1) + min);
+  }
   return (
     <section className="grid my-16 lg:my-16 alternate-grid lg:gap-16 px-4 max-w-site-full mx-auto ">
       {contentData.map((content: Content, i: number) => (
@@ -61,30 +64,67 @@ export default function AlternateGrid({
             <div
               className={`${
                 calc(i) === "even" ? "lg:order-2 mt-4  lg:mt-0" : ""
-              } flex justify-center items-center `}
+              }  flex justify-center items-center img-cont  `}
             >
+              <svg
+                className={`h-20 w-20 img-svg img-svg-1  translate-x-${randomIntFromInterval(
+                  1,
+                  10
+                )}  z-50 translate-y-${randomIntFromInterval(1, 10)}`}
+                viewBox="0 0 87 83"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <rect
+                  x="3.5"
+                  y="3.5"
+                  width="80"
+                  height="76"
+                  rx="17.5"
+                  stroke="#82BDB7"
+                  stroke-width="7"
+                />
+              </svg>
+
               {calc(i) === "even" ? (
-                <Fade right>
-                  <Image
-                    className="img-mask"
-                    src={content.image}
-                    alt=""
-                    width={900}
-                    height={900}
-                  />
-                </Fade>
+                <Image
+                  className="img-mask"
+                  src={content.image}
+                  alt=""
+                  width={900}
+                  height={900}
+                />
               ) : (
-                <Fade left>
-                  <Image
-                    className="img-mask"
-                    src={content.image}
-                    alt=""
-                    width={900}
-                    height={900}
-                  />
-                </Fade>
+                <Image
+                  className="img-mask"
+                  src={content.image}
+                  alt=""
+                  width={900}
+                  height={900}
+                />
               )}
+
+              <svg
+                className={`h-20 w-20 img-svg-2 img-svg  translate-x-${randomIntFromInterval(
+                  1,
+                  10
+                )}  z-50 translate-y-${randomIntFromInterval(1, 10)}`}
+                viewBox="0 0 87 83"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <rect
+                  x="3.5"
+                  y="3.5"
+                  width="80"
+                  height="76"
+                  rx="17.5"
+                  stroke="#82BDB7"
+                  stroke-width="7"
+                />
+              </svg>
             </div>
+
             <div
               className={`${
                 calc(i) === "even" ? "md:order-1 lg:mr-12 " : "lg:ml-16"
