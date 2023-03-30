@@ -1,9 +1,12 @@
 import AlternateGrid from "@/components/Common/AlternateGrid";
 import SimpleHero from "@/components/Common/SimpleHero";
 import YoastNextSeo from "@/components/UI/YoastNextSeo";
+
 import React from "react";
 
-export default function About() {
+export default function About(props: any) {
+  const { pageData } = props;
+
   const content = [
     {
       information: {
@@ -38,14 +41,15 @@ export default function About() {
         heading="About Lend A Loan"
         subHeading="We are more than just a broker."
       />
-      {/* <YoastNextSeo {} /> */}
+      <YoastNextSeo {...pageData.yoast_head_json} />
+
       <AlternateGrid content={content} />
       <section className="bg-gray-bg  ">
-        <div className="max-w-site-full py-20 mx-auto">
-          <h3 className="text-30px font-isidorasans_semi_bold mb-10 md:mb-8 text-center">
+        <div className="max-w-site-full  md:py-20 mx-auto">
+          <h3 className="text-30px font-isidorasans_semi_bold py-5   md:mb-8 text-center">
             Meet Our People
           </h3>
-          <div className="grid md:grid-cols-2 gap-8 px-4">
+          <div className="grid md:grid-cols-2 gap-8 px-4 py-4">
             {peoples.map((p) => (
               <div className="" key={Math.random()}>
                 <div className="mb-4">
@@ -67,3 +71,15 @@ export default function About() {
     </div>
   );
 }
+
+export const getStaticProps = async () => {
+  const homepage_url = process.env.NEXT_WP_API_URL + `/custom-page/120`;
+
+  const homePageData = await fetch(homepage_url).then((r) => r.json());
+
+  return {
+    props: {
+      pageData: homePageData,
+    },
+  };
+};

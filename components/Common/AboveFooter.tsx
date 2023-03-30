@@ -28,11 +28,11 @@ export default function AboveFooter({
         </p>
 
         <p
-          className="text-center text-15px md:px-32 my-4 md:my-8 leading-8"
+          className="text-center text-15px lg:px-32   leading-8"
           dangerouslySetInnerHTML={{ __html: header.info }}
         />
 
-        <div className="grid gap-4 md:grid-cols-2 md:px-16">
+        <div className="grid gap-4 md:grid-cols-2  ">
           {contentData.map((grid: { heading: string; info: string }) => (
             <div className="text-15px" key={Math.random()}>
               <h4
@@ -45,12 +45,6 @@ export default function AboveFooter({
               </div>
             </div>
           ))}
-        </div>
-
-        <div className="grid md:grid-cols-3 py-8 md:pb-0 md:pt-16 md:px-16">
-          <Box />
-          <Box />
-          <Box />
         </div>
       </div>
     </div>

@@ -1,12 +1,10 @@
 import AboveFooter from "@/components/Common/AboveFooter";
 import Testinominal from "@/components/Common/Testinominal";
-import Head from "next/head";
+
 import Info from "@/components/HomeLoan/Info";
 import Pannel from "@/components/HomeLoan/Pannel";
-import Advantage from "@/components/HomeLoan/Advantage";
 import { HomePage } from "@/types";
 import AlternateGrid from "@/components/Common/AlternateGrid";
-import Help from "@/components/HomeLoan/Help";
 import VideoHero from "@/components/Common/VideoHero";
 import HomePageAdv from "@/components/HomePage/HomePageAdv";
 import YoastNextSeo from "@/components/UI/YoastNextSeo";

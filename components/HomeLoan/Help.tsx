@@ -37,7 +37,7 @@ const Box = ({ svgName, heading, content }: any) => {
     },
   ];
   return (
-    <div className="hover:box transition-all hover:-translate-y-3 delay-200 rounded-xl py-8 hover:shadow-2xl text-dark md:px-8">
+    <div className="hover:box transition-all hover:-translate-y-3 delay-200 rounded-xl lg:py-8 hover:shadow-2xl text-dark lg:px-8">
       {svgName === "phone" && <PhoneIcon />}
       {svgName === "email" && <MailIcon />}
       {svgName === "clock" && <ClockIcon />}
@@ -50,12 +50,12 @@ const Box = ({ svgName, heading, content }: any) => {
 };
 export default function Help() {
   return (
-    <div className="bg-gray-bg py-16 px-4 md:px-8">
+    <div className="bg-gray-bg py-8 lg:py-16 px-4 lg:px-8">
       <div className="max-w-site-full mx-auto">
         <h2 className="text-25px mb-8 font-isidorasans_semi_bold text-center">
           We’re Here to help
         </h2>
-        <div className="grid md:grid-cols-3 my-8">
+        <div className="grid md:grid-cols-3 gap-2 my-8">
           <Box
             svgName={"phone"}
             heading="Give us a call"

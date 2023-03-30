@@ -16,6 +16,10 @@ module.exports = {
         isidorasans_medium: ["var(--isidorasans-medium-font)"],
         isidorasans_semi_bold: ["var(--isidorasans-semi-bold-font)"],
       },
+      top: {
+        "13rem": "3.3rem",
+      },
+
       fontSize: {
         banner: "50px",
         "13px": "13.68px",

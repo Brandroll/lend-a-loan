@@ -63,66 +63,28 @@ export default function AlternateGrid({
           <section className="grid lg:grid-cols-2 gap-4   ">
             <div
               className={`${
-                calc(i) === "even" ? "lg:order-2 mt-4  lg:mt-0" : ""
-              }  flex justify-center items-center img-cont  `}
+                calc(i) === "even"
+                  ? "lg:order-2 mt-4  lg:mt-0 justify-end"
+                  : "justify-start"
+              }  flex  items-center   `}
             >
-              <svg
-                className={`h-20 w-20 img-svg img-svg-1  translate-x-${randomIntFromInterval(
-                  1,
-                  10
-                )}  z-50 translate-y-${randomIntFromInterval(1, 10)}`}
-                viewBox="0 0 87 83"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <rect
-                  x="3.5"
-                  y="3.5"
-                  width="80"
-                  height="76"
-                  rx="17.5"
-                  stroke="#82BDB7"
-                  stroke-width="7"
-                />
-              </svg>
-
               {calc(i) === "even" ? (
                 <Image
-                  className="img-mask"
+                  className="img-mask shadow-2xl "
                   src={content.image}
                   alt=""
-                  width={900}
+                  width={1000}
                   height={900}
                 />
               ) : (
                 <Image
-                  className="img-mask"
+                  className="img-mask "
                   src={content.image}
                   alt=""
-                  width={900}
+                  width={1000}
                   height={900}
                 />
               )}
-
-              <svg
-                className={`h-20 w-20 img-svg-2 img-svg  translate-x-${randomIntFromInterval(
-                  1,
-                  10
-                )}  z-50 translate-y-${randomIntFromInterval(1, 10)}`}
-                viewBox="0 0 87 83"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <rect
-                  x="3.5"
-                  y="3.5"
-                  width="80"
-                  height="76"
-                  rx="17.5"
-                  stroke="#82BDB7"
-                  stroke-width="7"
-                />
-              </svg>
             </div>
 
             <div
@@ -139,7 +101,7 @@ export default function AlternateGrid({
                 />
                 <WPHTMLContent html={content.information.info} />
                 <Link legacyBehavior href={"#"}>
-                  <a className="flex transition-all hover:translate-x-3 delay-200 mb-4 hover:text-brand-blue items-center gap-4">
+                  <a className="flex transition-all hover:translate-x-3 delay-200   hover:text-brand-blue items-center gap-4">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       fill="none"

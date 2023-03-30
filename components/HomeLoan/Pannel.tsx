@@ -21,7 +21,7 @@ const Box = ({ info }: { info: string }) => {
   return (
     <div className="bg-brand-blue gap-8 lg:gap-0 hover:shadow-lg delay-150 hover:shadow-brand-blue-light py-2 flex justify-between px-6 items-center rounded-2xl text-white">
       <p className="font-isidorasans_semi_bold text-left text-19px lg:text-25px ">
-        {info}{" "}
+        {info}
       </p>
       <svg
         xmlns="http://www.w3.org/2000/svg"

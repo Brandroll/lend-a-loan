@@ -78,14 +78,14 @@ export default function Advantage() {
     },
   ];
   return (
-    <div className="bg-gray-bg p-6 lg:p-12">
+    <div className="bg-gray-bg p-4 lg:p-12 lg:px-4">
       <div className="max-w-site-full mx-auto">
-        <section className={`grid lg:grid-cols-${data.length} gap-8`}>
+        <section className={`grid lg:grid-cols-1 gap-8`}>
           {data.map((d) => (
             <Section {...d} />
           ))}
         </section>
-        <section className="grid md:grid-cols-4 my-16 gap-8">
+        <section className="grid md:grid-cols-2 lg:grid-cols-4 lg:my-16 md:gap-8">
           {adv.map((d) => (
             <Adv {...d} />
           ))}
@@ -94,13 +94,13 @@ export default function Advantage() {
         <div className="flex justify-center">
           <motion.button
             whileHover={{ scale: 1.1 }}
-            className="px-8 hover:bg-brand-blue hover:text-white border-2 border-brand-blue py-3 rounded-l-full font-isidorasans_regular text-16px text-brand-blue"
+            className="md:px-8 px-4 hover:bg-brand-blue hover:text-white border-2 border-brand-blue py-3 rounded-l-full font-isidorasans_regular text-16px text-brand-blue"
           >
             Request a callback
           </motion.button>
           <motion.button
             whileHover={{ scale: 1.1 }}
-            className="px-8 border-2 border-brand-blue py-3 bg-brand-blue rounded-r-full font-isidorasans_regular text-16px text-white hover:scale-125 delay-200"
+            className="md:px-8 px-4 border-2 border-brand-blue py-3 bg-brand-blue rounded-r-full font-isidorasans_regular text-16px text-white hover:scale-125 delay-200"
           >
             Book appointment
           </motion.button>

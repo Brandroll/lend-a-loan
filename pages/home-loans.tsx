@@ -6,7 +6,6 @@ import Pannel from "@/components/HomeLoan/Pannel";
 import React from "react";
 import { HomePage, Project, Service } from "@/types";
 import Help from "@/components/HomeLoan/Help";
-import VideoHero from "@/components/Common/VideoHero";
 import HomeLoanVideoHero from "@/components/HomeLoan/HomeLoanVideoHero";
 import YoastNextSeo from "@/components/UI/YoastNextSeo";
 

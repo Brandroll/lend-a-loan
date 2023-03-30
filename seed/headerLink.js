@@ -21,19 +21,15 @@ export default [
       },
     ],
   },
-  { href: "about", label: "About Us" },
+  { href: "/about", label: "About Us" },
 
   {
-    href: "calculator",
+    href: "/calculator",
     label: "Calculators",
     subItems: [
       {
         href: "/calculator/borrowing-power-calculator",
         label: "Borrowing Power Calculator",
-      },
-      {
-        href: "/calculator/stamp-duty-calculator/",
-        label: "Stamp Duty Calculator",
       },
 
       {
@@ -50,7 +46,7 @@ export default [
       },
       {
         href: "/calculator/how-much-to-deposit-calculator/",
-        label: "How Much To Deposit Calculator",
+        label: "Savings Calculator",
       },
       {
         href: "/calculator/fortnightly-repayment-calculator",
@@ -69,8 +65,25 @@ export default [
         href: "/calculator/income-annualisation-calculator/",
         label: "Income Annualisation Calculator",
       },
+      {
+        label: "Split Loan Calculator",
+        href: "/calculator/split-loan-calculator",
+      },
+      {
+        label: "Savings Calculator",
+        href: "/calculator/saving-calculator",
+      },
+
+      {
+        label: "Interest Only Mortgage Calculator",
+        href: "/calculator/interest-only-mortgage-calculator",
+      },
+      {
+        label: "Leasing Calculator",
+        href: "/calculator/leasing-calculator",
+      },
     ],
   },
 
-  { href: "contact", label: "Contact Us" },
+  { href: "/contact", label: "Contact Us" },
 ];

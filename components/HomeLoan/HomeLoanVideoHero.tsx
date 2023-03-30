@@ -33,13 +33,13 @@ export default function HomeLoanVideoHero() {
         <div className=" flex justify-center  md:hidden my-8  ">
           <motion.button
             whileHover={{ scale: 1.1 }}
-            className="px-8 hover:bg-brand-blue hover:text-white border-2 border-brand-blue py-3 rounded-l-full font-isidorasans_regular text-16px text-brand-blue"
+            className="md:px-8 px-2 hover:bg-brand-blue hover:text-white border-2 border-brand-blue py-3 rounded-l-full font-isidorasans_regular text-16px text-brand-blue"
           >
             Request a callback
           </motion.button>
           <motion.button
             whileHover={{ scale: 1.1 }}
-            className="px-8 border-2 border-brand-blue py-3 bg-brand-blue rounded-r-full font-isidorasans_regular text-16px text-white hover:scale-125 delay-200"
+            className="md:px-8 px-2 border-2 border-brand-blue py-3 bg-brand-blue rounded-r-full font-isidorasans_regular text-16px text-white hover:scale-125 delay-200"
           >
             Book appointment
           </motion.button>
