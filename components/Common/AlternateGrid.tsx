@@ -57,15 +57,15 @@ export default function AlternateGrid({
     return Math.floor(Math.random() * (max - min + 1) + min);
   }
   return (
-    <section className="grid my-16 lg:my-16 alternate-grid lg:gap-16 px-4 max-w-site-full mx-auto ">
+    <section className="grid mt-8   lg:my-16 alternate-grid lg:gap-16 px-4   max-w-site-full mx-auto ">
       {contentData.map((content: Content, i: number) => (
         <>
           <section className="grid lg:grid-cols-2 gap-4   ">
             <div
               className={`${
                 calc(i) === "even"
-                  ? "lg:order-2 mt-4  lg:mt-0 justify-end"
-                  : "justify-start"
+                  ? "lg:order-2 mt-4  lg:mt-0 md:justify-center lg:justify-end"
+                  : "md:justify-center lg:justify-start"
               }  flex  items-center   `}
             >
               {calc(i) === "even" ? (
@@ -78,7 +78,7 @@ export default function AlternateGrid({
                 />
               ) : (
                 <Image
-                  className="img-mask "
+                  className="img-mask shadow-2xl"
                   src={content.image}
                   alt=""
                   width={1000}
@@ -92,12 +92,12 @@ export default function AlternateGrid({
                 calc(i) === "even" ? "md:order-1 lg:mr-12 " : "lg:ml-16"
               }  mt-8 lg:mt-0  flex`}
             >
-              <div className="flex flex-col font-isidorasans_regular justify-center  ">
+              <div className="flex flex-col font-isidorasans_regular justify-center mb-8 lg:mb-0 ">
                 <h4
                   dangerouslySetInnerHTML={{
                     __html: DOMPurify.sanitize(content.information.heading),
                   }}
-                  className="text-dark  text-28px lg:text-2xl font-isidorasans_semi_bold  font-medium md:mb-2"
+                  className="text-dark  text-28px lg:text-2xl font-isidorasans_semi_bold  font-medium  "
                 />
                 <WPHTMLContent html={content.information.info} />
                 <Link legacyBehavior href={"#"}>
@@ -108,7 +108,8 @@ export default function AlternateGrid({
                       viewBox="0 0 24 24"
                       strokeWidth={0.5}
                       stroke="currentColor"
-                      className="w-16 md:w-16 h-16 md:h-16  text-brand-blue"
+                      // className="w-16 md:w-16 h-16 md:h-16  text-brand-blue"
+                      className="w-12 h-12 text-brand-blue"
                     >
                       <path
                         strokeLinecap="round"

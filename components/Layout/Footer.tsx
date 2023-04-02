@@ -6,7 +6,7 @@ import Link from "next/link";
 export default function Footer() {
   return (
     <footer className="bg-footer">
-      <div className="max-w-site-full mx-auto md:px-5 text-18px font-isidorasans_regular text-footer-link  py-16 md:py-20  ">
+      <div className="max-w-site-full mx-auto   text-18px font-isidorasans_regular text-footer-link px-4    py-16 md:py-20  ">
         <div className="flex justify-center md:justify-start ">
           <Image
             src={
@@ -55,7 +55,7 @@ export default function Footer() {
             >
               1300 993 095
             </a>
-            <div className="flex   items-center justify-center md:justify-start gap-4">
+            <div className="flex   items-center justify-center md:justify-start gap-2 lg:gap-4">
               <a
                 target={"_blank"}
                 href="https://twitter.com/lend_loan"
@@ -191,7 +191,7 @@ export default function Footer() {
           </svg> */}
           </div>
         </div>
-        <div className="my-8 px-4 md:px-0">
+        <div className="my-8   md:px-0">
           <div className="flex gap-1 text-footer-link">
             <Link className="hover:text-gray-200" href="/terms-conditions">
               Terms & Conditions{" "}

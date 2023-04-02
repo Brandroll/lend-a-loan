@@ -24,8 +24,8 @@ const Adv = ({
   info: string;
 }) => {
   return (
-    <div>
-      <div className="border-brand-blue  w-12 h-12  flex  justify-center items-center text-24px adv-num   text-brand-blue  font-isidorasans_semi_bold border-2    rounded-full">
+    <div className="flex md:block   flex-col items-center justify-center">
+      <div className="border-brand-blue  w-12 h-12 mb-2 md:mb-0  flex  justify-center items-center text-24px adv-num   text-brand-blue  font-isidorasans_semi_bold border-2    rounded-full">
         {num.toString()}
       </div>
       <h2
@@ -45,12 +45,6 @@ export default function HomePageAdv({
   heading?: string;
   info?: string;
 }) {
-  const data = [
-    {
-      heading,
-      info,
-    },
-  ];
   const adv = [
     {
       num: 1,
@@ -77,7 +71,7 @@ export default function HomePageAdv({
     },
   ];
   return (
-    <div className="bg-gray-bg p-4 lg:p-12 lg:px-4">
+    <div className="bg-gray-bg p-4   py-8">
       <div className="max-w-site-full mx-auto">
         <section className={`grid lg:grid-cols-1 gap-8`}>
           <Section heading={heading ? heading : ""} info={info ? info : ""} />

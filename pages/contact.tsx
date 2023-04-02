@@ -11,7 +11,7 @@ export default function ContactUsPage(props: any) {
     <>
       <YoastNextSeo {...pageData.yoast_head_json} />
       <div
-        className="py-8    md:py-24 px-4 lg:px-12"
+        className="py-12    md:py-24 px-4 lg:px-12"
         style={{ backgroundColor: "#171719" }}
       >
         <div className="max-w-site-full mx-auto">
@@ -20,20 +20,20 @@ export default function ContactUsPage(props: any) {
           </h1>
         </div>
       </div>
-      <div style={{ backgroundColor: "#F2F2F2" }} className="mb-8 ">
-        <div className="test-bg py-12">
+      <div className="mb-8 s ">
+        <div className="test-bg lg:py-12 -m-[2px] ">
           <div className="w-full  bg-brand-blue absolute   blue-line"></div>
           <div className="max-w-site-full   mx-auto  p-4 lg:p-0 bg-g">
-            <div className="relative z-10">
+            <div className="relative z-10  px-4">
               <ContactGrid contact_address={pageData.acf.contact_address} />
             </div>
           </div>
         </div>
       </div>
       <div className="max-w-site-full mx-auto">
-        <div className="bg-white px-4 md:px-10">
-          <div className="text-center mb-8">
-            <h2 className="text-36px mb-5 mt-12 font-isidorasans_semi_bold">
+        <div className="bg-white px-4 ">
+          <div className="text-center  ">
+            <h2 className="text-36px  my-4 font-isidorasans_semi_bold">
               How can we help?
             </h2>
             <p className="text-18px font-isidorasans_regular">

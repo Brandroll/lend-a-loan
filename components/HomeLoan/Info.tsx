@@ -17,12 +17,13 @@ export default function Info({
   content?: string;
 }) {
   return (
-    <div>
-      <h2 className="my-4 mt-6 text-24px font-isidorasans_semi_bold">
-        {heading ? heading : ""}
-      </h2>
-
-      <Pagragraph info={content ? content : ""} />
-    </div>
+    <>
+      {heading && (
+        <h2 className="my-4 mt-6 text-24px font-isidorasans_semi_bold">
+          {heading}
+        </h2>
+      )}
+      {content && <Pagragraph info={content ? content : ""} />}
+    </>
   );
 }

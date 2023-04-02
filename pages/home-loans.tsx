@@ -22,7 +22,7 @@ export default function Homeloans(props: Props) {
       <HomeLoanVideoHero />
       <Testinominal />
 
-      <div className="max-w-site-full mx-auto mt-16 text-center">
+      <div className="max-w-site-full mx-auto   text-center">
         <Info />
         <Pannel />
       </div>

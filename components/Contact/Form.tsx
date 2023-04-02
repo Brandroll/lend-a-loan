@@ -135,7 +135,7 @@ export default function ContactForm(props: any) {
               type="number"
               error={errors.phone?.message!}
             />
-            <div className={"grid col-span-2 lg:col-span-1"}>
+            <div className={"grid col-span-2  "}>
               <label className=" text-18px block text-left mb-3  font-isidorasans_semi_bold leading-none text-gray-800">
                 When is the best time to contact you?
               </label>
@@ -165,14 +165,14 @@ export default function ContactForm(props: any) {
 const TimeToContact = ({ setSelectedTime, selectedTime }: any) => {
   const time = ["Morning", "Noon", "Afternoon", "Evening", "Anytime"];
   return (
-    <div className="grid grid-cols-3 md:grid-cols-5 gap-2 items-center">
+    <div className="grid  items-center">
       <select
         value={selectedTime}
         onChange={(e) => {
           console.log(e);
           setSelectedTime(e.target.value);
         }}
-        className="py-4"
+        className="p-4 border  "
       >
         {time.map((t, y) => (
           <option key={y} value={t}>

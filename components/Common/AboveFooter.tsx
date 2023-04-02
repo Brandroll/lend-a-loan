@@ -23,12 +23,12 @@ export default function AboveFooter({
   return (
     <div className=" bg-gray-bg text-18px py-5 font-isidorasans_regular px-4">
       <div className="max-w-site-full mx-auto">
-        <p className=" text-center text-30px md:mt-16  font-isidorasans_semi_bold">
+        <p className=" text-center text-[23px] md:text-30px  my-4 font-isidorasans_semi_bold">
           {header.header ? header.header : ""}
         </p>
 
         <p
-          className="text-center text-15px lg:px-32   leading-8"
+          className="text-center text-15px lg:px-32 md:mt-6  leading-8"
           dangerouslySetInnerHTML={{ __html: header.info }}
         />
 
@@ -36,7 +36,7 @@ export default function AboveFooter({
           {contentData.map((grid: { heading: string; info: string }) => (
             <div className="text-15px" key={Math.random()}>
               <h4
-                className="text-24px mb-4 font-isidorasans_semi_bold"
+                className="text-[23px] md:mb-4 font-isidorasans_semi_bold"
                 dangerouslySetInnerHTML={{ __html: grid.heading }}
               />
 

@@ -45,8 +45,8 @@ export default function About(props: any) {
 
       <AlternateGrid content={content} />
       <section className="bg-gray-bg  ">
-        <div className="max-w-site-full  md:py-20 mx-auto">
-          <h3 className="text-30px font-isidorasans_semi_bold py-5   md:mb-8 text-center">
+        <div className="max-w-site-full  py-8 lg:py-12 mx-auto">
+          <h3 className="text-30px font-isidorasans_semi_bold  lg:mb-4    text-center">
             Meet Our People
           </h3>
           <div className="grid md:grid-cols-2 gap-8 px-4 py-4">

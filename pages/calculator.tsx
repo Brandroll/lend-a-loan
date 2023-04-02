@@ -161,7 +161,7 @@ const CalculatorGrid = (props: any) => {
             viewBox="0 0 24 24"
             strokeWidth={0.5}
             stroke="currentColor"
-            className="w-16 md:w-12 h-16 md:h-12  text-brand-blue"
+            className="w-12 h-12  text-brand-blue"
           >
             <path
               strokeLinecap="round"

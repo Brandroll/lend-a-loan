@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function ContactGrid(props: any) {
   return (
-    <div className=" grid md:grid-cols-3">
+    <div className=" grid md:grid-cols-3  ">
       {props.contact_address.map((addr: any) => (
         <div key={Math.random()}>
           <div>

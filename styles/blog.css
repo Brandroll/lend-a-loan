@@ -76,12 +76,21 @@ html {
   
   }
   
- 
+   .blue-line{
+    top:50%;
+    height: 7px;
+  
+  }
   @media (max-width:768px) {
 
     .video-container{
     max-height: 620px;
     margin-top: 5px;
+    }
+    .blue-line{
+      top:50%;
+      height: 7px;
+    
     }
     .hero-section {
   
@@ -107,7 +116,7 @@ html {
     }
   
   }
-  
+
   @media(max-width:417px){
     .hero-btn{
       padding-top: 123px;
@@ -777,17 +786,13 @@ html {
   
   
 
-  .blue-line{
-    top:285px;
-    height: 7px;
-  
-  }
+
   @media (max-width:390px) {
     .hero-btn {
         padding-top: 124px;
       }
       .blue-line{
-        top:269px;
+        top:50%;
         height: 7px;
       
       }
@@ -973,7 +978,7 @@ html {
   height: 100%;
   margin: 0;
   box-sizing: border-box;
-  padding: 18% 18px;
+  padding: 27% 18px;
   line-height: 1.5;
   text-align: center;
   

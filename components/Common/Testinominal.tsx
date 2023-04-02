@@ -78,7 +78,7 @@ export default function Testinominal({ images }: { images?: AcfImage[] }) {
               },
               // when window width is >= 480px
               480: {
-                slidesPerView: 4,
+                slidesPerView: 6,
                 spaceBetween: 50,
               },
               // when window width is >= 640px
@@ -90,7 +90,7 @@ export default function Testinominal({ images }: { images?: AcfImage[] }) {
             loop
           >
             {imgs.map((i) => (
-              <SwiperSlide>
+              <SwiperSlide className="  justify-center items-center">
                 <Image
                   alt={i.title}
                   src={i.full_image_url}

@@ -11,7 +11,7 @@ export default function HomeLoanVideoHero() {
       </video>
       <div className="caption flex flex-col justify-end md:block">
         <div className="md:cp-center px-4 md:text-left lg:text-center lg:px-0">
-          <p className="text-24px  md:text-30px    font-isidorasans_semi_bold text-white">
+          <p className="text-24px  md:text-30px   text-center font-isidorasans_semi_bold text-white">
             Start your home loan journey, with an expert lend a loan mortgage
             broker
           </p>
