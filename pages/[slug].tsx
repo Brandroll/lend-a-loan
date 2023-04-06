@@ -23,12 +23,13 @@ export default function ServicePage(props: Props) {
       <YoastNextSeo slug={service.slug} {...service.yoast_head_json} />
       <SimpleHero heading={service.title.rendered} subHeading="" />
       <Testinominal />
-      <div className="max-w-site-full mx-auto mt-16 text-center">
+      <div className="max-w-site-full mx-auto    text-center">
         <Info />
-        {/* <Pannel /> */}
       </div>
       <MainTextGrid />
-      <AlternateGrid content={service.acf.content} />
+      <div className="-mt-8 ">
+        <AlternateGrid content={service.acf.content} />
+      </div>
       <Help />
     </>
   );

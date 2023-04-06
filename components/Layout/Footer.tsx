@@ -153,9 +153,9 @@ export default function Footer() {
               Get updates in your inbox!
             </p>
             <div className="grid grid-cols-1 border  items-center pr-2">
-              <div className="flex justify-between items-center">
+              <div className="flex justify-between  items-center">
                 <input
-                  className="   px-4 py-3 bg-footer text-white outline-none border-footer-link"
+                  className="   px-4   bg-footer text-white outline-none border-footer-link"
                   placeholder="EMAIL ADDRESS"
                 />
                 <svg
@@ -164,7 +164,7 @@ export default function Footer() {
                   viewBox="0 0 24 24"
                   strokeWidth={1.5}
                   stroke="currentColor"
-                  className="w-6 h-6     "
+                  className="w-8   h-12  border-l pl-1     "
                 >
                   <path
                     strokeLinecap="round"
@@ -174,21 +174,6 @@ export default function Footer() {
                 </svg>
               </div>
             </div>
-
-            {/* <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            strokeWidth={1.5}
-            stroke="currentColor"
-            className="w-6 h-6 top-4 text-footer-link  "
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"
-            />
-          </svg> */}
           </div>
         </div>
         <div className="my-8   md:px-0">

@@ -43,21 +43,14 @@ export default function AlternateGrid({
 <g style="mix-blend-mode:multiply">
 <path d="M519.579 139.673H237C204.95 139.673 175.334 156.817 159.308 184.648L18.0187 430.025C1.99375 457.856 1.99375 492.144 18.0187 519.975L159.308 765.352C175.334 793.184 204.95 810.327 237 810.327H519.579C551.63 810.327 581.246 793.184 597.272 765.352L738.561 519.975C754.586 492.144 754.586 457.856 738.561 430.025L597.272 184.648C581.246 156.817 551.63 139.673 519.579 139.673Z" fill="#61C0CD"/>
 </g>  
- 
-
-
-
-
-
-
-</svg>
+ </svg>
 `;
   function randomIntFromInterval(min: number, max: number) {
     // min and max included
     return Math.floor(Math.random() * (max - min + 1) + min);
   }
   return (
-    <section className="grid mt-8   lg:my-16 alternate-grid lg:gap-16 px-4   max-w-site-full mx-auto ">
+    <section className="grid mt-8   md:my-10 alternate-grid lg:gap-16 px-4   max-w-site-full mx-auto ">
       {contentData.map((content: Content, i: number) => (
         <>
           <section className="grid lg:grid-cols-2 gap-4   ">
@@ -65,7 +58,7 @@ export default function AlternateGrid({
               className={`${
                 calc(i) === "even"
                   ? "lg:order-2 mt-4  lg:mt-0 md:justify-center lg:justify-end"
-                  : "md:justify-center lg:justify-start"
+                  : "md:justify-start lg:justify-start"
               }  flex  items-center   `}
             >
               {calc(i) === "even" ? (

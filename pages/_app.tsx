@@ -38,14 +38,17 @@ const isidorasans = localFont({
 export default function App({ Component, pageProps }: AppProps) {
   return (
     <>
-      <style jsx global>{`
-        :root {
-          --isidorasans-font: ${isidorasans.style.fontFamily};
-          --isidorasans-regular-font: ${isidorasansRegular.style.fontFamily};
-          --isidorasans-medium-font: ${isidorasansmedium.style.fontFamily};
-          --isidorasans-semi-bold-font: ${isidorasanssemibold.style.fontFamily};
-        }
-      `}</style>
+      <style jsx global>
+        {`
+          :root {
+            --isidorasans-font: ${isidorasans.style.fontFamily};
+            --isidorasans-regular-font: ${isidorasansRegular.style.fontFamily};
+            --isidorasans-medium-font: ${isidorasansmedium.style.fontFamily};
+            --isidorasans-semi-bold-font: ${isidorasanssemibold.style
+              .fontFamily};
+          }
+        `}
+      </style>
       <>
         <Header />
         <Component {...pageProps} />

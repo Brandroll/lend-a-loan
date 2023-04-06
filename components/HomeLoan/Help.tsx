@@ -6,9 +6,12 @@ import PhoneIcon from "../UI/Icons/Phone";
 const Box = ({ svgName, heading, content }: any) => {
   return (
     <div className="lg:hover:box cursor-pointer transition-all lg:hover:-translate-y-3 delay-200 rounded-xl lg:py-2 lg:hover:shadow-2xl text-dark lg:px-8">
-      {svgName === "phone" && <PhoneIcon />}
-      {svgName === "email" && <MailIcon />}
-      {svgName === "clock" && <ClockIcon />}
+      <div className="flex justify-center md:justify-start ">
+        {svgName === "phone" && <PhoneIcon />}
+        {svgName === "email" && <MailIcon />}
+        {svgName === "clock" && <ClockIcon />}
+      </div>
+
       <h4 className="text-22px my-4 font-isidorasans_semi_bold">
         <p>{heading}</p>
       </h4>
@@ -48,14 +51,14 @@ export default function Help() {
 `}
           />
         </div>
-        <div className="  flex justify-center">
+        {/* <div className="  flex justify-center">
           <motion.button
             whileHover={{ scale: 1.1 }}
             className="px-8 py-3 hover:bg-brand-blue hover:text-white border-2 border-brand-blue  rounded-full font-isidorasans_regular text-16px text-brand-blue"
           >
             Request a callback
           </motion.button>
-        </div>
+        </div> */}
       </div>
     </div>
   );

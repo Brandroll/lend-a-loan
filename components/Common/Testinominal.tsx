@@ -90,13 +90,15 @@ export default function Testinominal({ images }: { images?: AcfImage[] }) {
             loop
           >
             {imgs.map((i) => (
-              <SwiperSlide className="  justify-center items-center">
-                <Image
-                  alt={i.title}
-                  src={i.full_image_url}
-                  width={80}
-                  height={30}
-                />{" "}
+              <SwiperSlide className="flex  justify-center items-center">
+                <center>
+                  <Image
+                    alt={i.title}
+                    src={i.full_image_url}
+                    width={80}
+                    height={30}
+                  />
+                </center>
               </SwiperSlide>
             ))}
           </Swiper>

@@ -175,6 +175,8 @@ export interface HomePage {
   };
   slug: string;
   acf: {
+    heading?: string;
+    video?: string;
     content: {
       information: {
         heading: string;

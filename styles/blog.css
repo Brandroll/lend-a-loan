@@ -978,7 +978,7 @@ html {
   height: 100%;
   margin: 0;
   box-sizing: border-box;
-  padding: 27% 18px;
+  padding: 30% 18px;
   line-height: 1.5;
   text-align: center;
   
@@ -1020,7 +1020,7 @@ html {
   border-radius: 128px 0;
   position: relative;
 
-  width: 500px;
+  width: 735px;
 }
 .adv-num{
   width: 50px;

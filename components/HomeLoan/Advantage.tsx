@@ -25,7 +25,7 @@ const Adv = ({
 }) => {
   return (
     <div className="flex md:block   flex-col items-center justify-center">
-      <div className="border-brand-blue  w-12 h-12 mb-2 md:mb-0  flex  justify-center items-center text-24px adv-num   text-brand-blue  font-isidorasans_semi_bold border-2    rounded-full">
+      <div className="border-brand-blue  w-12 h-12 mb-2 lg:mb-4 md:mb-0  flex  justify-center items-center text-24px adv-num   text-brand-blue  font-isidorasans_semi_bold border-2    rounded-full">
         {num.toString()}
       </div>
       <h2
@@ -56,25 +56,33 @@ export default function Advantage() {
     {
       num: 1,
       heading: "Fact-finding Interview",
-      info: "One of the first steps we take is to learn about you and any other entity involved, your requirements and objectives in order to make sure we find a product that meets your requirements.",
+      info: `One of the first steps we take is to learn about you and any other entity involved, your requirements and objectives in order to make sure we find a product that meets your requirements.
+
+      `,
     },
     {
       num: 2,
 
       heading: "Product Selection",
-      info: "Once we complete a preliminary assessment we then compare loan products and provide you with a credit proposal showing what lending product we considered and our recommendation.",
+      info: `Once we complete a preliminary assessment we then compare loan products and provide you with a credit proposal showing what lending product we considered and our recommendation.
+
+      `,
     },
     {
       num: 3,
 
       heading: "Lodgement",
-      info: "Once all of the your documents are provided to us. We will submit your application to the selected bank or lender. We will regularly update you on your application progress through to settlement.",
+      info: `Once all of the your documents are provided to us. We will submit your application to the selected bank or lender. We will regularly update you on your application progress through to settlement.
+
+      `,
     },
     {
       num: 4,
 
-      heading: "Product Selection",
-      info: "Once your loan has settled your broker will contact you and explain all you need to know about your loan. We will regularly get in touch with you to review your loan and interest-rate.        ",
+      heading: "Post Settlement",
+      info: `Once your loan has settled your broker will contact you and explain all you need to know about your loan. We will regularly get in touch with you to review your loan and interest-rate.
+
+      `,
     },
   ];
   return (

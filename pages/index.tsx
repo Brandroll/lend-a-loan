@@ -1,13 +1,12 @@
 import AboveFooter from "@/components/Common/AboveFooter";
 import Testinominal from "@/components/Common/Testinominal";
-
 import Info from "@/components/HomeLoan/Info";
 import Pannel from "@/components/HomeLoan/Pannel";
 import { HomePage } from "@/types";
 import AlternateGrid from "@/components/Common/AlternateGrid";
-import VideoHero from "@/components/Common/VideoHero";
 import HomePageAdv from "@/components/HomePage/HomePageAdv";
 import YoastNextSeo from "@/components/UI/YoastNextSeo";
+import HomeLoanVideoHero from "@/components/HomeLoan/HomeLoanVideoHero";
 
 interface Props {
   homePageData: HomePage;
@@ -19,17 +18,25 @@ export default function Home(props: Props) {
     <>
       <YoastNextSeo {...homePageData.yoast_head_json} />
 
-      <VideoHero />
+      <HomeLoanVideoHero
+        heading={
+          homePageData.acf.heading
+            ? homePageData.acf.heading
+            : homePageData.title.rendered
+        }
+        video={homePageData.acf.video}
+      />
 
       <Testinominal />
       <div className=" ">
-        <div className="max-w-site-full mx-auto mt-6 text-center">
+        <div className="max-w-site-full mx-auto my-12 text-center">
           <Info {...homePageData.acf.header} />
           <Pannel />
         </div>
         <HomePageAdv {...homePageData.acf.comparison} />
-
-        <AlternateGrid content={homePageData.acf.content} />
+        <div className="my-12">
+          <AlternateGrid content={homePageData.acf.content} />
+        </div>
 
         <AboveFooter {...homePageData.acf.above_footer} />
       </div>
