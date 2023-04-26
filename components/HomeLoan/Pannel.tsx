@@ -8,7 +8,7 @@ export default function Pannel() {
     `All other lending solutions`,
   ];
   return (
-    <div className=" my-8 px-4 ">
+    <div className="my-12 md:my-8 px-4 ">
       <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
         {info.map((i) => (
           <Box info={i} />

@@ -30,7 +30,9 @@ export default function MainTextGrid() {
   return (
     <div className="  mt-8  lg:px-12  ">
       <div className="max-w-site-full mx-auto">
-        <section className={`grid lg:grid-cols-${data.length} gap-8`}>
+        <section
+          className={`grid px-4 lg:px-0 lg:grid-cols-${data.length} gap-8`}
+        >
           {data.map((d) => (
             <Section {...d} />
           ))}

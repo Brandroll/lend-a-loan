@@ -34,7 +34,7 @@ export default function Home(props: Props) {
           <Pannel />
         </div>
         <HomePageAdv {...homePageData.acf.comparison} />
-        <div className="my-12">
+        <div className="my-4">
           <AlternateGrid content={homePageData.acf.content} />
         </div>
 

@@ -18,7 +18,7 @@ export default function Info({
   return (
     <>
       {heading && (
-        <h2 className="my-4 mt-6 text-24px font-isidorasans_semi_bold">
+        <h2 className="my-6 mt-6 text-24px font-isidorasans_semi_bold">
           {heading}
         </h2>
       )}

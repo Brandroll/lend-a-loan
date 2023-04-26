@@ -1,6 +1,10 @@
 import AlternateGrid from "@/components/Common/AlternateGrid";
 import SimpleHero from "@/components/Common/SimpleHero";
+import WPHTMLContent from "@/components/UI/WPHTMLContent";
 import YoastNextSeo from "@/components/UI/YoastNextSeo";
+import DOMPurify from "isomorphic-dompurify";
+import Image from "next/image";
+import Link from "next/link";
 
 import React from "react";
 
@@ -35,6 +39,13 @@ export default function About(props: any) {
         `,
     },
   ];
+  function oddOrEven(num: number) {
+    if (num % 2 == 0) return "even";
+    return "odd";
+  }
+  const calc = (i: number) => {
+    return oddOrEven(i + 1);
+  };
   return (
     <div>
       <SimpleHero
@@ -42,8 +53,47 @@ export default function About(props: any) {
         subHeading="We are more than just a broker."
       />
       <YoastNextSeo {...pageData.yoast_head_json} />
+      <div className="my-8">
+        <section className="grid lg:mt-8   md:my-10 alternate-grid md:gap-4 lg:gap-8 px-4   max-w-site-full mx-auto ">
+          {content.map((content: any, i: number) => (
+            <>
+              <section className="grid lg:grid-cols-2 lg:gap-4  my-4 ">
+                <div
+                  className={`${
+                    calc(i) === "even"
+                      ? "lg:order-2 mt-4  lg:mt-0 md:justify-center lg:justify-end"
+                      : "md:justify-center lg:justify-start"
+                  }  flex  items-center   `}
+                >
+                  <Image
+                    className="  lg:rounded-tl-[128px] lg:rounded-br-[128px] lg:shadow-2xl "
+                    src={content.image}
+                    alt=""
+                    width={1000}
+                    height={900}
+                  />
+                </div>
 
-      <AlternateGrid content={content} />
+                <div
+                  className={`${
+                    calc(i) === "even" ? "md:order-1 lg:mr-12 " : "lg:ml-16"
+                  }  mt-8 lg:mt-0  flex`}
+                >
+                  <div className="flex flex-col font-isidorasans_regular justify-center -mb-4 lg:mb-0 ">
+                    <h4
+                      dangerouslySetInnerHTML={{
+                        __html: DOMPurify.sanitize(content.information.heading),
+                      }}
+                      className="text-dark lg:mb-4 text-28px lg:text-2xl font-isidorasans_semi_bold  font-medium  "
+                    />
+                    <WPHTMLContent html={content.information.info} />
+                  </div>
+                </div>
+              </section>
+            </>
+          ))}
+        </section>
+      </div>
       <section className="bg-gray-bg  ">
         <div className="max-w-site-full  py-8 lg:py-12 mx-auto">
           <h3 className="text-30px font-isidorasans_semi_bold  lg:mb-4    text-center">

@@ -2,9 +2,7 @@ html {
     height: 100%;
   }
   
-  
-   
-   
+ 
    .grecaptcha-badge{
     display: none;
   }
@@ -20,7 +18,7 @@ html {
     margin: 0;
     min-height: 100%;
     /* padding-bottom: 50rem; */
-    padding-top:55px ;
+    padding-top:65px ;
     overflow-x: hidden;
   }
   
@@ -54,7 +52,31 @@ html {
     line-height: 60px;
     word-spacing: 2px;
   }
-  
+  .video-container .caption {
+    z-index: 1;
+    /* position: relative; */
+    text-align: center;
+    background: rgba(0,0,0,0.6);
+    /* background-image: linear-gradient(to bottom right,#002f4b,#dc4225); */
+    opacity: .8;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    box-sizing: border-box;
+    padding: 30% 18px;
+    line-height: 1.5;
+    text-align: center;
+    
+  }
+  .valign{
+    position: relative;
+    top: 40%; 
+    transform: translateY(-40%);
+  }
   
   @media (max-width:1200px) {
     .hero-section {
@@ -85,7 +107,7 @@ html {
 
     .video-container{
     max-height: 620px;
-    margin-top: 5px;
+    /* margin-top: 5px; */
     }
     .blue-line{
       top:50%;
@@ -132,6 +154,20 @@ html {
     }
     .below-hero{
       margin-top: -2rem;
+    }
+    .video-container .caption{
+      padding: 38% 18px;
+    }
+
+  }
+  @media only screen and (max-width:765px) and (min-width: 570px)  {
+
+ 
+    .video-container .caption{
+      padding: 30% 18px;
+    }
+    .valign{
+      top: 22%;
     }
   }
   @media only screen and (max-width: 635px) and (min-width: 340px)  {
@@ -605,15 +641,22 @@ html {
   }
   
   @media (max-width: 768px) {
+
     .blog-wrapper {
       columns: 1;
   
       justify-content: center;
       margin: 0 auto;
     }
-  
+    .post-content {
+      margin-bottom: 3px;
+    }
+    .post-content p{
+      margin-bottom: 0;
+    }
     .post-content h1 {
       font-size: 24px;
+
     }
   
     .blog-img {
@@ -697,8 +740,16 @@ html {
       object-fit: cover;
     }
   }
-  
+ 
   @media (max-width: 588px) {
+    .video-container .caption{
+      padding: 38% 18px;
+    }
+    .valign{
+      position: relative;
+      top: 5%; 
+      transform: translateY(-20%);
+    }
     ul.wp-block-gallery {
       padding: 0;
       display: grid;
@@ -948,6 +999,7 @@ html {
     height: 800px;
     width: 100vw;
     position: relative;
+     
     background: rgba(0,0,0,0.6);
 
 }
@@ -963,26 +1015,7 @@ html {
 }
 
 /* Just styling the content of the div, the *magic* in the previous rules */
-.video-container .caption {
-  z-index: 1;
-  /* position: relative; */
-  text-align: center;
-  background: rgba(0,0,0,0.6);
-  /* background-image: linear-gradient(to bottom right,#002f4b,#dc4225); */
-  opacity: .8;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  width: 100%;
-  height: 100%;
-  margin: 0;
-  box-sizing: border-box;
-  padding: 30% 18px;
-  line-height: 1.5;
-  text-align: center;
-  
-}
+
 .test-bg{
   background: linear-gradient(to top, #F2F2F2 50%, #171719 50%);
   position: relative;
@@ -1141,12 +1174,23 @@ html {
     font-weight: 400;
   }
  
-  @media (min-width:1080px) {
+  @media (min-width:1680px) {
   
     /* .hero-section {
       height: 15rem;
     } */
+    .video-container .caption{
+      padding: 10% 18px;
+    }
+  }
+  @media (min-width:4000px) {
   
+    /* .hero-section {
+      height: 15rem;
+    } */
+    .video-container .caption{
+      padding: 5% 18px;
+    }
   }
   
    

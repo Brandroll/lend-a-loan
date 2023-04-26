@@ -29,16 +29,18 @@ export default function Homeloans(props: Props) {
       />
       <Testinominal />
 
-      <div className="max-w-site-full mx-auto my-12   text-center">
+      <div className="max-w-site-full mx-auto lg:my-12   text-center">
         <Info />
         <Pannel />
       </div>
       <Advantage />
-      <div className="my-12">
+      <div className="my-8 md:my-10">
         <AlternateGrid content={homePageData.acf.content} />
       </div>
       <Help />
-      <AlternateGrid content={homePageData.acf.content} />
+      <div className="my-9 mb-6 md:my-12">
+        <AlternateGrid content={homePageData.acf.content} />
+      </div>
     </>
   );
 }

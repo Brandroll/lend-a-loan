@@ -24,8 +24,8 @@ const Adv = ({
   info: string;
 }) => {
   return (
-    <div className="flex md:block   flex-col items-center justify-center">
-      <div className="border-brand-blue  w-12 h-12 mb-2 lg:mb-4 md:mb-0  flex  justify-center items-center text-24px adv-num   text-brand-blue  font-isidorasans_semi_bold border-2    rounded-full">
+    <div className="flex md:block my-4  flex-col items-center justify-center">
+      <div className="border-brand-blue  w-12 h-12 mb-4 lg:mb-4 md:mb-0  flex  justify-center items-center text-24px adv-num   text-brand-blue  font-isidorasans_semi_bold border-2    rounded-full">
         {num.toString()}
       </div>
       <h2
@@ -86,7 +86,7 @@ export default function Advantage() {
     },
   ];
   return (
-    <div className="bg-gray-bg p-4   py-8">
+    <div className="bg-gray-bg p-4   py-8 md:py-12">
       <div className="max-w-site-full mx-auto">
         <section className={`grid lg:grid-cols-1 gap-8`}>
           {data.map((d) => (
