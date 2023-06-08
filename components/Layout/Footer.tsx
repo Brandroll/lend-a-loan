@@ -2,6 +2,7 @@ import Image from "next/image";
 import React from "react";
 import { nav1, nav2 } from "@/seed/footerLinks";
 import Link from "next/link";
+import FooterForm from "./Footer-form";
 
 export default function Footer() {
   return (
@@ -152,28 +153,8 @@ export default function Footer() {
               {" "}
               Get updates in your inbox!
             </p>
-            <div className="grid grid-cols-1 border  items-center pr-2">
-              <div className="flex justify-between  items-center">
-                <input
-                  className="   px-4   bg-footer text-white outline-none border-footer-link"
-                  placeholder="EMAIL ADDRESS"
-                />
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  strokeWidth={1.5}
-                  stroke="currentColor"
-                  className="w-8   h-12  border-l pl-1     "
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3"
-                  />
-                </svg>
-              </div>
-            </div>
+
+            <FooterForm />
           </div>
         </div>
         <div className="my-8   md:px-0">

@@ -9,6 +9,10 @@ interface Content {
     info: string;
   };
   image: string;
+  cta: {
+    label: string;
+    value: string;
+  };
 }
 export default function AlternateGrid({
   content,
@@ -19,6 +23,10 @@ export default function AlternateGrid({
       info: string;
     };
     image: string;
+    cta?: {
+      label: string;
+      value: string;
+    };
   }[];
 }) {
   const [contentData, setContentData] = useState<Content | any>([]);
@@ -70,28 +78,30 @@ export default function AlternateGrid({
                   className="text-dark  text-28px lg:text-2xl font-isidorasans_semi_bold  font-medium  "
                 />
                 <WPHTMLContent html={content.information.info} />
-                <Link legacyBehavior href={"#"} className="">
-                  <a className="flex md:my-[30px]     lg:-mt-8 transition-all hover:translate-x-3 delay-200   hover:text-brand-blue items-center gap-4">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      strokeWidth={0.5}
-                      stroke="currentColor"
-                      className="w-12 h-12 text-brand-blue"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        d="M12.75 15l3-3m0 0l-3-3m3 3h-7.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-                      />
-                    </svg>
+                {content.cta && (
+                  <Link legacyBehavior href={content.cta.value} className="">
+                    <a className="flex md:my-[30px]     lg:-mt-8 transition-all hover:translate-x-3 delay-200   hover:text-brand-blue items-center gap-4">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        strokeWidth={0.5}
+                        stroke="currentColor"
+                        className="w-12 h-12 text-brand-blue"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          d="M12.75 15l3-3m0 0l-3-3m3 3h-7.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                        />
+                      </svg>
 
-                    <span className=" text-brand-blue font-isidorasans_semi_bold">
-                      Learn more about service
-                    </span>
-                  </a>
-                </Link>
+                      <span className=" text-brand-blue font-isidorasans_semi_bold">
+                        {content.cta.label}
+                      </span>
+                    </a>
+                  </Link>
+                )}
               </div>
             </div>
           </section>

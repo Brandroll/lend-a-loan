@@ -52,9 +52,10 @@ export default function App({ Component, pageProps }: AppProps) {
       <>
         <Header />
         <Component {...pageProps} />
+        <ToastContainer autoClose={2000} theme="colored" />
+
         <Footer />
         <ManagedDrawer />
-        <ToastContainer autoClose={2000} theme="colored" />
       </>
     </>
   );

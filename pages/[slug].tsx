@@ -43,7 +43,7 @@ export const getStaticProps: GetStaticProps = async ({
   const url = process.env.NEXT_WP_API_URL + `/service?slug=${slug}`;
 
   const services = await fetch(url).then((r) => r.json());
-  console.log({ url });
+
   const t = services.length > 0 ? services[0] : null;
 
   return {

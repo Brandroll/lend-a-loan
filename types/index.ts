@@ -183,6 +183,10 @@ export interface HomePage {
         info: string;
       };
       image: string;
+      cta: {
+        label: string;
+        value: string;
+      };
     }[];
     grid: {
       heading: string;

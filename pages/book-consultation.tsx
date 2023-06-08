@@ -27,7 +27,7 @@ export default function bookconsultation() {
                 src="https://app.squarespacescheduling.com/schedule.php?owner=29084236"
                 title="Schedule Appointment"
                 width="100%"
-                height="800"
+                height="1080"
                 frameBorder="0"
               ></iframe>
               <script
