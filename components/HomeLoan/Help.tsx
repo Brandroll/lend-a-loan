@@ -3,8 +3,9 @@ import ClockIcon from "../UI/Icons/Clock";
 import MailIcon from "../UI/Icons/Mail";
 import PhoneIcon from "../UI/Icons/Phone";
 import { MapPin } from "../icons/map-pin";
+import Link from "next/link";
 
-const Box = ({ svgName, heading, content, cta }: any) => {
+const Box = ({ svgName, heading, content, cta, href }: any) => {
   return (
     <div
       className={`lg:hover:box my-2  cursor-pointer transition-all lg:hover:-translate-y-3 delay-200 lg:rounded-xl lg:py-2 lg:hover:shadow-2xl text-dark lg:px-8`}
@@ -25,9 +26,11 @@ const Box = ({ svgName, heading, content, cta }: any) => {
       </p>
       <div className="flex justify-center lg:mt-4">
         {" "}
-        <motion.button className="px-8 w-72 py-2  lg:my-2 hover:bg-brand-blue hover:text-white border-2 border-brand-blue  rounded-full font-isidorasans_regular text-16px text-brand-blue">
-          {cta}
-        </motion.button>
+        <Link href={href}>
+          <motion.button className="px-8 w-72 py-2  lg:my-2 hover:bg-brand-blue hover:text-white border-2 border-brand-blue  rounded-full font-isidorasans_regular text-16px text-brand-blue">
+            {cta}
+          </motion.button>
+        </Link>
       </div>
     </div>
   );
@@ -43,6 +46,7 @@ export default function Help() {
           <Box
             svgName={"phone"}
             heading="Give us a call"
+            href={`tel:1300 993 095`}
             cta="Give us a call "
             content={`Would you  
             like to discuss your home loan with one of our brokers. Our brokers can help you with your enquiry 7 days a week between our working hours. `}
@@ -54,6 +58,7 @@ export default function Help() {
             content={`Once we complete a preliminary assessment we then compare loan products and provide you with a credit proposal showing what lending product we considered and our recommendation.
 
 `}
+            href={`/book-consultation`}
           />
           <Box
             svgName={"email"}
@@ -62,6 +67,7 @@ export default function Help() {
             content={`Once all of the your documents are provided to us. We will submit your application to the selected bank or lender. We will regularly update you on your application progress through to settlement.
 
 `}
+            href={"/contact"}
           />
         </div>
         {/* <div className="  flex justify-center">

@@ -1,5 +1,7 @@
+import Link from "next/link";
 import WPHTMLContent from "../UI/WPHTMLContent";
 import { motion } from "framer-motion";
+import { useModalAction } from "../UI/modal/modal.context";
 const Section = ({ heading, info }: { heading: string; info: string }) => {
   return (
     <div>
@@ -38,7 +40,10 @@ const Adv = ({
     </div>
   );
 };
+
 export default function Advantage() {
+  const { openModal } = useModalAction();
+
   const data = [
     {
       heading: `Buying a home is a time to be excited,let our home loan experts do the hard work`,
@@ -102,16 +107,21 @@ export default function Advantage() {
         <div className="flex justify-center">
           <motion.button
             whileHover={{ scale: 1.1 }}
+            onClick={() => {
+              openModal("CONTACT_FORM");
+            }}
             className="md:px-8 px-4 hover:bg-brand-blue hover:text-white border-2 border-brand-blue py-3 rounded-l-full font-isidorasans_regular text-16px text-brand-blue"
           >
             Request a callback
           </motion.button>
-          <motion.button
-            whileHover={{ scale: 1.1 }}
-            className="md:px-8 px-4 border-2 border-brand-blue py-3 bg-brand-blue rounded-r-full font-isidorasans_regular text-16px text-white hover:scale-125 delay-200"
-          >
-            Book appointment
-          </motion.button>
+          <Link href={"/book-consultation"}>
+            <motion.button
+              whileHover={{ scale: 1.1 }}
+              className="md:px-8 px-4 border-2 border-brand-blue py-3 bg-brand-blue rounded-r-full font-isidorasans_regular text-16px text-white hover:scale-125 delay-200"
+            >
+              Book appointment
+            </motion.button>
+          </Link>
         </div>
       </div>
     </div>

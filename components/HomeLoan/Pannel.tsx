@@ -1,17 +1,21 @@
+import Link from "next/link";
+
 export default function Pannel() {
   const info = [
-    `I want to buy my first home`,
-    `I want to buy an investment`,
-    `I want to refinance my home loan`,
-    `I want to buy my next home`,
-    `I want to consolidate all my loans into one`,
-    `All other lending solutions`,
+    { title: "I want to buy my first home", href: "/home-loan" },
+    { title: "I want to buy an investment", href: "/home-loan" },
+    { title: "I want to refinance my home loan", href: "/home-loan-refinance" },
+    { title: "I want to buy my next home", href: "" },
+    { title: "I want to consolidate all my loans into one", href: "" },
+    { title: "All other lending solutions", href: "" },
   ];
   return (
     <div className="my-12 md:my-8 px-4 ">
       <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
         {info.map((i) => (
-          <Box info={i} />
+          <Link href={i.href}>
+            <Box info={i.title} />
+          </Link>
         ))}
       </div>
     </div>

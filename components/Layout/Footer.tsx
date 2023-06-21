@@ -10,9 +10,8 @@ export default function Footer() {
       <div className="max-w-site-full mx-auto   text-18px font-isidorasans_regular text-footer-link px-4    py-16 md:py-20  ">
         <div className="flex justify-center md:justify-start ">
           <Image
-            src={
-              "https://lendaloan.au/wp-content/uploads/2022/03/LEND-A-LOAN-LOGOWHITE-AND-AQUA.svg"
-            }
+            src={"/imgs/footer_logo.png"}
+            loading="lazy"
             width={200}
             height={10}
             alt="logo"

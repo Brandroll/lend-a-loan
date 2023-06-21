@@ -1,6 +1,6 @@
 import { NextSeo } from "next-seo";
 import RefinanceForm from "../components/Forms/Refinance-form";
-import PurchaseForm from "../components/Forms/Purchase-form";
+import PurchaseForm from "../components/Forms/Nexthome-form";
 import SimpleHero from "@/components/Common/SimpleHero";
 import Link from "next/link";
 import { useState } from "react";
@@ -46,66 +46,10 @@ export default function Applynow() {
             </p>
           )}
           <section className="grid lg:grid-cols-12 gap-8">
-            <section className="col-span-8">
-              {!isSelected && (
-                <div>
-                  <p className="text-2xl">
-                    Q. What is the purpose of the loan?
-                  </p>
-                  <div className="grid  lg:grid-cols-2 gap-8  justify-center my-16">
-                    <div
-                      onClick={() => selectForm(0)}
-                      className="flex flex-wrap flex-col border  p-8 rounded-xl shadow-xl  hover:-translate-y-2 transition-all delay-300 gap-4 items-center cursor-pointer"
-                    >
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        strokeWidth={1}
-                        stroke="currentColor"
-                        className="w-16 h-16"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          d="M2.25 12l8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25"
-                        />
-                      </svg>
-                      <p>I am buying a home</p>
-                    </div>
-                    <div
-                      onClick={() => selectForm(1)}
-                      className="flex flex-wrap flex-col border  p-8 rounded-xl shadow-xl  hover:-translate-y-2 transition-all delay-300 gap-4 items-center cursor-pointer"
-                    >
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        strokeWidth={1}
-                        stroke="currentColor"
-                        className="w-16 h-16"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          d="M12 6v12m-3-2.818l.879.659c1.171.879 3.07.879 4.242 0 1.172-.879 1.172-2.303 0-3.182C13.536 12.219 12.768 12 12 12c-.725 0-1.45-.22-2.003-.659-1.106-.879-1.106-2.303 0-3.182s2.9-.879 4.006 0l.415.33M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-                        />
-                      </svg>
-                      <p>I want to refinance </p>
-                    </div>
-                  </div>
-                </div>
-              )}
-
-              {isSelected ? (
-                form === 0 ? (
-                  <PurchaseForm />
-                ) : (
-                  <RefinanceForm />
-                )
-              ) : null}
+            <section className="col-span-12 md:col-span-8">
+              <PurchaseForm />
             </section>
-            <section className="max-w-site-full mx-auto   md:col-span-3  ">
+            <section className="  col-span-12   md:col-span-4  ">
               <div className="py-8 px-8 rounded-md bg-blue-800 ">
                 <p className="font-isidorasans_semi_bold text-3xl mb-4 text-brand-blue">
                   Need help finding the right loan?

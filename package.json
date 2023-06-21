@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@headlessui/react": "^1.7.15",
     "@hookform/resolvers": "^2.9.11",
     "@next/font": "13.1.6",
     "@reach/portal": "^0.18.0",

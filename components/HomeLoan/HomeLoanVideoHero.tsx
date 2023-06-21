@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import SimpleHero from "../Common/SimpleHero";
+import Link from "next/link";
 interface Props {
   heading: string;
   video?: string;
@@ -29,7 +30,7 @@ export default function HomeLoanVideoHero(props: Props) {
                 whileHover={{ scale: 1.1 }}
                 className="md:px-8 px-8 border-2 border-brand-blue py-3 bg-brand-blue rounded-full font-isidorasans_regular text-16px text-white hover:scale-125 delay-200"
               >
-                Book Appointment
+                <Link href={"/book-consultation"}>Book Appointment</Link>
               </motion.button>
             </div>
           </div>
@@ -44,7 +45,7 @@ export default function HomeLoanVideoHero(props: Props) {
               whileHover={{ scale: 1.1 }}
               className="md:px-8 px-8 border-2 border-brand-blue py-3 bg-brand-blue rounded-full font-isidorasans_regular text-16px text-white hover:scale-125 delay-200"
             >
-              Book Appointment
+              <Link href={"/book-consultation"}>Book Appointment</Link>
             </motion.button>
           </div>
         </div>

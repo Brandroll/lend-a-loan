@@ -7,6 +7,10 @@ import localFont from "@next/font/local";
 import Header from "@/components/Layout/Header";
 import Footer from "@/components/Layout/Footer";
 import { ToastContainer } from "react-toastify";
+import { ModalProvider } from "@/components/UI/modal/modal.context";
+
+import "react-toastify/dist/ReactToastify.css";
+import ManagedModal from "@/components/UI/modal/managed-modal";
 
 const isidorasansRegular = localFont({
   src: "../public/fonts/Isidora-sans/IsidoraSans-Regular.ttf",
@@ -49,14 +53,18 @@ export default function App({ Component, pageProps }: AppProps) {
           }
         `}
       </style>
-      <>
-        <Header />
-        <Component {...pageProps} />
-        <ToastContainer autoClose={2000} theme="colored" />
 
-        <Footer />
-        <ManagedDrawer />
-      </>
+      <ModalProvider>
+        <>
+          <Header />
+          <Component {...pageProps} />
+
+          <ToastContainer autoClose={2000} theme="colored" />
+          <Footer />
+          <ManagedModal />
+          <ManagedDrawer />
+        </>
+      </ModalProvider>
     </>
   );
 }

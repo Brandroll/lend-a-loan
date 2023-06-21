@@ -2,66 +2,17 @@ import { AcfImage } from "@/types";
 import Image from "next/image";
 import "swiper/css";
 import SwiperCore, { Autoplay } from "swiper";
+import { clients } from "@/seed/clients";
 SwiperCore.use([Autoplay]);
 
 import { Swiper, SwiperSlide } from "swiper/react";
 
 export default function Testinominal({ images }: { images?: AcfImage[] }) {
-  const imgs = [
-    {
-      title: "saa",
-      full_image_url: "/imgs/QBE.png.webp",
-    },
-    {
-      title: "saa",
-      full_image_url: "/imgs/Prospa.png.webp",
-    },
-    {
-      title: "saa",
-      full_image_url: "/imgs/NAB.png.webp",
-    },
-    {
-      title: "saa",
-      full_image_url: "/imgs/QBE.png.webp",
-    },
+  const imgs = clients.map((i) => ({
+    title: "Client",
+    full_image_url: i,
+  }));
 
-    {
-      title: "saa",
-      full_image_url: "/imgs/NAB.png.webp",
-    },
-    {
-      title: "saa",
-      full_image_url: "/imgs/La-Trobe.png",
-    },
-    {
-      title: "saa",
-      full_image_url: "/imgs/Prospa.png.webp",
-    },
-    {
-      title: "saa",
-      full_image_url: "/imgs/NAB.png.webp",
-    },
-    {
-      title: "saa",
-      full_image_url: "/imgs/QBE.png.webp",
-    },
-    {
-      title: "saa",
-      full_image_url: "/imgs/NAB.png.webp",
-    },
-    {
-      title: "saa",
-      full_image_url: "/imgs/Prospa.png.webp",
-    },
-    {
-      title: "saa",
-      full_image_url: "/imgs/NAB.png.webp",
-    },
-    {
-      title: "saa",
-      full_image_url: "/imgs/QBE.png.webp",
-    },
-  ];
   return (
     <div className="bg-gray-bg ">
       <div className="md:px-16 px-2  max-w-site-full mx-auto py-8  lg:py-20">

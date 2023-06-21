@@ -173,6 +173,7 @@ export interface HomePage {
   content: {
     rendered: string;
   };
+  yoast_head: string;
   slug: string;
   acf: {
     heading?: string;
@@ -306,6 +307,7 @@ export interface AcfImage {
   full_image_url: string;
 }
 export interface YoastSeoData {
+  yoast_head?: string;
   title: string;
   slug?: string;
   description: string;

@@ -6,6 +6,7 @@ import React, { TextareaHTMLAttributes, useState } from "react";
 import Input from "./ContactInput";
 import { toast } from "react-toastify";
 import axios from "axios";
+import { useModalAction } from "../UI/modal/modal.context";
 
 const contactFormSchema = yup.object().shape({
   first_name: yup.string().required("First name is required"),
@@ -68,6 +69,7 @@ const TextArea = React.forwardRef<HTMLTextAreaElement, Props>((props, ref) => {
 export default function ContactForm(props: any) {
   const [resetForm, setResetForm] = useState({});
   const [selectedTime, setSelectedTime] = useState("");
+  const { closeModal } = useModalAction();
 
   const resetValues = {
     first_name: "",
@@ -91,9 +93,9 @@ export default function ContactForm(props: any) {
       })
       .then((res) => {
         if (res.data.message) {
-          console.log({ f: res.data.message });
           toast.success(res.data.message);
           setResetForm(resetValues);
+          closeModal();
         }
       })
       .catch((err) => {

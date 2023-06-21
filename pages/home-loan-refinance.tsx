@@ -1,24 +1,55 @@
 import { NextSeo } from "next-seo";
-import BusinessForm from "../components/Forms/Business-form";
+import RefinanceForm from "../components/Forms/Refinance-form";
+
 import SimpleHero from "@/components/Common/SimpleHero";
 import Link from "next/link";
-import { toast } from "react-toastify";
+import { useState } from "react";
 
-export default function businessloan() {
+export default function Applynow() {
+  const [form, setForm] = useState(0);
+  const [isSelected, setIsSelected] = useState(false);
+  const selectForm = (number: number) => {
+    setForm(number);
+    setIsSelected(true);
+  };
   return (
     <>
       <SimpleHero
-        heading="Business Loan"
+        heading="Apply For Home Loan Refinance "
         subHeading="We are more than just a broker."
       />
       <div className="max-w-site-full mx-auto">
         <div className="my-12 bg-[#fff]    md:py-24 px-4 ">
-          <NextSeo title="Apply For Business Loan Now " />
+          <NextSeo title="Apply For Home Loan  " />
+          {isSelected && (
+            <p
+              onClick={() => {
+                setIsSelected(false);
+              }}
+              className="text-xl mb-8 cursor-pointer font-semibold flex gap-2 items-center"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                strokeWidth={1.5}
+                stroke="currentColor"
+                className="w-6 h-6"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M6.75 15.75L3 12m0 0l3.75-3.75M3 12h18"
+                />
+              </svg>
+              Back
+            </p>
+          )}
           <section className="grid lg:grid-cols-12 gap-8">
-            <section className="col-span-12 md:col-span-8">
-              <BusinessForm />
+            <section className="col-span-8">
+              <RefinanceForm />
             </section>
-            <section className="max-w-site-full mx-auto col-span-12  md:col-span-3  ">
+            <section className="max-w-site-full mx-auto   md:col-span-3  ">
               <div className="py-8 px-8 rounded-md bg-blue-800 ">
                 <p className="font-isidorasans_semi_bold text-3xl mb-4 text-brand-blue">
                   Need help finding the right loan?

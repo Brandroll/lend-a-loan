@@ -3,6 +3,7 @@ import { NextSeo } from "next-seo";
 import { useEffect, useState } from "react";
 
 export default function YoastNextSeo(props: YoastSeoData) {
+  // console.log(props);
   const openGrap = {
     locale: props.og_locale,
     type: props.og_type,
@@ -18,15 +19,18 @@ export default function YoastNextSeo(props: YoastSeoData) {
   };
 
   return (
-    <NextSeo
-      title={props.title}
-      description={props.description}
-      openGraph={openGrap}
-      canonical={
-        props.slug
-          ? process.env.NEXT_PUBLIC_SITE_URL + `/${props.slug}`
-          : process.env.NEXT_PUBLIC_SITE_URL
-      }
-    />
+    <>
+      <NextSeo
+        title={props.title}
+        description={props.description}
+        openGraph={openGrap}
+        canonical={
+          props.slug
+            ? process.env.NEXT_PUBLIC_SITE_URL + `/${props.slug}`
+            : process.env.NEXT_PUBLIC_SITE_URL
+        }
+      />
+      {/* <script></script> */}
+    </>
   );
 }
