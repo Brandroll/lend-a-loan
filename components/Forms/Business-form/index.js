@@ -113,7 +113,7 @@ export default function RefinanceForm() {
         "Pay off non-tax debt",
         "Pay off tax debt",
         "other",
-      ],
+      ].map((t) => t.toLowerCase()),
       name: "purpose",
     },
     {
@@ -292,7 +292,7 @@ const InputGroup = (props) => {
                         ? "-translate-y-2 bg-brand-blue text-white font-bold"
                         : "  hover:-translate-y-2"
                     }  p-4 rounded-xl shadow-xl
-                    transition-all delay-300 gap-4 items-center cursor-pointer capitalize
+                    transition-all delay-300 gap-4 items-center cursor-pointer  
            `}
                 // className={`p-2 border capitalize rounded bg-emerald-600/70 ${
                 //   selectedValue === opt ? "bg-emerald-800" : ""
@@ -307,7 +307,7 @@ const InputGroup = (props) => {
                   });
                 }}
               >
-                {opt}
+                {capitalizeFirstLetter(opt)}
               </button>
             ))}
           </div>

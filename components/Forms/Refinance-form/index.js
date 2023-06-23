@@ -174,7 +174,7 @@ const InputGroup = (props) => {
           >
             {props.options.map((opt) => (
               <option className="p-2" value={opt}>
-                {opt}
+                {capitalizeFirstLetter(opt)}
               </option>
             ))}
           </select>
