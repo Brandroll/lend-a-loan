@@ -2,6 +2,7 @@ import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import * as yup from "yup";
 import { toast } from "react-toastify";
+import { capitalizeFirstLetter } from "@/utils/capitalise-word";
 
 const schema = yup.object().shape({
   first_buyer: yup.string().required("Data is required"),
@@ -418,7 +419,7 @@ const InputGroup = (props) => {
     >
       <div className="grid ">
         <label className="mb-6 text-[20px] font-isidorasans_medium">
-          {props.label}
+          {capitalizeFirstLetter(props.label)}
         </label>
         {props.options ? (
           <div
@@ -434,7 +435,7 @@ const InputGroup = (props) => {
                selectedValue === opt
                  ? "-translate-y-2 bg-brand-blue text-white font-bold"
                  : "  hover:-translate-y-2"
-             }  p-8 rounded-xl shadow-xl
+             }  p-4 rounded-xl shadow-xl
          transition-all delay-300 gap-4 items-center cursor-pointer capitalize
           `}
                 // className={`p-2 border capitalize rounded bg-emerald-600/70 ${

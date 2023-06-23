@@ -1,37 +1,37 @@
 export const nav1 = [
   {
     name: "Home Loans",
-    slug: "",
+    slug: "/home-loans",
   },
   {
     name: "Property Finance",
-    slug: "",
+    slug: "/property-finance",
   },
   {
     name: "Private Finance",
-    slug: "",
+    slug: "/private-finance",
   },
   {
     name: "Asset Finance",
-    slug: "",
+    slug: "/asset-finance",
   },
 ];
 
 export const nav2 = [
   {
     name: "About Us",
-    slug: "",
+    slug: "/about",
   },
   {
     name: "Apply now",
-    slug: "",
+    slug: "/apply-online",
   },
   {
     name: "Calculators",
-    slug: "",
+    slug: "/calculator",
   },
   {
     name: "Contact Us",
-    slug: "",
+    slug: "/contact",
   },
 ];

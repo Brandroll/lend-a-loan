@@ -6,6 +6,7 @@ import { Form } from "@/components/UI/forms/Form";
 import Input from "@/components/UI/forms/Input";
 import Button from "@/components/UI/button";
 import { toast } from "react-toastify";
+import { capitalizeFirstLetter } from "@/utils/capitalise-word";
 const isGibberish = (value) => {
   const gibberishPattern = /[a-zA-Z]{4,}/;
   return !gibberishPattern.test(value);
@@ -278,20 +279,20 @@ const InputGroup = (props) => {
     >
       <div className="grid ">
         <label className="mb-2 text-[20px] font-isidorasans_medium">
-          {props.label}
+          {capitalizeFirstLetter(props.label)}
         </label>
         {props.options ? (
-          <div className="grid grid-cols-4 gap-4">
+          <div className="grid grid-cols-2 gap-4">
             {props.options.map((opt) => (
               <button
                 className={`flex
-                text-[18px]
-              flex-wrap flex-col justify-center border ${
-                selectedValue === opt
-                  ? "-translate-y-2 bg-brand-blue text-white font-bold"
-                  : "  hover:-translate-y-2"
-              }  p-8 rounded-xl shadow-xl
-          transition-all delay-300 gap-4 items-center cursor-pointer capitalize
+                    text-[18px]
+                    flex-wrap flex-col justify-center border ${
+                      selectedValue === opt
+                        ? "-translate-y-2 bg-brand-blue text-white font-bold"
+                        : "  hover:-translate-y-2"
+                    }  p-4 rounded-xl shadow-xl
+                    transition-all delay-300 gap-4 items-center cursor-pointer capitalize
            `}
                 // className={`p-2 border capitalize rounded bg-emerald-600/70 ${
                 //   selectedValue === opt ? "bg-emerald-800" : ""

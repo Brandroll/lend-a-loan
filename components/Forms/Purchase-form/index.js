@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
+import { capitalizeFirstLetter } from "@/utils/capitalise-word";
 export default function PurchaseForm() {
   const [step, setStep] = useState(1);
   const [formData, setFormData] = useState({
@@ -256,7 +257,7 @@ const InputGroup = (props) => {
     >
       <motion.div className="grid ">
         <motion.label className="mb-2 text-[20px] font-isidorasans_medium">
-          {props.label}
+          {capitalizeFirstLetter(props.label)}
         </motion.label>
         {props.options ? (
           <select

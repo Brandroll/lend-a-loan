@@ -12,7 +12,7 @@ export default function Footer() {
           <Image
             src={"/imgs/footer_logo.png"}
             loading="lazy"
-            width={200}
+            width={160}
             height={10}
             alt="logo"
           />
