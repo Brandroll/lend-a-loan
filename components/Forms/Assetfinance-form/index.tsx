@@ -1,45 +1,50 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { capitalizeFirstLetter } from "@/utils/capitalise-word";
+import * as Yup from "yup";
+
+const schema = Yup.object().shape({
+  amount: Yup.number().required("Amount is required"),
+  abn_acn: Yup.string().required("ABN/ACN  is required"),
+  purchased_price: Yup.number().required("Purchased price is required"),
+  new_or_used: Yup.string().required("Vehicle condition is required"),
+  no_of_applicant: Yup.number().required("Number of applicants is required"),
+  employment_type: Yup.string().required("Employment type is required"),
+  credit_history: Yup.string(),
+  type_of_use: Yup.string().required("Vehicle use is required"),
+  purpose: Yup.string().required("Purpose is required"),
+  property_value: Yup.number().required("Property value is required"),
+});
 export default function RefinanceForm() {
   const [step, setStep] = useState(1);
+  const [formError, setFormError] = useState("");
+
   const [formData, setFormData] = useState({
     amount: "",
-    interest: "",
-    regular_payment: "",
-    current_lender: "",
-    purpose: "",
-    repayment: "",
-    address: "",
-    property_value: "",
-    annual_income: "",
-    loan_term: "",
-    trading_period: "",
-    registered_business: "",
     abn_acn: "",
     purchased_price: "",
     new_or_used: "",
+    no_of_applicant: "",
+    employment_type: "",
+    credit_history: "",
+    type_of_use: "",
+    purpose: "",
+    property_value: "",
   });
   const {
-    amount,
-    interest,
-    regular_payment,
-    current_lender,
+    type_of_use,
+    credit_history,
+    employment_type,
+    no_of_applicant,
     purpose,
-    repayment,
     property_value,
-    annual_income,
-    loan_term,
-    address,
-    trading_period,
-    registered_business,
-    abn_acn,
     purchased_price,
     new_or_used,
   } = formData;
 
-  const handleInputChange = (e) => {
+  const handleInputChange = (e: any) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
+    setFormError("");
   };
   const data = [
     {
@@ -70,42 +75,42 @@ export default function RefinanceForm() {
 
     {
       step: 4,
-      value: new_or_used,
+      value: type_of_use,
       label: `Q. Is this vehicle or asset for business use or personal use?
 
       `,
 
       options: ["Business Use", "Personal Use"],
-      name: "new_or_used",
+      name: "type_of_use",
     },
     {
       step: 5,
-      value: abn_acn,
+      value: credit_history,
       label: `Q. What is your credit history (optional)?
       `,
       options: ["Excellent", "Average", "Fair", "I don't know"],
 
-      name: "abn_acn",
+      name: "credit_history",
     },
     {
       step: 6,
-      value: abn_acn,
+      value: employment_type,
       label: `Q. What is your employment type?
 
       `,
       options: ["Employee", "Self Employed", "Other"],
 
-      name: "abn_acn",
+      name: "employment_type",
     },
     {
       step: 7,
-      value: abn_acn,
+      value: no_of_applicant,
       label: `Q. How many applicants will be involve for this loan application?
 
       `,
       options: ["One", "Two", "More"],
 
-      name: "abn_acn",
+      name: "no_of_applicant",
     },
     {
       step: 8,
@@ -117,21 +122,46 @@ export default function RefinanceForm() {
     },
   ];
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e?: any) => {
     console.dir(formData);
   };
-  const getCorrectInputForm = (step) => {
+  const getCorrectInputForm = (step: any) => {
     if (step === data.length + 1) {
       return;
     }
     return data.find((inp) => inp.step === step);
   };
-  const nextStep = () => {
+  const nextStep = async () => {
     if (step == data.length + 1) {
       handleSubmit();
       return;
     }
-    setStep(step + 1);
+    //check if the current step data is filled
+    const currentData = isFilled(step);
+    const isValidated = await isNotFilled(currentData);
+
+    if (isValidated && formError.length === 0) {
+      setStep(step + 1);
+    } else {
+      isNotFilled(currentData);
+    }
+    return;
+  };
+  const isFilled = (step: any) => {
+    const crtData = data.find((field) => field.step === step);
+
+    return crtData;
+  };
+  const isNotFilled = async (currentData: any) => {
+    try {
+      const validation = await schema.validateAt(currentData.name, {
+        [currentData.name]: currentData.value,
+      });
+      return true;
+    } catch (err: any) {
+      setFormError(err.message);
+      return false;
+    }
   };
   return (
     <div>
@@ -141,7 +171,15 @@ export default function RefinanceForm() {
           onChange={handleInputChange}
         />
       )}
-
+      <div>
+        {formError.length > 0 && (
+          <div>
+            <p className="font-isidorasans leading-7 tracking-wider text-xs my-2 text-red-600">
+              {formError}
+            </p>
+          </div>
+        )}
+      </div>
       {step === data.length + 1 && <FinalForm />}
 
       <div className="flex justify-start">
@@ -165,7 +203,9 @@ export default function RefinanceForm() {
   );
 }
 
-const InputGroup = (props) => {
+const InputGroup = (props: any) => {
+  const selectedValue = props.value;
+
   return (
     <motion.div
       initial={{ opacity: 0, scale: 0.5 }}
@@ -178,17 +218,36 @@ const InputGroup = (props) => {
           {capitalizeFirstLetter(props.label)}
         </motion.label>
         {props.options ? (
-          <select
-            className="outline-none py-2 px-4 border-b"
-            onChange={props.onChange}
-            name={props.name}
+          <div
+            className={`grid ${
+              props.options.length > 3 ? "grid-cols-2" : "grid-cols-2"
+            }  gap-4`}
           >
-            {props.options.map((opt) => (
-              <option className="p-2" value={opt}>
-                {opt}
-              </option>
+            {props.options.map((opt: any) => (
+              <button
+                className={`flex
+               text-[18px]
+             flex-wrap flex-col justify-center border ${
+               selectedValue === opt
+                 ? "-translate-y-2 bg-brand-blue text-white font-bold"
+                 : "  hover:-translate-y-2"
+             }  p-4 rounded-xl shadow-xl
+         transition-all delay-300 gap-4 items-center cursor-pointer  
+          `}
+                value={opt}
+                onClick={() => {
+                  props.onChange({
+                    target: {
+                      name: props.name,
+                      value: opt,
+                    },
+                  });
+                }}
+              >
+                {capitalizeFirstLetter(opt)}
+              </button>
             ))}
-          </select>
+          </div>
         ) : (
           <input
             className=" border-b outline-none px-4 py-2"

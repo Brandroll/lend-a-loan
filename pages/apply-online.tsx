@@ -1,5 +1,7 @@
 import { NextSeo } from "next-seo";
 import PurchaseForm from "../components/Forms/Purchase-form";
+import AssetfinanceForm from "../components/Forms/Assetfinance-form";
+
 import BusinessForm from "../components/Forms/Business-form";
 import SimpleHero from "@/components/Common/SimpleHero";
 import Link from "next/link";
@@ -13,6 +15,12 @@ export default function Applynow2() {
   const selectForm = (number: number) => {
     if (number === 0) {
       return router.push("/home-loan");
+    }
+    if (number === 1) {
+      return router.push("/business-loan");
+    }
+    if (number === 2) {
+      return router.push("/asset-finance");
     }
     setForm(number);
     setIsSelected(true);
@@ -125,13 +133,9 @@ export default function Applynow2() {
                 )}
                 {isSelected && (
                   <div className=" ">
-                    {isSelected ? (
-                      form === 0 ? (
-                        <PurchaseForm />
-                      ) : (
-                        <BusinessForm />
-                      )
-                    ) : null}
+                    {form === 0 && <PurchaseForm />}
+                    {form === 1 && <BusinessForm />}
+                    {form === 2 && <AssetfinanceForm />}
                   </div>
                 )}
               </section>

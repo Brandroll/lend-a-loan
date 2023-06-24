@@ -158,7 +158,7 @@ export default function Footer() {
         </div>
         <div className="my-8   md:px-0">
           <div className="flex gap-1 text-footer-link">
-            <Link className="hover:text-gray-200" href="/terms-conditions">
+            <Link className="hover:text-gray-200" href="/terms-and-conditions">
               Terms & Conditions{" "}
             </Link>{" "}
             |{" "}
