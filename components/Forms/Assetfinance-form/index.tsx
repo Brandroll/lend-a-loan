@@ -2,13 +2,12 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { capitalizeFirstLetter } from "@/utils/capitalise-word";
 import * as Yup from "yup";
+import { toast } from "react-toastify";
 
 const schema = Yup.object().shape({
-  amount: Yup.number().required("Amount is required"),
-  abn_acn: Yup.string().required("ABN/ACN  is required"),
   purchased_price: Yup.number().required("Purchased price is required"),
   new_or_used: Yup.string().required("Vehicle condition is required"),
-  no_of_applicant: Yup.number().required("Number of applicants is required"),
+  no_of_applicant: Yup.string().required("Number of applicants is required"),
   employment_type: Yup.string().required("Employment type is required"),
   credit_history: Yup.string(),
   type_of_use: Yup.string().required("Vehicle use is required"),
@@ -18,10 +17,19 @@ const schema = Yup.object().shape({
 export default function RefinanceForm() {
   const [step, setStep] = useState(1);
   const [formError, setFormError] = useState("");
-
-  const [formData, setFormData] = useState({
+  const initalValue = {
     amount: "",
     abn_acn: "",
+    purchased_price: "",
+    new_or_used: "",
+    no_of_applicant: "",
+    employment_type: "",
+    credit_history: "",
+    type_of_use: "",
+    purpose: "",
+    property_value: "",
+  };
+  const [formData, setFormData] = useState({
     purchased_price: "",
     new_or_used: "",
     no_of_applicant: "",
@@ -122,8 +130,29 @@ export default function RefinanceForm() {
     },
   ];
 
-  const handleSubmit = (e?: any) => {
-    console.dir(formData);
+  const handleSubmit = async (e?: any) => {
+    try {
+      const validated = await schema.validate(formData);
+
+      fetch("/api/forms/asset-finance", {
+        method: "POST",
+        body: JSON.stringify(formData),
+      })
+        .then((r) => r.json())
+        .then((resp) => {
+          console.log(resp);
+          setFormData({ ...initalValue });
+          setStep(1);
+          toast.success("Form Has Been Submitted");
+        })
+        .catch((err) => {
+          toast.error("There is some issue");
+          console.log(err);
+        });
+    } catch (err: any) {
+      toast.error(err.message);
+    }
+    return;
   };
   const getCorrectInputForm = (step: any) => {
     if (step === data.length + 1) {
