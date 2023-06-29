@@ -7,6 +7,7 @@ import Input from "@/components/UI/forms/Input";
 import Button from "@/components/UI/button";
 import { toast } from "react-toastify";
 import { capitalizeFirstLetter } from "@/utils/capitalise-word";
+import ThankyouForm from "@/components/UI/forms/ThankyouForm";
 const isGibberish = (value) => {
   const gibberishPattern = /[a-zA-Z]{4,}/;
   return !gibberishPattern.test(value);
@@ -46,6 +47,8 @@ const schema = yup.object().shape({
 export default function RefinanceForm() {
   const [step, setStep] = useState(1);
   const [formError, setFormError] = useState("");
+  const [isSubmitted, setIsSubmitted] = useState(false);
+
   const initalValue = {
     amount: "",
     purpose: "",
@@ -160,7 +163,9 @@ export default function RefinanceForm() {
         .then((r) => r.json())
         .then((resp) => {
           console.log(resp);
+          setIsSubmitted(true);
           setFormData({ ...initalValue });
+
           setStep(1);
           toast.success("Form Has Been Submitted");
         })
@@ -212,6 +217,9 @@ export default function RefinanceForm() {
 
     return crtData;
   };
+  if (isSubmitted) {
+    return <ThankyouForm />;
+  }
 
   return (
     <>

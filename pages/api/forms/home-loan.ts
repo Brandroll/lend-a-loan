@@ -20,44 +20,57 @@ export default async function handler(
 ) {
   if (req.method === "POST") {
     // Process a POST request
-
     const {
-      purchased_price,
+      first_buyer,
+      when_to_buy,
+      regular_payment,
       purpose,
-
-      address,
-      trading_period,
-      registered_business,
-      abn_acn,
-      full_name,
-      email,
-      phone,
-      new_or_used,
-      type_of_use,
-      credit_history,
-      employment_type,
-      no_of_applicant,
       property_value,
+      expected_purchase_price,
+      deposit,
+      credit_history,
+      empoloyment_type,
+      no_of_applicant,
+      regular_monthly_income,
+      rental_monthly_income,
+      regular_tax,
+      dependants,
+      regular_monthly_expense,
+      existing_lon_payment,
+      credit_card_limits,
+      current_home_status,
+      full_name,
+      phone,
+      email,
     } = JSON.parse(req.body);
 
     const data = {
-      input_1: purpose,
-      input_3: purchased_price,
-      input_4: new_or_used,
-      input_9: type_of_use,
-      input_5: credit_history ? credit_history : "",
-      input_6: employment_type,
-      input_7: no_of_applicant,
-      input_8: property_value,
+      input_1: first_buyer,
+      input_3: when_to_buy,
+      input_4: purpose,
+      input_5: expected_purchase_price,
 
-      input_10: full_name,
-      input_11: email,
-      input_12: phone,
+      input_6: deposit,
+      input_7: credit_history,
+      input_8: empoloyment_type,
+      input_9: no_of_applicant,
+
+      input_10: regular_monthly_income,
+      input_11: rental_monthly_income,
+      input_12: regular_tax,
+      input_13: dependants,
+      input_14: regular_monthly_expense,
+      input_15: existing_lon_payment,
+      input_16: credit_card_limits,
+      input_17: current_home_status,
+      input_18: full_name,
+      input_19: email,
+      input_21: phone,
     };
     console.log({ data });
     const formResp = await axios({
       method: "post",
-      url: "https://cms.lendaloan.com.au/wp-json/gf/v2/forms/5/submissions",
+      url: "https://cms.lendaloan.com.au/wp-json/gf/v2/forms/6/submissions",
       data,
     });
     try {

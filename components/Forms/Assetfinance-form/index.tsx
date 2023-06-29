@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { capitalizeFirstLetter } from "@/utils/capitalise-word";
 import * as Yup from "yup";
 import { toast } from "react-toastify";
+import ThankyouForm from "@/components/UI/forms/ThankyouForm";
 
 const schema = Yup.object().shape({
   purchased_price: Yup.number().required("Purchased price is required"),
@@ -17,6 +18,8 @@ const schema = Yup.object().shape({
 export default function RefinanceForm() {
   const [step, setStep] = useState(1);
   const [formError, setFormError] = useState("");
+  const [isSubmitted, setIsSubmitted] = useState(false);
+
   const initalValue = {
     amount: "",
     abn_acn: "",
@@ -141,6 +144,8 @@ export default function RefinanceForm() {
         .then((r) => r.json())
         .then((resp) => {
           console.log(resp);
+          setIsSubmitted(true);
+
           setFormData({ ...initalValue });
           setStep(1);
           toast.success("Form Has Been Submitted");
@@ -192,6 +197,9 @@ export default function RefinanceForm() {
       return false;
     }
   };
+  if (isSubmitted) {
+    return <ThankyouForm />;
+  }
   return (
     <div>
       {step < data.length + 1 && (
@@ -209,7 +217,9 @@ export default function RefinanceForm() {
           </div>
         )}
       </div>
-      {step === data.length + 1 && <FinalForm />}
+      {step === data.length + 1 && (
+        <FinalForm value={formData} onChange={handleInputChange} />
+      )}
 
       <div className="flex justify-start">
         {step > 1 && (
@@ -291,22 +301,28 @@ const InputGroup = (props: any) => {
   );
 };
 
-const FinalForm = () => {
+const FinalForm = (props: any) => {
   return (
     <div>
       <div className="grid grid-cols-2 gap-4">
         <div className="grid">
           <label>Full name</label>
           <input
+            value={[props.value.full_name]}
+            placeholder={props.placeholder}
+            onChange={props.onChange}
+            name={"full_name"}
             className=" border-b outline-none  py-2"
-            placeholder="Full name"
           />
         </div>
         <div className="grid">
           <label>Mobile</label>
           <input
             className=" border-b outline-none  py-2"
-            placeholder="04XXX XXXX"
+            value={[props.value.phone]}
+            placeholder={props.placeholder}
+            onChange={props.onChange}
+            name={"phone"}
           />
         </div>
       </div>
@@ -314,7 +330,10 @@ const FinalForm = () => {
         <label>Email</label>
         <input
           className=" border-b outline-none  py-2"
-          placeholder="Email Address"
+          value={[props.value.email]}
+          placeholder={props.placeholder}
+          onChange={props.onChange}
+          name={"email"}
         />
       </div>
     </div>

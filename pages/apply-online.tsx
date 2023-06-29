@@ -20,7 +20,7 @@ export default function Applynow2() {
       return router.push("/business-loan");
     }
     if (number === 2) {
-      return router.push("/asset-finance");
+      return router.push("/apply-asset-finance");
     }
     setForm(number);
     setIsSelected(true);

@@ -44,25 +44,54 @@ export const getStaticProps: GetStaticProps = async ({
 
   const services = await fetch(url).then((r) => r.json());
 
-  const t = services.length > 0 ? services[0] : null;
-
-  return {
-    props: {
-      service: t,
-    },
-  };
+  const service = services.length > 0 ? services[0] : null;
+  if (service) {
+    return {
+      props: {
+        service: service,
+        advanceService: null,
+      },
+    };
+  } else {
+    const advUrl =
+      process.env.NEXT_WP_API_URL + `/advance_services?slug=${slug}`;
+    const Advservices = await fetch(advUrl).then((r) => r.json());
+    const advanceService = Advservices.length > 0 ? Advservices[0] : null;
+    if (advanceService) {
+      return {
+        props: {
+          service: null,
+          advanceService: advanceService,
+        },
+      };
+    } else {
+      return {
+        props: {},
+        notFound: true,
+      };
+    }
+  }
 };
 export const getStaticPaths: GetStaticPaths = async () => {
+  // advance_services
   const services = await fetch(process.env.NEXT_WP_API_URL + "/service").then(
     (r) => r.json()
   );
+  const advanceServices = await fetch(
+    process.env.NEXT_WP_API_URL + "/advance_services"
+  ).then((r) => r.json());
   const services_path = services.map((service: any) => {
     return {
       params: { slug: service.slug.toString() },
     };
   });
+  const advance_services_path = advanceServices.map((adv: any) => {
+    return {
+      params: { slug: adv.slug.toString() },
+    };
+  });
 
-  const paths = services_path;
+  const paths = services_path.concat(advance_services_path);
   return {
     paths,
     fallback: "blocking",

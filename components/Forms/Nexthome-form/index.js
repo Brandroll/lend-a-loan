@@ -3,19 +3,13 @@ import { AnimatePresence, motion } from "framer-motion";
 import * as yup from "yup";
 import { toast } from "react-toastify";
 import { capitalizeFirstLetter } from "@/utils/capitalise-word";
+import ThankyouForm from "@/components/UI/forms/ThankyouForm";
 
 const schema = yup.object().shape({
   first_buyer: yup.string().required("Data is required"),
   when_to_buy: yup.string().required("When to buy is required"),
-  interest: yup.string().required("Interest is required"),
-  regular_payment: yup.string().required("Regular payment is required"),
-  current_lender: yup.string().required("Current lender is required"),
   purpose: yup.string().required("Purpose is required"),
-  repayment: yup.string().required("Repayment is required"),
-  address: yup.string().required("Address is required"),
-  property_value: yup.string().required("Property value is required"),
-  annual_income: yup.string().required("Annual income is required"),
-  loan_term: yup.string().required("Loan term is required"),
+
   expected_purchase_price: yup
     .string()
     .required("Expected purchase price is required"),
@@ -42,6 +36,7 @@ const schema = yup.object().shape({
 });
 export default function RefinanceForm() {
   const [step, setStep] = useState(1);
+  const [isSubmitted, setIsSubmitted] = useState(false);
   const [formError, setFormError] = useState("");
   const initalValue = {
     first_buyer: false,
@@ -54,7 +49,7 @@ export default function RefinanceForm() {
     address: "",
     property_value: "",
     annual_income: "",
-    loan_term: "",
+
     expected_purchase_price: "",
     deposit: "",
     credit_history: "",
@@ -72,15 +67,13 @@ export default function RefinanceForm() {
   const [formData, setFormData] = useState({
     first_buyer: false,
     when_to_buy: "",
-    interest: "",
+
     regular_payment: "",
-    current_lender: "",
+
     purpose: "",
-    repayment: "",
-    address: "",
+
     property_value: "",
-    annual_income: "",
-    loan_term: "",
+
     expected_purchase_price: "",
     deposit: "",
     credit_history: "",
@@ -293,16 +286,16 @@ export default function RefinanceForm() {
     try {
       const validated = await schema.validate(formData);
 
-      fetch("/api/forms/business", {
+      fetch("/api/forms/home-loan", {
         method: "POST",
         body: JSON.stringify(formData),
       })
         .then((r) => r.json())
         .then((resp) => {
-          console.log(resp);
           setFormData({ ...initalValue });
-          setStep(1);
+          setIsSubmitted(true);
           toast.success("Form Has Been Submitted");
+          setStep(1);
         })
         .catch((err) => {
           toast.error("There is some issue");
@@ -353,6 +346,9 @@ export default function RefinanceForm() {
     return crtData;
   };
 
+  if (isSubmitted) {
+    return <ThankyouForm />;
+  }
   return (
     <>
       <AnimatePresence>
