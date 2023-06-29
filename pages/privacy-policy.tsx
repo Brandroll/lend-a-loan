@@ -12,7 +12,7 @@ export default function ProvacyPolicyPage(props: any) {
         heading={data.title.rendered}
         subHeading="We are more than just a broker."
       />
-      <div className="max-w-site-full mx-auto lg:my-12  ">
+      <div className="max-w-site-full mx-auto lg:my-12  font-isidorasans_regular ">
         <WPHTMLContent html={data.content.rendered} />
       </div>
     </div>
