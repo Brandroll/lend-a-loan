@@ -10,9 +10,20 @@ export default function index() {
   const [email, setEmail] = useState("");
   const [phoneNo, setPhoneNo] = useState("");
   const [fullName, setFullName] = useState("");
+  function isValidEmail(email: string) {
+    // Regular expression pattern for validating email addresses
+    var pattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    // Use the pattern to test the email string
+    return pattern.test(email);
+  }
   const nextStep = () => {
     if (currentForm === 1) {
-      setCurrentForm(2);
+      //check for valid email
+      if (isValidEmail(email)) {
+        setCurrentForm(2);
+      } else {
+        toast.error("Please enter a valid email id");
+      }
     }
     if (currentForm === 2) {
       setCurrentForm(3);
