@@ -11,6 +11,11 @@ import { ModalProvider } from "@/components/UI/modal/modal.context";
 
 import "react-toastify/dist/ReactToastify.css";
 import ManagedModal from "@/components/UI/modal/managed-modal";
+import { GetStaticProps } from "next";
+
+import apolloClient from '../config/client'
+import {AllServices} from '../config/queries'
+import { ApolloProvider } from "@apollo/client";
 
 const isidorasansRegular = localFont({
   src: "../public/fonts/Isidora-sans/IsidoraSans-Regular.ttf",
@@ -39,9 +44,11 @@ const isidorasans = localFont({
   display: "swap",
   variable: "--font-isidorasans",
 });
-export default function App({ Component, pageProps }: AppProps) {
+export default function App({ Component, pageProps }: any) {
+
   return (
     <>
+    
       <style jsx global>
         {`
           :root {
@@ -53,7 +60,7 @@ export default function App({ Component, pageProps }: AppProps) {
           }
         `}
       </style>
-
+      <ApolloProvider client={apolloClient}>
       <ModalProvider>
         <>
           <Header />
@@ -65,6 +72,11 @@ export default function App({ Component, pageProps }: AppProps) {
           <ManagedDrawer />
         </>
       </ModalProvider>
+      </ApolloProvider>
     </>
   );
 }
+
+
+
+

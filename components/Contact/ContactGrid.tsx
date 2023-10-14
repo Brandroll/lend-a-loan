@@ -2,13 +2,13 @@ import Image from "next/image";
 
 export default function ContactGrid(props: any) {
   return (
-    <div className=" grid md:grid-cols-3  ">
+    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
       {props.contact_address.map((addr: any) => (
         <div key={Math.random()}>
           <div>
-            <Image height={400} alt="" src={addr.img} width={400} />
+            <Image height={400} alt="" src={addr.img} width={400} className="h-[240px] object-cover w-full"/>
           </div>
-          <div className="py-8 px-4 bg-white">
+          <div className="py-8 px-6 bg-white">
             <div>
               <p className="text-24px font-isidorasans_semi_bold">
                 {addr.location_title}

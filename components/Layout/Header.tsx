@@ -7,6 +7,8 @@ import { useAtom } from "jotai";
 import { drawerAtom } from "@/store/drawer-atom";
 import navLinks from "@/seed/headerLink";
 import { useModalAction } from "../UI/modal/modal.context";
+import { useQuery } from "@apollo/client";
+import { AllServices } from "@/config/queries";
 
 interface NavLink {
   href: string;
@@ -26,6 +28,10 @@ export default function Header() {
   function handleSidebar(view: string) {
     setDrawerView({ display: true, view });
   }
+
+  const { loading, error, data } = useQuery(AllServices);
+  console.log("🚀 ~ file: Header.tsx:33 ~ Header ~ data:", data)
+
 
   return (
     <div className="  ">
@@ -242,10 +248,25 @@ export default function Header() {
                                       className="hover:text-white hover:bg-brand-blue p-2  px-5  "
                                       href={l.href}
                                     >
-                                      {l.label}
+                                      {l.label} 
                                     </Link>
                                   </>
                                 ))}
+                                {
+                                  i.services === true &&
+                                  data?.services?.nodes?.map((s:any, idx:number)=>(
+                                    <>
+                                    <Link
+                                      className="hover:text-white hover:bg-brand-blue p-2 capitalize px-5  "
+                                      href={s.slug}
+                                      key={idx}
+                                    >
+                                      {s.title} 
+                                    </Link>
+                                  </>
+                                  ))
+                                  
+                                }
                               </div>
                             </div>
                           </>

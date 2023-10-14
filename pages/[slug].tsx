@@ -30,7 +30,6 @@ export default function ServicePage(props: Props) {
       <div className="md:-mt-8 mb-8 md:mb-0">
         <AlternateGrid content={service.acf.content} />
       </div>
-
       <Help />
     </>
   );
