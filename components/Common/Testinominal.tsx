@@ -14,7 +14,7 @@ export default function Testinominal({ images }: { images?: AcfImage[] }) {
   }));
 
   return (
-    <div className="bg-gray-bg ">
+    <div className=" ">
       <div className="md:px-16 px-2  max-w-site-full mx-auto py-8  lg:py-20">
         <div>
           <h3 className="text-center mb-8 pt-2 font-isidorasans_semi_bold    text-24px ">
