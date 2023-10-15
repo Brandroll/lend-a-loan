@@ -11,7 +11,7 @@ export default function ContactUsPage(props: any) {
     <div className="bg-gray-100">
       <YoastNextSeo {...pageData.yoast_head_json} />
       <div
-        className="py-12 md:py-24 px-4 lg:px-12 border-b-[7px] border-[#33CCFF] "
+        className="py-12 md:py-24 px-4 lg:px-12 border-b-[7px] border-[#61C0CD] "
         style={{ backgroundColor: "#171719" }}
       >
         <div className="max-w-site-full h-[280px] mx-auto">
