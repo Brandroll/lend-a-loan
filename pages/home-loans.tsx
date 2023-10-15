@@ -12,47 +12,32 @@ import YoastNextSeo from "@/components/UI/YoastNextSeo";
 interface Props {
   homePageData: HomePage;
 }
-export default function Homeloans(props: Props) {
+export default function Homeloans(props: any) {
   const { homePageData } = props;
+  console.log("🚀 ~ file: home-loans.tsx:17 ~ Homeloans ~ homePageData:", homePageData)
 
   return (
     <>
-      <YoastNextSeo {...homePageData.yoast_head_json} />
+      {/* <YoastNextSeo {...homePageData.yoast_head_json} /> */}
 
       <HomeLoanVideoHero
-        heading={
-          homePageData.acf.heading
-            ? homePageData.acf.heading
-            : homePageData.title.rendered
-        }
-        video={homePageData.acf.video}
+        heading={``}
+        video={homePageData?.acf?.video || homePageData?.header?.video}
       />
       <Testinominal />
-
       <div className="max-w-site-full mx-auto lg:my-12   text-center">
         <Info />
         <Pannel />
       </div>
       <Advantage />
       <div className="my-8 md:my-10">
-        <AlternateGrid content={homePageData.acf.content} />
+        <AlternateGrid content={homePageData?.services?.content?.slice(0,2)} />
       </div>
       <Help />
       <div className="my-9 mb-6 md:my-12">
-        <AlternateGrid content={homePageData.acf.content} />
+        <AlternateGrid content={homePageData?.services?.content?.slice(0,3)} />
       </div>
     </>
   );
 }
 
-export const getStaticProps = async () => {
-  const homepage_url = process.env.NEXT_WP_API_URL + `/custom-page/74`;
-
-  const homePageData = await fetch(homepage_url).then((r) => r.json());
-
-  return {
-    props: {
-      homePageData,
-    },
-  };
-};

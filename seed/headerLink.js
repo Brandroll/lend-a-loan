@@ -6,9 +6,8 @@ export default [
     subItems: [
       {
         href: "/home-loans",
-        label: "Home Loans ",
-      },
-     
+        label: "Home Loans test",
+      }
     ],
   },
   { href: "/about", label: "About Us" },

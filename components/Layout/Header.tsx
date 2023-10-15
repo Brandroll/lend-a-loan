@@ -8,7 +8,7 @@ import { drawerAtom } from "@/store/drawer-atom";
 import navLinks from "@/seed/headerLink";
 import { useModalAction } from "../UI/modal/modal.context";
 import { useQuery } from "@apollo/client";
-import { AllServices } from "@/config/queries";
+import { AllServices, advanceServices } from "@/config/queries";
 
 interface NavLink {
   href: string;
@@ -30,6 +30,9 @@ export default function Header() {
   }
 
   const { loading, error, data } = useQuery(AllServices);
+  const advanceServicesNav = useQuery(advanceServices);
+
+  console.log("🚀 ~ file: Header.tsx:34 ~ Header ~ advanceServices:", advanceServicesNav)
 
 
   return (
@@ -200,9 +203,8 @@ export default function Header() {
                   >
                     <div>
                       <p
-                        className={`font-isidorasans_regular ${
-                          router.asPath === i.href ? "text-brand-blue-dark" : ""
-                        }  hover:text-brand-blue  flex items-center gap-1 p-3 text-18px cursor-pointer relative`}
+                        className={`font-isidorasans_regular ${router.asPath === i.href ? "text-brand-blue-dark" : ""
+                          }  hover:text-brand-blue  flex items-center gap-1 p-3 text-18px cursor-pointer relative`}
                       >
                         {i.label}
                         {i.subItems && i.subItems?.length > 0 && (
@@ -241,30 +243,49 @@ export default function Header() {
                               className="lg:absolute bg-white z-50  top-[52px] bg-navbar"
                             >
                               <div className="flex flex-col font-isidorasans_regular     pt-3 pb-2">
-                                {i.subItems.map((l) => (
+                                {i?.subItems.map((l) => (
                                   <>
-                                    <Link
-                                      className="hover:text-white hover:bg-brand-blue p-2  px-5  "
-                                      href={l.href}
-                                    >
-                                      {l.label} 
-                                    </Link>
+                                    {
+                                      l.label !== "Home Loans test" &&
+                                      <Link
+                                        className="hover:text-white hover:bg-brand-blue p-2  px-5  "
+                                        href={l.href}
+                                      >
+                                        {l.label}
+                                      </Link>
+                                    }
                                   </>
                                 ))}
+                                
                                 {
-                                  i.services === true &&
-                                  data?.services?.nodes?.map((s:any, idx:number)=>(
+                                  i?.services === true &&
+                                  advanceServicesNav.data?.advanceServices?.nodes?.map((s: any, idx: number) => (
                                     <>
-                                    <Link
-                                      className="hover:text-white hover:bg-brand-blue p-2 capitalize px-5  "
-                                      href={s.slug}
-                                      key={idx}
-                                    >
-                                      {s.title} 
-                                    </Link>
-                                  </>
+                                      <Link
+                                        className="hover:text-white hover:bg-brand-blue p-2 capitalize px-5  "
+                                        href={s.slug}
+                                        key={idx}
+                                      >
+                                        {s.title}
+                                      </Link>
+                                    </>
                                   ))
-                                  
+
+                                }
+                                {
+                                  i?.services === true &&
+                                  data?.services?.nodes?.map((s: any, idx: number) => (
+                                    <>
+                                      <Link
+                                        className="hover:text-white hover:bg-brand-blue p-2 capitalize px-5  "
+                                        href={s.slug}
+                                        key={idx}
+                                      >
+                                        {s.title}
+                                      </Link>
+                                    </>
+                                  ))
+
                                 }
                               </div>
                             </div>

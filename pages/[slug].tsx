@@ -8,9 +8,10 @@ import MainTextGrid from "@/components/SimplePage/MainTextGrid";
 import AlternateGrid from "@/components/Common/AlternateGrid";
 import Help from "@/components/HomeLoan/Help";
 import apolloClient from "@/config/client";
-import { GET_SERVICE } from "@/config/queries";
+import { GET_SERVICE, advanceService } from "@/config/queries";
 import Head from "next/head";
 import parse from "html-react-parser";
+import Homeloans from "./home-loans";
 
 interface Props {
   service: Service;
@@ -19,6 +20,8 @@ interface Props {
 
 export default function ServicePage(props: any) {
   const { service, singleService } = props;
+  console.log("🚀 ~ file: [slug].tsx:22 ~ ServicePage ~ singleService:", singleService)
+
   if (!singleService) {
     return null;
   }
@@ -26,20 +29,25 @@ export default function ServicePage(props: any) {
 
   return (
     <>
-      <Head>
-        <title>{singleService.title}</title>
-        {fullHead}
-      </Head>
-      <SimpleHero heading={singleService.title} subHeading="" />
-      <Testinominal />
-      <div className="max-w-site-full mx-auto text-center">
-        <Info />
-      </div>
-      <MainTextGrid grid={singleService?.services?.grid}/>
-      <div className="mb-8 md:mb-0">
-        <AlternateGrid content={singleService?.services?.content} />
-      </div>
-      <Help /> 
+      {
+        singleService?.uri?.includes("advance_services") ? <Homeloans homePageData={singleService}/> :
+          <>
+            <Head>
+              <title>{singleService.title}</title>
+              {fullHead}
+            </Head>
+            <SimpleHero heading={singleService.title} subHeading="" />
+            <div className="max-w-site-full mx-auto text-center">
+              <Info />
+            </div>
+            <MainTextGrid grid={singleService?.services?.grid} />
+            <Testinominal />
+            <div className="mb-8 md:mb-0">
+              <AlternateGrid content={singleService?.services?.content} />
+            </div>
+            <Help />
+          </>
+      }
     </>
   );
 }
@@ -56,7 +64,23 @@ export async function getStaticProps({ params }: any) {
     },
   });
 
+  const advanceServicesResponse = await apolloClient.query({
+    query: advanceService,
+    variables: {
+      id: slug,
+    },
+  });
+
   const singleService = response?.data.service;
+  const singleAdvanceService = advanceServicesResponse?.data.advanceService;
+  if (singleAdvanceService?.uri?.includes("advance_services")) {
+    return {
+      props: {
+        singleService: singleAdvanceService,
+      },
+    };
+  }
+
   return {
     props: {
       singleService,

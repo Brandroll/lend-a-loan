@@ -42,3 +42,52 @@ query GET_SERVICE($id: ID = "") {
   }
 }
 `
+
+export const advanceServices = gql`
+query advanceServices{
+  advanceServices {
+    nodes {
+      title
+      slug
+    }
+  }
+}`
+
+
+export const advanceService = gql`
+query advanceService($id: ID = "") {
+  advanceService(id: $id, idType: SLUG) {
+    slug
+    title
+    uri
+    header {
+      heading
+      image {
+        mediaItemUrl
+      }
+      video
+    }
+    seo {
+      fullHead
+    }
+    services {
+      content {
+        cta {
+          value
+          label
+        }
+        image {
+          mediaItemUrl
+        }
+        information {
+          heading
+          info
+        }
+      }
+      grid {
+        heading
+        content
+      }
+    }
+  }
+}`
