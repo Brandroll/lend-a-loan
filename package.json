@@ -17,6 +17,7 @@
     "@types/node": "18.11.19",
     "@types/react": "18.0.27",
     "@types/react-dom": "18.0.10",
+    "@types/scheduler": "^0.16.4",
     "axios": "^1.3.4",
     "axios-oauth-1.0a": "^0.3.6",
     "body-scroll-lock": "^4.0.0-beta.0",
