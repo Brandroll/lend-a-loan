@@ -30,7 +30,6 @@ export default function Header() {
   }
 
   const { loading, error, data } = useQuery(AllServices);
-  console.log("🚀 ~ file: Header.tsx:33 ~ Header ~ data:", data)
 
 
   return (

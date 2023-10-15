@@ -19,7 +19,7 @@ export default function Info({
     <>
       {heading && (
         <h2 className="my-6 mt-6 text-24px font-isidorasans_semi_bold">
-          {heading}
+          {heading} 
         </h2>
       )}
       {content && <Pagragraph info={content ? content : ""} />}

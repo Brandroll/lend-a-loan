@@ -8,7 +8,9 @@ interface Content {
     heading: string;
     info: string;
   };
-  image: string;
+  image:{
+    mediaItemUrl: string;
+  }
   cta: {
     label: string;
     value: string;
@@ -22,7 +24,9 @@ export default function AlternateGrid({
       heading: string;
       info: string;
     };
-    image: string;
+    image:{
+      mediaItemUrl: string;
+    }
     cta?: {
       label: string;
       value: string;
@@ -45,7 +49,7 @@ export default function AlternateGrid({
   }
 
   return (
-    <section className="grid lg:mt-8   md:my-10 alternate-grid md:gap-4 lg:gap-8 px-4   max-w-site-full mx-auto ">
+    <section className="grid lg:mt-8 mt-10 md:my-10 alternate-grid md:gap-4 lg:gap-8 px-4   max-w-site-full mx-auto ">
       {contentData.map((content: Content, i: number) => (
         <>
           <section className="grid lg:grid-cols-2 lg:gap-4  my-4 ">
@@ -58,7 +62,7 @@ export default function AlternateGrid({
             >
               <Image
                 className="  lg:rounded-tl-[128px] lg:rounded-br-[128px] lg:shadow-2xl "
-                src={content.image}
+                src={content?.image?.mediaItemUrl}
                 alt=""
                 width={1000}
                 height={900}

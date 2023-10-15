@@ -2,7 +2,7 @@ import "@/styles/globals.css";
 import "@/styles/blog.css";
 import ManagedDrawer from "@/components/UI/Drawer/Managed-drawer";
 
-import type { AppProps } from "next/app";
+// import type { AppProps } from "next/app";
 import localFont from "@next/font/local";
 import Header from "@/components/Layout/Header";
 import Footer from "@/components/Layout/Footer";
@@ -14,7 +14,6 @@ import ManagedModal from "@/components/UI/modal/managed-modal";
 import { GetStaticProps } from "next";
 
 import apolloClient from '../config/client'
-import {AllServices} from '../config/queries'
 import { ApolloProvider } from "@apollo/client";
 
 const isidorasansRegular = localFont({
@@ -44,7 +43,7 @@ const isidorasans = localFont({
   display: "swap",
   variable: "--font-isidorasans",
 });
-export default function App({ Component, pageProps }: any) {
+export default function App({ Component, pageProps }) {
 
   return (
     <>
