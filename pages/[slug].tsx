@@ -1,6 +1,6 @@
-import { GetStaticPaths, GetStaticProps, GetStaticPropsContext } from "next";
+import { GetStaticPaths } from "next";
 import { Service } from "@/types";
-import dynamic from "next/dynamic";
+// import dynamic from "next/dynamic";
 import SimpleHero from "@/components/Common/SimpleHero";
 import Testinominal from "@/components/Common/Testinominal";
 import Info from "@/components/HomeLoan/Info";
@@ -15,7 +15,7 @@ import parse from "html-react-parser";
 interface Props {
   service: Service;
 }
-const YoastNextSeo = dynamic(() => import("@/components/UI/YoastNextSeo"));
+// const YoastNextSeo = dynamic(() => import("@/components/UI/YoastNextSeo"));
 
 export default function ServicePage(props: any) {
   const { service, singleService } = props;
