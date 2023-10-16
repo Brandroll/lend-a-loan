@@ -91,16 +91,16 @@ query advanceService($id: ID = "") {
     }
     advanceServices {
       content {
-        cta {
-          value
-          label
+        information {
+          info
+          heading
         }
         image {
           mediaItemUrl
         }
-        information {
-          heading
-          info
+        callToActionButton {
+          value
+          label
         }
       }
     }

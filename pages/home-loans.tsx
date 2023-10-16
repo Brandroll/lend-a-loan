@@ -18,12 +18,11 @@ export default function Homeloans(props: any) {
   return (
     <>
       {/* <YoastNextSeo {...homePageData.yoast_head_json} /> */}
-
+      <Testinominal />
       <HomeLoanVideoHero
         heading={``}
         video={homePageData?.acf?.video || homePageData?.header?.video}
       />
-      <Testinominal />
       <div className="max-w-site-full mx-auto lg:my-12   text-center">
         <Info />
         <Pannel />

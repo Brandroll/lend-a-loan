@@ -64,12 +64,12 @@ export default function AlternateGrid({
               <div className="flex flex-col font-isidorasans_regular justify-center -mb-4 lg:mb-0 ">
                 <h4
                   dangerouslySetInnerHTML={{
-                    __html: DOMPurify.sanitize(content.information.heading),
+                    __html: DOMPurify.sanitize(content?.information?.heading),
                   }}
                   className="text-dark  text-28px lg:text-2xl font-isidorasans_semi_bold  font-medium  "
                 />
-                <WPHTMLContent html={content.information.info} />
-                {content.cta && (
+                <WPHTMLContent html={content?.information?.info} />
+                {content?.cta && (
                   <Link legacyBehavior href={content.cta.value} className="">
                     <a className="flex md:my-[30px]     lg:-mt-8 transition-all hover:translate-x-3 delay-200   hover:text-brand-blue items-center gap-4">
                       <svg
