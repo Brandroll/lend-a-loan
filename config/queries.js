@@ -89,5 +89,20 @@ query advanceService($id: ID = "") {
         content
       }
     }
+    advanceServices {
+      content {
+        cta {
+          value
+          label
+        }
+        image {
+          mediaItemUrl
+        }
+        information {
+          heading
+          info
+        }
+      }
+    }
   }
 }`

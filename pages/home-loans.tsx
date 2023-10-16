@@ -14,7 +14,6 @@ interface Props {
 }
 export default function Homeloans(props: any) {
   const { homePageData } = props;
-  console.log("🚀 ~ file: home-loans.tsx:17 ~ Homeloans ~ homePageData:", homePageData)
 
   return (
     <>
@@ -31,11 +30,11 @@ export default function Homeloans(props: any) {
       </div>
       <Advantage />
       <div className="my-8 md:my-10">
-        <AlternateGrid content={homePageData?.services?.content?.slice(0,2)} />
+        <AlternateGrid content={homePageData?.services?.content} />
       </div>
       <Help />
       <div className="my-9 mb-6 md:my-12">
-        <AlternateGrid content={homePageData?.services?.content?.slice(0,3)} />
+        <AlternateGrid content={homePageData?.advanceServices?.content} />
       </div>
     </>
   );

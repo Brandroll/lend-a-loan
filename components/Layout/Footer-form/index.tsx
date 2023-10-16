@@ -60,7 +60,7 @@ export default function index() {
         currentForm < 4 && "border "
       }  items-center pr-2`}
     >
-      <div className="flex justify-between  items-center">
+      <div className="flex justify-between items-center">
         {currentForm === 1 && <Email onChange={setEmail} value={email} />}
         {currentForm === 2 && (
           <FullName onChange={setFullName} value={fullName} />
@@ -70,15 +70,16 @@ export default function index() {
         )}
         {currentForm === 4 && "Submitted"}
         {currentForm < 4 && (
-          <svg
+          <span className="w-12 flex justify-center items-center flex-col -pl-4">
+            <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
             viewBox="0 0 24 24"
             strokeWidth={1.5}
             stroke="currentColor"
-            className={`w-8  text-brand-blue  h-12  ${
+            className={`w-12 text-brand-blue  h-12  ${
               currentForm < 4 && "border-l"
-            } pl-1     `}
+            } px-[10px]     `}
             onClick={nextStep}
           >
             <path
@@ -87,6 +88,7 @@ export default function index() {
               d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3"
             />
           </svg>
+            </span>
         )}
       </div>
     </div>
