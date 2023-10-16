@@ -18,11 +18,12 @@ export default function Homeloans(props: any) {
   return (
     <>
       {/* <YoastNextSeo {...homePageData.yoast_head_json} /> */}
-      <Testinominal />
+     
       <HomeLoanVideoHero
         heading={``}
         video={homePageData?.acf?.video || homePageData?.header?.video}
       />
+       <Testinominal />
       <div className="max-w-site-full mx-auto lg:my-12   text-center">
         <Info />
         <Pannel />
@@ -32,9 +33,9 @@ export default function Homeloans(props: any) {
         <AlternateGrid content={homePageData?.services?.content} />
       </div>
       <Help />
-      <div className="my-9 mb-6 md:my-12">
+      {/* <div className="my-9 mb-6 md:my-12">
         <AlternateGrid content={homePageData?.advanceServices?.content} />
-      </div>
+      </div> */}
     </>
   );
 }

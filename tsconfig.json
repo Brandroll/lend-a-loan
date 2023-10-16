@@ -19,6 +19,6 @@
       "@/*": ["./*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "components/Forms/Nexthome-form/index.js", "pages/_app.jsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "components/Forms/Nexthome-form/index.js", "pages/_app.jsx", "components/Common/AlternateGrid.tsx"],
   "exclude": ["node_modules"]
 }

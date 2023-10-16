@@ -19,7 +19,7 @@ interface Content {
 export default function AlternateGrid({
   content,
 }:any) {
-  const [contentData, setContentData] = useState<Content | any>([]);
+  const [contentData, setContentData] = useState<any>([]);
   
   useEffect(() => {
     setContentData(content);
@@ -34,10 +34,9 @@ export default function AlternateGrid({
   if (!content) {
     return null;
   }
-  console.log("🚀 ~ file: AlternateGrid.tsx:37 ~ contentData:", contentData)
   return (
     <section className="grid lg:mt-8 mt-10 md:my-10 alternate-grid md:gap-4 lg:gap-8 px-4   max-w-site-full mx-auto ">
-      {contentData.map((content: Content, i: number) => (
+      {contentData.map((content:any, i: number) => (
         <>
           <section className="grid lg:grid-cols-2 lg:gap-4  my-4 ">
             <div
