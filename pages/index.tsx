@@ -32,7 +32,7 @@ export default function Home(props: Props) {
 
       <Testinominal />
       <div className=" ">
-        <div className="max-w-site-full mx-auto my-12 text-center">
+        <div className="max-w-site-full mx-auto my-12 mt-0 text-center">
           <Info {...homePageData.acf.header} />
           <Pannel data={homePageData.acf.related_pages} />
         </div>
