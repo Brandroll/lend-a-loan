@@ -98,7 +98,7 @@ export default function Advantage() {
             <Section {...d} />
           ))}
         </section>
-        <section className="grid md:grid-cols-2 lg:grid-cols-4 lg:my-16 md:gap-8">
+        <section className="grid md:grid-cols-2 lg:grid-cols-4 lg:my-8 md:gap-8">
           {adv.map((d) => (
             <Adv {...d} />
           ))}

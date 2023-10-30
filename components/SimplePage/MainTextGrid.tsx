@@ -15,7 +15,7 @@ const Section = ({ heading, content }: { heading: string; content: string }) => 
 };
 export default function MainTextGrid({ grid }: any) {
   return (
-    <div className="my-8 lg:px-12">
+    <div className="mt-12 lg:px-12">
       <div className="max-w-site-full mx-auto">
         <section
           className={`grid px-4 lg:px-0 lg:grid-cols-${grid.length} gap-8`}
