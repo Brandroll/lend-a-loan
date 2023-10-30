@@ -93,7 +93,7 @@ export default function Advantage() {
   return (
     <div className="bg-gray-bg p-4   py-8 md:py-12">
       <div className="max-w-site-full mx-auto">
-        <section className={`grid lg:grid-cols-1 gap-8`}>
+        <section className={`grid lg:grid-cols-1 gap-8 text-center`}>
           {data.map((d) => (
             <Section {...d} />
           ))}

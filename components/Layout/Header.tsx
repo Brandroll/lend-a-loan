@@ -40,7 +40,7 @@ export default function Header() {
       <nav className=" w-full top-0 fixed shadow-2xl z-40    lg:py-3 py-3 px-5   lg:px-8     bg-white    ">
         <div className="max-w-site-full mx-auto flex gap-3 md:gap-0 justify-between items-center">
           <Link className="lg:block hidden" href={"/"}>
-            <Image alt="logo" src={"/imgs/logo.svg"} width={160} height={180} />
+            <Image alt="logo" src={"/imgs/logo.svg"} width={160} height={20} />
           </Link>
           <div className="lg:hidden ">
             <Link href={"/"}>
