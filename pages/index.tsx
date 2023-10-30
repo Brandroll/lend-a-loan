@@ -13,6 +13,9 @@ interface Props {
 }
 export default function Home(props: Props) {
   const { homePageData } = props;
+
+ 
+   console.log("🚀 ~ file: index.tsx:16 ~ Home ~ homePageData:", homePageData)
    
   return (
     <>

@@ -188,10 +188,7 @@ export interface HomePage {
         label: string;
         value: string;
       };
-      related_pages: {
-        loan_title: string;
-        loan_type: string;
-      };
+      
     }[];
     grid: {
       heading: string;
@@ -204,6 +201,10 @@ export interface HomePage {
     comparison: {
       heading: string;
       info: string;
+    };
+    related_pages: {
+      loan_title: any;
+      loan_type: any;
     };
     above_footer: {
       header: {
