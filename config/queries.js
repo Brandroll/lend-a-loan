@@ -89,6 +89,12 @@ query advanceService($id: ID = "") {
         content
       }
     }
+    advanceServices {
+      relatedPages {
+        loanTitle
+        loanType
+      }
+    }
     
   }
 }`

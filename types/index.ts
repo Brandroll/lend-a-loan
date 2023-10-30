@@ -188,6 +188,10 @@ export interface HomePage {
         label: string;
         value: string;
       };
+      related_pages: {
+        loan_title: string;
+        loan_type: string;
+      };
     }[];
     grid: {
       heading: string;
@@ -214,6 +218,7 @@ export interface HomePage {
         heading: string;
         info: string;
       };
+      
     };
 
     clients: AcfImage[];

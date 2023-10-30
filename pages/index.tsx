@@ -31,7 +31,7 @@ export default function Home(props: Props) {
       <div className=" ">
         <div className="max-w-site-full mx-auto my-12 text-center">
           <Info {...homePageData.acf.header} />
-          <Pannel />
+          <Pannel data={homePageData.acf.related_pages} />
         </div>
         <HomePageAdv {...homePageData.acf.comparison} />
         <div className="my-4 mb-8">

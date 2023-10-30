@@ -14,6 +14,8 @@ interface Props {
 }
 export default function Homeloans(props: any) {
   const { homePageData } = props;
+  console.log("🚀 ~ file: home-loans.tsx:17 ~ Homeloans ~ homePageData:", homePageData)
+  
 
   return (
     <>
@@ -26,7 +28,7 @@ export default function Homeloans(props: any) {
        <Testinominal />
       <div className="max-w-site-full mx-auto lg:my-12   text-center">
         <Info />
-        <Pannel />
+        <Pannel data={homePageData?.advanceServices?.relatedPages} />
       </div>
       <Advantage />
       <div className="my-8 md:my-10">
