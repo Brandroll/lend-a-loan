@@ -11,6 +11,21 @@ query AllServices {
    }
 `
 
+
+
+
+export const AdvanceService = gql`
+query AdvanceService {
+  menuItems(where: {location: SOLUTIONS}) {
+    nodes {
+      label
+      uri
+    }
+  }
+
+   }
+`
+
 export const GET_SERVICE = gql`
 query GET_SERVICE($id: ID = "") {
   service(id: $id, idType: SLUG) {

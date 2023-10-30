@@ -8,7 +8,7 @@ import { drawerAtom } from "@/store/drawer-atom";
 import navLinks from "@/seed/headerLink";
 import { useModalAction } from "../UI/modal/modal.context";
 import { useQuery } from "@apollo/client";
-import { AllServices, advanceServices } from "@/config/queries";
+import { AdvanceService, advanceServices } from "@/config/queries";
 
 interface NavLink {
   href: string;
@@ -29,7 +29,7 @@ export default function Header() {
     setDrawerView({ display: true, view });
   }
 
-  const { loading, error, data } = useQuery(AllServices);
+  const { loading, error, data } = useQuery(AdvanceService);
   const advanceServicesNav = useQuery(advanceServices);
 
   console.log("🚀 ~ file: Header.tsx:34 ~ Header ~ advanceServices:", advanceServicesNav)
@@ -257,31 +257,17 @@ export default function Header() {
                                   </>
                                 ))}
                                 
+                                
                                 {
                                   i?.services === true &&
-                                  advanceServicesNav.data?.advanceServices?.nodes?.map((s: any, idx: number) => (
+                                  data?.menuItems?.nodes?.map((s: any, idx: number) => (
                                     <>
                                       <Link
                                         className="hover:text-white hover:bg-brand-blue p-2 capitalize px-5  "
-                                        href={s.slug}
+                                        href={s.label.replace(' ' , '-').toLowerCase()}
                                         key={idx}
                                       >
-                                        {s.title}
-                                      </Link>
-                                    </>
-                                  ))
-
-                                }
-                                {
-                                  i?.services === true &&
-                                  data?.services?.nodes?.map((s: any, idx: number) => (
-                                    <>
-                                      <Link
-                                        className="hover:text-white hover:bg-brand-blue p-2 capitalize px-5  "
-                                        href={s.slug}
-                                        key={idx}
-                                      >
-                                        {s.title}
+                                        {s.label}
                                       </Link>
                                     </>
                                   ))

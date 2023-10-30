@@ -11,7 +11,6 @@ export default [
     ],
   },
   { href: "/about", label: "About Us" },
-
   {
     href: "/calculator",
     label: "Calculators",
