@@ -32,7 +32,7 @@ export default function Header() {
   const { loading, error, data } = useQuery(AdvanceService);
   const advanceServicesNav = useQuery(advanceServices);
 
-  console.log("🚀 ~ file: Header.tsx:34 ~ Header ~ advanceServices:", advanceServicesNav)
+
 
 
   return (

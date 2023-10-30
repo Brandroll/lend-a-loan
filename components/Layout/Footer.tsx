@@ -3,8 +3,14 @@ import React from "react";
 import { nav1, nav2 } from "@/seed/footerLinks";
 import Link from "next/link";
 import FooterForm from "./Footer-form";
+import { useQuery } from "@apollo/client";
+import { Footer1, Footer2 } from "@/config/queries";
 
 export default function Footer() {
+
+  const { loading, error, data } = useQuery(Footer1);
+  const footer2 = useQuery(Footer2);
+  console.log("🚀 ~ file: Footer.tsx:12 ~ Footer ~ data:", data)
   return (
     <footer className="bg-footer">
       <div className="max-w-site-full mx-auto   text-18px font-isidorasans_regular text-footer-link px-4    py-16 md:py-20  ">
@@ -20,15 +26,20 @@ export default function Footer() {
 
         <div className="grid gap-4 justify-center text-center  md:text-justify md:grid-cols-2 lg:grid-cols-4 my-7 md:my-4">
           <div className="flex flex-col gap-2">
-            {nav1.map((l: any) => (
+            {data?.menuItems?.nodes?.map((s: any, idx: number) => (
               <Link
                 className="text-footer-link text-18px hover:text-white font-isidorasans_regular"
                 key={Math.random()}
-                href={l.slug}
+                href={s.label.replace(' ', '-').toLowerCase()}
               >
-                {l.name}
+                {s.label}
               </Link>
             ))}
+
+
+
+
+
           </div>
           <div className="flex flex-col gap-2">
             {nav2.map((l: any) => (
@@ -40,6 +51,8 @@ export default function Footer() {
                 {l.name}
               </Link>
             ))}
+
+
           </div>
 
           <div className="flex flex-col gap-2">

@@ -26,6 +26,31 @@ query AdvanceService {
    }
 `
 
+
+export const Footer1 = gql`
+query Footer1 {
+  menuItems(where: {location: FOOTER1}) {
+    nodes {
+      label
+      uri
+    }
+  }
+
+   }
+`
+
+export const Footer2 = gql`
+query Footer2 {
+  menuItems(where: {location: FOOTER2}) {
+    nodes {
+      label
+      uri
+    }
+  }
+
+   }
+`
+
 export const GET_SERVICE = gql`
 query GET_SERVICE($id: ID = "") {
   service(id: $id, idType: SLUG) {
