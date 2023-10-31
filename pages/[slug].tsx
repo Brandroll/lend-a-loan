@@ -44,6 +44,7 @@ export default function ServicePage(props: any) {
               video={singleService?.acf?.video || singleService?.header?.video}
             />
              <Testinominal />
+             <TopGrid grid={singleService?.services.topSection?.grid} />
              <div className="mt-12">
              <Help  />
              </div>
@@ -51,7 +52,7 @@ export default function ServicePage(props: any) {
               <Info />
             </div> */}
             {/* <MainTextGrid grid={singleService?.services?.grid} /> */}
-            <TopGrid grid={singleService?.services.topSection?.grid} />
+            
            
             <div className="mb-8 md:mb-0">
               <AlternateGrid content={singleService?.services.topSection?.content} />
