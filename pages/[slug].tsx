@@ -44,7 +44,7 @@ export default function ServicePage(props: any) {
               video={singleService?.acf?.video || singleService?.header?.video}
             />
              <Testinominal />
-             {/* <TopGrid grid={singleService?.services.topSection?.grid} /> */}
+             <TopGrid grid={singleService?.services?.topSection?.grid} />
              <div className="mt-12">
              <Help  />
              </div>
