@@ -2,11 +2,9 @@
 const Section = ({ heading, content }: { heading: string; content: string }) => {
   return (
     <div>
-      <div
-        className="text-24px font-isidorasans_semi_bold mb-4"
-        // dangerouslySetInnerHTML={{ __html: heading }}
-        <h2>{ heading }</h2>
-      />
+      
+        <h2 className="text-24px font-isidorasans_semi_bold mb-4">{ heading }</h2>
+   
       <div className="font-isidorasans_regular"
         dangerouslySetInnerHTML={{ __html: content }}
       >

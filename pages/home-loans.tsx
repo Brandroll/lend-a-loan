@@ -28,16 +28,16 @@ export default function Homeloans(props: any) {
        <Testinominal />
       <div className="max-w-site-full mx-auto lg:my-12   text-center">
         <Info />
-        <Pannel data={homePageData?.advanceServices.topSection?.relatedPages} />
+        <Pannel data={homePageData?.advanceServices?.relatedPages} />
       </div>
       <Advantage />
       <div className="my-8 md:my-10">
         <AlternateGrid content={homePageData?.services.topSection?.content} />
       </div>
       <Help />
-      {/* <div className="my-9 mb-6 md:my-12">
-        <AlternateGrid content={homePageData?.advanceServices?.content} />
-      </div> */}
+      <div className="my-9 mb-6 md:my-12">
+        <AlternateGrid content={homePageData?.services.bottomSection?.content} />
+      </div>
     </>
   );
 }
