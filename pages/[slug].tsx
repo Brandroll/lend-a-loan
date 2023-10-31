@@ -22,7 +22,7 @@ interface Props {
 
 export default function ServicePage(props: any) {
   const { service, singleService } = props;
-  console.log("🚀 ~ file: [slug].tsx:24 ~ ServicePage ~ singleService:", singleService)
+
 
   if (!singleService) {
     return null;

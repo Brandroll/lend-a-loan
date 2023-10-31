@@ -5,7 +5,7 @@ export default function SimpleHero({
   heading: string;
   subHeading: string;
 }) {
-  console.log("🚀 ~ file: SimpleHero.tsx:8 ~ heading:", heading)
+  
   return (
     <div
       className=" py-16 lg:py-20 px-4 lg:px-12"

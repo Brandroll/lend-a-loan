@@ -12,11 +12,7 @@ interface Props {
   homePageData: HomePage;
 }
 export default function Home(props: Props) {
-  const { homePageData } = props;
-
- 
-   console.log("🚀 ~ file: index.tsx:16 ~ Home ~ homePageData:", homePageData)
-   
+  const { homePageData } = props; 
   return (
     <>
       <YoastNextSeo yoast_head={ homePageData.yoast_head} {...homePageData.yoast_head_json} />

@@ -10,7 +10,6 @@ export default function Footer() {
 
   const { loading, error, data } = useQuery(Footer1);
   const footer2 = useQuery(Footer2);
-  console.log("🚀 ~ file: Footer.tsx:12 ~ Footer ~ data:", data)
   return (
     <footer className="bg-footer">
       <div className="max-w-site-full mx-auto   text-18px font-isidorasans_regular text-footer-link px-4    py-16 md:py-20  ">
