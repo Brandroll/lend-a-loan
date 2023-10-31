@@ -13,6 +13,7 @@ import Head from "next/head";
 import parse from "html-react-parser";
 import Homeloans from "./home-loans";
 import HomeLoanVideoHero from "@/components/HomeLoan/HomeLoanVideoHero";
+import TopGrid from "@/components/Content/Topgrid";
 
 interface Props {
   service: Service;
@@ -39,18 +40,26 @@ export default function ServicePage(props: any) {
             </Head>
             {/* <SimpleHero heading={singleService.title} subHeading="" /> */}
             <HomeLoanVideoHero
-              heading={singleService.title}
+              heading={singleService?.header?.heading}
               video={singleService?.acf?.video || singleService?.header?.video}
             />
-            <div className="max-w-site-full mx-auto text-center">
+             <Testinominal />
+            {/* <div className="max-w-site-full mx-auto text-center">
               <Info />
-            </div>
-            <MainTextGrid grid={singleService?.services?.grid} />
-            <Testinominal />
+            </div> */}
+            {/* <MainTextGrid grid={singleService?.services?.grid} /> */}
+            <TopGrid grid={singleService?.services.topSection?.grid} />
+           
             <div className="mb-8 md:mb-0">
-              <AlternateGrid content={singleService?.services?.content} />
+              <AlternateGrid content={singleService?.services.topSection?.content} />
             </div>
             <Help />
+            <TopGrid grid={singleService?.services.bottomSection?.grid} />
+            <div className="mb-8 md:mb-0">
+              <AlternateGrid content={singleService?.services.bottomSection?.content} />
+            </div>
+
+
           </>
       }
     </>
