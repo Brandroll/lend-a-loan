@@ -101,6 +101,7 @@ export default function Advantage({content}:any) {
             <Adv {...d} />
           ))}
         </section>
+        
 
         <div className="flex justify-center">
           <motion.button
