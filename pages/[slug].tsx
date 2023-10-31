@@ -52,7 +52,7 @@ export default function ServicePage(props: any) {
               <AlternateGrid content={singleService?.services?.topSection?.content} />
             </div>
             
-            {/* <TopGrid grid={singleService?.services.bottomSection?.grid} /> */}
+     
             {/* <div className="mb-8 md:mb-0">
               <AlternateGrid content={singleService?.services.bottomSection?.content} />
             </div> */}
