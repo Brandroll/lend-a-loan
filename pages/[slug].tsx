@@ -27,7 +27,7 @@ export default function ServicePage(props: any) {
   if (!singleService) {
     return null;
   }
-  const fullHead = parse(singleService?.seo?.fullHead);
+ // const fullHead = parse(singleService?.seo?.fullHead);
 
   return (
     <>
@@ -36,12 +36,12 @@ export default function ServicePage(props: any) {
           <>
             <Head>
               <title>{singleService.title}</title>
-              {fullHead}
+              {/* {fullHead} */}
             </Head>
             {/* <SimpleHero heading={singleService.title} subHeading="" /> */}
             <HomeLoanVideoHero
               heading={singleService?.header?.heading}
-              video={singleService?.acf?.video || singleService?.header?.video}
+              video={singleService?.header?.video}
             />
              <Testinominal />
              <TopGrid grid={singleService?.services?.topSection?.grid} />
