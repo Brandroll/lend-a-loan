@@ -22,7 +22,7 @@ export default function Homeloans(props: any) {
       {/* <YoastNextSeo {...homePageData.yoast_head_json} /> */}
      
       <HomeLoanVideoHero
-        heading={``}
+        heading={homePageData?.header?.heading}
         video={homePageData?.acf?.video || homePageData?.header?.video}
       />
        <Testinominal />
