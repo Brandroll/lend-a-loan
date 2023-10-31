@@ -41,7 +41,7 @@ const Adv = ({
   );
 };
 
-export default function Advantage() {
+export default function Advantage({content}:any) {
   const { openModal } = useModalAction();
 
   const data = [
@@ -94,9 +94,7 @@ export default function Advantage() {
     <div className="bg-gray-bg p-4   py-8 md:py-12">
       <div className="max-w-site-full mx-auto">
         <section className={`grid lg:grid-cols-1 gap-8 text-center`}>
-          {data.map((d) => (
-            <Section {...d} />
-          ))}
+          <div className="dan" dangerouslySetInnerHTML={{__html:content}} />
         </section>
         <section className="grid md:grid-cols-2 lg:grid-cols-4 lg:my-8 md:gap-8">
           {adv.map((d) => (

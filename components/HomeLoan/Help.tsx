@@ -21,7 +21,7 @@ const Box = ({ svgName, heading, content, cta, href }: any) => {
       <h4 className="text-22px mb-4 lg:my-4 font-isidorasans_semi_bold text-center  ">
         <p>{heading}</p>
       </h4>
-      <p className="text-15px text-center lg:text-left  font-isidorasans_regular  mb-6 md:mb-0 sm:h-16 lg:h-32">
+      <p className="text-15px text-center  font-isidorasans_regular  mb-6 md:mb-0 sm:h-16 lg:h-32">
         {content}
       </p>
       <div className="flex justify-center lg:mt-4">

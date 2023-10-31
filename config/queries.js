@@ -121,6 +121,7 @@ export const advanceService = gql`
       slug
       title
       uri
+      content
       header {
         heading
         image {

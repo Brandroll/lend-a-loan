@@ -30,7 +30,7 @@ export default function Homeloans(props: any) {
         <Info />
         <Pannel data={homePageData?.advanceServices?.relatedPages} />
       </div>
-      <Advantage />
+      <Advantage content={homePageData.content} />
       <div className="my-8 md:my-10">
         <AlternateGrid content={homePageData?.services.topSection?.content} />
       </div>

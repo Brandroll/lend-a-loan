@@ -44,6 +44,9 @@ export default function ServicePage(props: any) {
               video={singleService?.acf?.video || singleService?.header?.video}
             />
              <Testinominal />
+             <div className="mt-12">
+             <Help  />
+             </div>
             {/* <div className="max-w-site-full mx-auto text-center">
               <Info />
             </div> */}
@@ -53,7 +56,7 @@ export default function ServicePage(props: any) {
             <div className="mb-8 md:mb-0">
               <AlternateGrid content={singleService?.services.topSection?.content} />
             </div>
-            <Help />
+            
             <TopGrid grid={singleService?.services.bottomSection?.grid} />
             <div className="mb-8 md:mb-0">
               <AlternateGrid content={singleService?.services.bottomSection?.content} />
