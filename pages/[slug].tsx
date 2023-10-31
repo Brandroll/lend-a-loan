@@ -51,8 +51,7 @@ export default function ServicePage(props: any) {
             {/* <div className="max-w-site-full mx-auto text-center">
               <Info />
             </div> */}
-            {/* <MainTextGrid grid={singleService?.services?.grid} /> */}
-            
+            {/* <MainTextGrid grid={singleService?.services?.grid} /> */}            
            
             <div className="mb-8 md:mb-0">
               <AlternateGrid content={singleService?.services.topSection?.content} />
