@@ -60,6 +60,13 @@ query GET_SERVICE($id: ID = "") {
     seo {
       fullHead
     }
+    header {
+      heading
+      image {
+        mediaItemUrl
+      }
+      video
+    }
     services {
       grid {
         content

@@ -12,6 +12,7 @@ import { GET_SERVICE, advanceService } from "@/config/queries";
 import Head from "next/head";
 import parse from "html-react-parser";
 import Homeloans from "./home-loans";
+import HomeLoanVideoHero from "@/components/HomeLoan/HomeLoanVideoHero";
 
 interface Props {
   service: Service;
@@ -20,6 +21,7 @@ interface Props {
 
 export default function ServicePage(props: any) {
   const { service, singleService } = props;
+  console.log("🚀 ~ file: [slug].tsx:24 ~ ServicePage ~ singleService:", singleService)
 
   if (!singleService) {
     return null;
@@ -35,7 +37,11 @@ export default function ServicePage(props: any) {
               <title>{singleService.title}</title>
               {fullHead}
             </Head>
-            <SimpleHero heading={singleService.title} subHeading="" />
+            {/* <SimpleHero heading={singleService.title} subHeading="" /> */}
+            <HomeLoanVideoHero
+              heading={singleService.title}
+              video={singleService?.acf?.video || singleService?.header?.video}
+            />
             <div className="max-w-site-full mx-auto text-center">
               <Info />
             </div>
