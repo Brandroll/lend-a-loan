@@ -14,12 +14,9 @@ interface Props {
 }
 export default function Homeloans(props: any) {
   const { homePageData } = props;
-  console.log("🚀 ~ file: home-loans.tsx:17 ~ Homeloans ~ homePageData:", homePageData)
-  
-
   return (
     <>
-      {/* <YoastNextSeo {...homePageData.yoast_head_json} /> */}
+      <YoastNextSeo {...homePageData.yoast_head_json} />
      
       <HomeLoanVideoHero
         heading={homePageData?.header?.heading}
