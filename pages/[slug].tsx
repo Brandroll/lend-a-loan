@@ -31,7 +31,7 @@ export default function ServicePage(props: any) {
   return (
     <>
       {
-        singleService?.uri?.includes("advance_services") ? <Homeloans homePageData={singleService}/> :
+        singleService?.uri?.includes("advance_services") ? <Homeloans homePageData={singleService} /> :
           <>
             <Head>
               <title>{singleService.title}</title>
