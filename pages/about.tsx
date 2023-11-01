@@ -1,5 +1,6 @@
 import AlternateGrid from "@/components/Common/AlternateGrid";
 import SimpleHero from "@/components/Common/SimpleHero";
+import HomeLoanVideoHero from "@/components/HomeLoan/HomeLoanVideoHero";
 import WPHTMLContent from "@/components/UI/WPHTMLContent";
 import YoastNextSeo from "@/components/UI/YoastNextSeo";
 import DOMPurify from "isomorphic-dompurify";
@@ -10,6 +11,7 @@ import React from "react";
 
 export default function About(props: any) {
   const { pageData } = props;
+  console.log("🚀 ~ file: about.tsx:14 ~ About ~ pageData:", pageData)
 
   const content = [
     {
@@ -48,50 +50,44 @@ export default function About(props: any) {
   };
   return (
     <div>
-      <SimpleHero
-        heading="About Lend A Loan"
-        subHeading="We are more than just a broker."
+
+      <HomeLoanVideoHero
+        heading={pageData?.acf?.heading}
+        video={pageData?.acf?.video}
       />
       <YoastNextSeo {...pageData.yoast_head_json} />
       <div className="my-8">
         <section className="grid lg:mt-8   md:my-10 alternate-grid md:gap-4 lg:gap-8 px-4   max-w-site-full mx-auto ">
-          {content.map((content: any, i: number) => (
-            <>
-              <section className="grid lg:grid-cols-2 lg:gap-4  my-4 ">
-                <div
-                  className={`${
-                    calc(i) === "even"
-                      ? "lg:order-2 mt-4  lg:mt-0 md:justify-center lg:justify-end"
-                      : "md:justify-center lg:justify-start"
-                  }  flex  items-center   `}
-                >
-                  <Image
-                    className="  lg:rounded-tl-[128px] lg:rounded-br-[128px] lg:shadow-2xl "
-                    src={content.image}
-                    alt=""
-                    width={1000}
-                    height={900}
-                  />
-                </div>
 
-                <div
-                  className={`${
-                    calc(i) === "even" ? "md:order-1 lg:mr-12 " : "lg:ml-16"
-                  }  mt-8 lg:mt-0  flex`}
-                >
-                  <div className="flex flex-col font-isidorasans_regular justify-center -mb-4 lg:mb-0 ">
-                    <h4
-                      dangerouslySetInnerHTML={{
-                        __html: DOMPurify.sanitize(content.information.heading),
-                      }}
-                      className="text-dark lg:mb-4 text-28px lg:text-2xl font-isidorasans_semi_bold  font-medium  "
-                    />
-                    <WPHTMLContent html={content.information.info} />
-                  </div>
+        
+            <section className="grid lg:grid-cols-2  my-4 gap-16">
+              <div
+                className=" mt-4  lg:mt-0 md:justify-center lg:justify-start"
+              >
+                <Image
+                  className="  lg:rounded-tl-[128px] lg:rounded-br-[128px] lg:shadow-2xl "
+                  src={pageData?.acf?.company_info?.image?.url}
+                  alt=""
+                  width={1000}
+                  height={900}
+                />
+              </div>
+
+              <div
+                className=" lg:mr-12  "
+              >
+                <div className="flex flex-col font-isidorasans_regular justify-center -mb-4 lg:mb-0 ">
+                  <h4 className="text-dark lg:mb-4 text-28px lg:text-2xl font-isidorasans_semi_bold  font-medium" >
+
+                    {pageData?.acf?.company_info?.title}
+
+                  </h4>
+                  <WPHTMLContent html={pageData?.acf.company_info?.details} />
                 </div>
-              </section>
-            </>
-          ))}
+              </div>
+            </section>
+       
+
         </section>
       </div>
       <section className="bg-gray-bg  ">
@@ -100,9 +96,13 @@ export default function About(props: any) {
             Meet Our People
           </h3>
           <div className="grid md:grid-cols-2 gap-8 px-4 py-4">
-            {peoples.map((p) => (
+            {pageData?.acf?.team_members.map((p: any) => (
               <div className="" key={Math.random()}>
                 <div className="mb-4">
+                  <div className="my-4">
+                    <Image src={p.profile_photo} width={450} height={373} alt="" className=" lg:rounded-tl-[128px] lg:rounded-br-[128px] lg:shadow-2xl h-[373px] object-cover " />
+
+                  </div>
                   <p className="text-30px font-isidorasans_semi_bold">
                     {p.name}
                   </p>
@@ -111,7 +111,7 @@ export default function About(props: any) {
                   </p>
                 </div>
                 <div className="lg:pr-16 text-16px md:text-18px text-dark font-isidorasans_regular">
-                  <p>{p.info}</p>
+                  <div dangerouslySetInnerHTML={{ __html: p.info }} />
                 </div>
               </div>
             ))}
@@ -130,6 +130,7 @@ export const getStaticProps = async () => {
   return {
     props: {
       pageData: homePageData,
+
     },
   };
 };
