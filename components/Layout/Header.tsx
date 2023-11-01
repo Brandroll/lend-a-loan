@@ -228,7 +228,7 @@ export default function Header() {
                       {currentSubMenu === idx &&
                         i.subItems &&
                         i.subItems?.length > 0 &&
-                        isSubMenuOpen && (
+                        isSubMenuOpen &&    (
                           <>
                             <div
                               onMouseOver={() => {
@@ -244,7 +244,7 @@ export default function Header() {
                               className="lg:absolute bg-white z-50  top-[52px] bg-navbar"
                             >
                               <div className="flex flex-col font-isidorasans_regular     pt-3 pb-2">
-                                {CalNav?.data?.menuItems?.nodes.map((l) => (
+                                {i.label === "Calculators" && CalNav?.data?.menuItems?.nodes.map((l:any) => (
                                   <>
                                     {
                                       l.label !== "Home Loans test" &&
@@ -260,7 +260,7 @@ export default function Header() {
                                 
                                 
                                 {
-                                  i?.services === true &&
+                                  i.label === "Solutions" && i?.services === true && 
                                   data?.menuItems?.nodes?.map((s: any, idx: number) => (
                                     <>
                                       <Link
