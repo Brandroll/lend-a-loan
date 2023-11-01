@@ -115,6 +115,17 @@ export const advanceServices = gql`
   }
 `;
 
+export const CalcMenu = gql`
+  query CalcMenu {
+    menuItems(where: { location: CALC }) {
+      nodes {
+        label
+        uri
+      }
+    }
+  }
+`;
+
 export const advanceService = gql`
   query advanceService($id: ID = "") {
     advanceService(id: $id, idType: SLUG) {

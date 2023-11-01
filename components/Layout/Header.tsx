@@ -8,7 +8,7 @@ import { drawerAtom } from "@/store/drawer-atom";
 import navLinks from "@/seed/headerLink";
 import { useModalAction } from "../UI/modal/modal.context";
 import { useQuery } from "@apollo/client";
-import { AdvanceService, advanceServices } from "@/config/queries";
+import { AdvanceService, CalcMenu, advanceServices } from "@/config/queries";
 
 interface NavLink {
   href: string;
@@ -31,6 +31,7 @@ export default function Header() {
 
   const { loading, error, data } = useQuery(AdvanceService);
   const advanceServicesNav = useQuery(advanceServices);
+  const CalNav = useQuery(CalcMenu);
 
 
 
@@ -243,13 +244,13 @@ export default function Header() {
                               className="lg:absolute bg-white z-50  top-[52px] bg-navbar"
                             >
                               <div className="flex flex-col font-isidorasans_regular     pt-3 pb-2">
-                                {i?.subItems.map((l) => (
+                                {CalNav?.data?.menuItems?.nodes.map((l) => (
                                   <>
                                     {
                                       l.label !== "Home Loans test" &&
                                       <Link
                                         className="hover:text-white hover:bg-brand-blue p-2  px-5  "
-                                        href={l.href}
+                                        href={l.uri}
                                       >
                                         {l.label}
                                       </Link>

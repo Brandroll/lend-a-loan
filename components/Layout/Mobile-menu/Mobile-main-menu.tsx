@@ -6,7 +6,7 @@ import { drawerAtom } from "@/store/drawer-atom";
 import { useState } from "react";
 import headerLinks from "@/seed/headerLink";
 import { useQuery } from "@apollo/client";
-import { AdvanceService } from "@/config/queries";
+import { AdvanceService, CalcMenu } from "@/config/queries";
 export default function MobileMainMenu() {
   const [showSubItems, setShowSubItems] = useState(false);
   const router = useRouter();
@@ -14,6 +14,7 @@ export default function MobileMainMenu() {
   const [currentSubMenu, setCurrentSubMenu] = useState<any>();
 
   const { loading, error, data } = useQuery(AdvanceService);
+  const CalNav = useQuery(CalcMenu);
 
 
   function handleClick(path: string, idx: any) {
@@ -61,6 +62,7 @@ export default function MobileMainMenu() {
             {currentSubMenu === idx &&
               showSubItems &&
               subItems &&
+              label === "Solutions" &&
               data.menuItems.nodes.map((item:any) => (
                 <li
                   onClick={() => handleClick(item.label.replace(' ' , '-').toLowerCase(), idx)}
@@ -68,7 +70,25 @@ export default function MobileMainMenu() {
                 >
                   {item.label}
                 </li>
-              ))}
+              ))
+              
+              
+              }
+               {currentSubMenu === idx &&
+              showSubItems &&
+              subItems &&
+              label === "Calculators" &&
+              CalNav?.data?.menuItems?.nodes?.map((item:any) => (
+                <li
+                  onClick={() => handleClick(item.uri, idx)}
+                  className="flex text-black   cursor-pointer font-isidorasans_regular items-center py-3 px-8 text-sm  font-semibold capitalize text-heading transition duration-200 hover:text-accent  "
+                >
+                  {item.label}
+                </li>
+              ))
+              
+              
+              }
           </li>
         ))}
         <li>
