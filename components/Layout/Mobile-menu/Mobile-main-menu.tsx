@@ -5,11 +5,16 @@ import { useAtom } from "jotai";
 import { drawerAtom } from "@/store/drawer-atom";
 import { useState } from "react";
 import headerLinks from "@/seed/headerLink";
+import { useQuery } from "@apollo/client";
+import { AdvanceService } from "@/config/queries";
 export default function MobileMainMenu() {
   const [showSubItems, setShowSubItems] = useState(false);
   const router = useRouter();
   const [_, closeSidebar] = useAtom(drawerAtom);
   const [currentSubMenu, setCurrentSubMenu] = useState<any>();
+
+  const { loading, error, data } = useQuery(AdvanceService);
+
 
   function handleClick(path: string, idx: any) {
     const hasSubItems = headerLinks.find((hed) => hed.href === path)?.subItems;
@@ -56,9 +61,9 @@ export default function MobileMainMenu() {
             {currentSubMenu === idx &&
               showSubItems &&
               subItems &&
-              subItems.map((item) => (
+              data.menuItems.nodes.map((item:any) => (
                 <li
-                  onClick={() => handleClick(item.href, idx)}
+                  onClick={() => handleClick(item.label.replace(' ' , '-').toLowerCase(), idx)}
                   className="flex text-black   cursor-pointer font-isidorasans_regular items-center py-3 px-8 text-sm  font-semibold capitalize text-heading transition duration-200 hover:text-accent  "
                 >
                   {item.label}

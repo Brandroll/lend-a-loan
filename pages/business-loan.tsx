@@ -14,7 +14,7 @@ export default function businessloan() {
       <div className="max-w-site-full mx-auto">
         <div className="my-12 bg-[#fff]    md:py-24 px-4 ">
           <NextSeo title="Apply For Business Loan Now " />
-          <section className="grid lg:grid-cols-12 gap-8">
+          <section className="md:grid lg:grid-cols-12 gap-8">
             <section className="col-span-12 md:col-span-8">
               <BusinessForm />
             </section>

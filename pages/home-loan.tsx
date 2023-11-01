@@ -45,7 +45,7 @@ export default function Applynow() {
               Back
             </p>
           )}
-          <section className="grid lg:grid-cols-12 gap-8">
+          <section className="md:grid lg:grid-cols-12 gap-8">
             <section className="col-span-12 md:col-span-8">
               <PurchaseForm />
             </section>
