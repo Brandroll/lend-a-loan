@@ -56,11 +56,6 @@ export default function AlternateGrid({
                 height={900}
               /> */}
               <MaskImage src={content?.image?.mediaItemUrl}/>
-              
-
-           
-              
-              
             </div>
 
             <div
