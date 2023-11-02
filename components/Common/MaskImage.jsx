@@ -1,5 +1,8 @@
-export default function MaskImage({ src }) {
-  
+import React, { useEffect, useState } from "react";
+
+export default function MaskImage({ src, id }) {
+  const [imageUrl, setImageUrl] = useState(src)
+
   return (
     <>
       <div className="box group">
@@ -14,8 +17,8 @@ export default function MaskImage({ src }) {
               id="a"
               x="0"
               y="0"
-              maskUnits="userSpaceOnUse"
-              maskType="alpha"
+              maskUnits="objectBoundingBox"
+              maskType="unset"
             >
               <path
                 fill="#D9D9D9"
@@ -26,28 +29,29 @@ export default function MaskImage({ src }) {
               />
             </mask>
             <g mask="url(#a)">
-              <path fill="url(#b)" d="M1-11h169v172H1z" />
+              <path fill={`url(#b${id})`} d="M1-11h169v172H1z" fill-opacity="1" />
             </g>
             <defs>
               <pattern
-                id="b"
+                id={`b${id}`}
                 width="1"
                 height="1"
                 patternContentUnits="objectBoundingBox"
               >
                 <use
-                  xlinkHref="#c"
+                  xlinkHref={`#c${id}`}
                   transform="scale(0.000544835 0.000535332)"
                 />
               </pattern>
-              <image xlinkHref={src} id="c" width="1836" height="1868" />
+              <image xlinkHref={imageUrl} id={`c${id}`} width="1836" height="1868" />
             </defs>
           </svg>
+
         </div>
 
         <img
           src="/after.png"
-          className="firstlayer  group-hover:animate-pulse  "
+          className="firstlayer group-hover:animate-pulse"
         />
         <figure>
           <img src="/before.png" className="before " />
