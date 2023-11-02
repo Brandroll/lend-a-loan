@@ -14,6 +14,7 @@ interface Props {
 }
 export default function Homeloans(props: any) {
   const { homePageData } = props;
+
   return (
     <>
       {/* <YoastNextSeo {...homePageData.yoast_head_json} /> */}

@@ -13,6 +13,7 @@ interface Props {
 }
 export default function Home(props: Props) {
   const { homePageData } = props;
+
   return (
     <>
       <YoastNextSeo yoast_head={homePageData.yoast_head} {...homePageData.yoast_head_json} />

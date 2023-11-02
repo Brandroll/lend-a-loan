@@ -21,6 +21,7 @@ export default function AlternateGrid({
   content,
 }:any) {
   const [contentData, setContentData] = useState<any>([]);
+ 
   
   useEffect(() => {
     setContentData(content);
@@ -45,16 +46,18 @@ export default function AlternateGrid({
                 calc(i) === "even"
                   ? "right_arrow lg:order-2 mt-4  lg:mt-0 md:justify-center lg:justify-end"
                   : " md:justify-center lg:justify-start"
-              }  flex items-center    `}
+              }   items-center    `}
             >
               {/* <Image
                 className="  lg:rounded-tl-[128px] lg:rounded-br-[128px] lg:shadow-2xl "
-                src={content?.image?.mediaItemUrl || content.image}
+                src={content?.image?.mediaItemUrl }
                 alt=""
                 width={1000}
                 height={900}
               /> */}
-              <MaskImage url={content?.image?.mediaItemUrl || content.image}/>
+              <MaskImage src={content?.image?.mediaItemUrl }/>
+
+           
               
               
             </div>
