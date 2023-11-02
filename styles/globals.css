@@ -22,9 +22,7 @@
   width: 70%;
 }
 
-.main {
-  width: 85%;
-}
+
 
 .before {
   position: absolute;
@@ -39,16 +37,12 @@
 .right_arrow .box {
   display: flex;
   justify-content: end;
-
 }
 
 .right_arrow .before {
   left: -22px;
-
 }
 
 .right_arrow .firstlayer {
-
   left: 44px;
- 
 }
