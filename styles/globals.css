@@ -2,8 +2,53 @@
 @tailwind components;
 @tailwind utilities;
 .test {
-    height: 160px;
-    width: 170px;
-    -webkit-clip-path: url(#shape);
-    clip-path: url(#shape);
-  }
+  height: 160px;
+  width: 170px;
+  -webkit-clip-path: url(#shape);
+  clip-path: url(#shape);
+}
+
+.box {
+  position: relative;
+}
+
+.firstlayer {
+  position: absolute;
+  top: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 44px;
+  z-index: -10;
+  width: 70%;
+}
+
+.main {
+  width: 85%;
+}
+
+.before {
+  position: absolute;
+  opacity: 0.9;
+  top: 50%;
+  transform: translateY(-50%);
+  right: -22px;
+  mix-blend-mode: multiply;
+  width: 50%;
+}
+
+.right_arrow .box {
+  display: flex;
+  justify-content: end;
+
+}
+
+.right_arrow .before {
+  left: -22px;
+
+}
+
+.right_arrow .firstlayer {
+
+  left: 44px;
+ 
+}

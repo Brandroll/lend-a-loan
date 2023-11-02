@@ -3,6 +3,7 @@ import Image from "next/image";
 import WPHTMLContent from "../UI/WPHTMLContent";
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import MaskImage from "./MaskImage";
 interface Content {
   information: {
     heading: string;
@@ -42,17 +43,20 @@ export default function AlternateGrid({
             <div
               className={`${
                 calc(i) === "even"
-                  ? "lg:order-2 mt-4  lg:mt-0 md:justify-center lg:justify-end"
-                  : "md:justify-center lg:justify-start"
-              }  flex  items-center   `}
+                  ? "right_arrow lg:order-2 mt-4  lg:mt-0 md:justify-center lg:justify-end"
+                  : " md:justify-center lg:justify-start"
+              }  flex items-center    `}
             >
-              <Image
+              {/* <Image
                 className="  lg:rounded-tl-[128px] lg:rounded-br-[128px] lg:shadow-2xl "
                 src={content?.image?.mediaItemUrl || content.image}
                 alt=""
                 width={1000}
                 height={900}
-              />
+              /> */}
+              <MaskImage url={content?.image?.mediaItemUrl || content.image}/>
+              
+              
             </div>
 
             <div

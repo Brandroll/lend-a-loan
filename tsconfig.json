@@ -19,6 +19,6 @@
       "@/*": ["./*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "components/Forms/Nexthome-form/index.js", "pages/_app.jsx", "components/Common/AlternateGrid.tsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "components/Forms/Nexthome-form/index.js", "pages/_app.jsx", "components/Common/AlternateGrid.tsx", "components/Common/MaskImage.jsx"],
   "exclude": ["node_modules"]
 }
