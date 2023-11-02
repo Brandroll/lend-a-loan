@@ -65,7 +65,7 @@ export default function About(props: any) {
                 className=" mt-4  lg:mt-0 md:justify-center lg:justify-start"
               >
                 <Image
-                  className="  lg:rounded-tl-[128px] lg:rounded-br-[128px] lg:shadow-2xl "
+                  className="lg:shadow-2xl "
                   src={pageData?.acf?.company_info?.image?.url}
                   alt=""
                   width={1000}
@@ -100,7 +100,7 @@ export default function About(props: any) {
               <div className="" key={Math.random()}>
                 <div className="mb-4">
                   <div className="my-4">
-                    <Image src={p.profile_photo} width={450} height={373} alt="" className=" lg:rounded-tl-[128px] lg:rounded-br-[128px] lg:shadow-2xl h-[373px] object-cover " />
+                    <Image src={p.profile_photo} width={450} height={373} alt="" className=" lg:shadow-2xl h-[373px] object-cover " />
 
                   </div>
                   <p className="text-30px font-isidorasans_semi_bold">
