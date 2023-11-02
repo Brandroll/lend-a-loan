@@ -55,7 +55,8 @@ export default function AlternateGrid({
                 width={1000}
                 height={900}
               /> */}
-              <MaskImage src={content?.image?.mediaItemUrl }/>
+              <MaskImage src={content?.image?.mediaItemUrl}/>
+              
 
            
               
