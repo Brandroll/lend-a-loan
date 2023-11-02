@@ -12,7 +12,7 @@ export default function Footer() {
   const footer2 = useQuery(Footer2);
   return (
     <footer className="bg-footer">
-      <div className="max-w-site-full mx-auto   text-18px font-isidorasans_regular text-footer-link px-4    py-16 md:py-20  ">
+      <div className="max-w-site-full mx-auto   text-18px font-isidorasans_regular text-footer-link px-0    py-16 md:py-20  ">
         <div className="flex justify-center md:justify-start ">
           <Image
             src={"/imgs/footer_logo.png"}

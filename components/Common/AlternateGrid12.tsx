@@ -53,7 +53,7 @@ export default function AlternateGrid12({
 </svg>
 `;
   return (
-    <section className="grid   my-16 alternate-grid lg:gap-16 px-4 max-w-site-full mx-auto ">
+    <section className="grid   my-16 alternate-grid lg:gap-16  max-w-site-full mx-auto ">
       {contentData.map((content: Content, i: number) => (
         <>
           <section className="grid lg:grid-cols-12 gap-4   ">
