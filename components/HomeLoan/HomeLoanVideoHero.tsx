@@ -4,7 +4,7 @@ import Link from "next/link";
 interface Props {
   heading: string;
   video?: string;
-  image: string
+  image?: string
 }
 export default function HomeLoanVideoHero(props: Props) {
   if (props?.image){
