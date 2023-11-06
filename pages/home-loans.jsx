@@ -11,8 +11,6 @@ import YoastNextSeo from "@/components/UI/YoastNextSeo";
 
 export default function Homeloans(props) {
   const { homePageData } = props;
-
-  
   
   const seoData = {
     title: homePageData.seo?.title,
@@ -24,8 +22,6 @@ export default function Homeloans(props) {
     og_url: homePageData.seo?.opengraphUrl,
     og_site_name: homePageData.seo?.opengraphSiteName,
   }
-  console.log('seoData', seoData);
-
 
   return (
     <>
