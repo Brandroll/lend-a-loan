@@ -41,7 +41,7 @@ export default function Testinominal({ images }: { images?: AcfImage[] }) {
             loop
           >
             {imgs.map((i) => (
-              <SwiperSlide className="flex  justify-center items-center">
+              <SwiperSlide className="flex  justify-center items-center" key={i.title}>
                 <center>
                   <Image
                     alt={i.title}

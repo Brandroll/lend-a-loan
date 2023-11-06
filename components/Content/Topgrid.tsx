@@ -15,8 +15,8 @@ export default function TopGrid({ grid }: any) {
             <div className="max-w-site-full mx-auto">
                 <section
                     className={`grid px-4 lg:px-0 lg:grid-cols-${grid?.length} gap-8`}  >
-                    {grid?.map((d: any) => (
-                        <Section {...d} />
+                    {grid?.map((d: any , i :any) => (
+                        <Section {...d} key={i} />
                     ))}
                 </section>
             </div>

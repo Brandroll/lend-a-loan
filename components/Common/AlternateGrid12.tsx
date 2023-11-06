@@ -56,7 +56,7 @@ export default function AlternateGrid12({
     <section className="grid   my-16 alternate-grid lg:gap-16  max-w-site-full mx-auto ">
       {contentData.map((content: Content, i: number) => (
         <>
-          <section className="grid lg:grid-cols-12 gap-4   ">
+          <section className="grid lg:grid-cols-12 gap-4   " key={i}>
             <div
               className={`${
                 calc(i) === "even"
