@@ -13,7 +13,7 @@ export default function HomeLoanVideoHero(props: Props) {
         <img src={props.image} alt="img" className="w-full object-cover object-center max-h-[792px]"/>
         <div className="caption flex flex-col justify-end md:block">
           <div className="valign md:cp-center px-4 md:text-left lg:text-center lg:px-0">
-            <p
+            <div
               className="text-24px  md:text-30px   text-center font-isidorasans_semi_bold text-white"
               dangerouslySetInnerHTML={{ __html: props.heading }}
             />
@@ -59,7 +59,7 @@ export default function HomeLoanVideoHero(props: Props) {
         </video>
         <div className="caption flex flex-col justify-end md:block">
           <div className="valign md:cp-center px-4 md:text-left lg:text-center lg:px-0">
-            <p
+            <div
               className="text-24px  md:text-30px   text-center font-isidorasans_semi_bold text-white"
               dangerouslySetInnerHTML={{ __html: props.heading }}
             />

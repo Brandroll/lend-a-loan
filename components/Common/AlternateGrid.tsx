@@ -64,7 +64,7 @@ export default function AlternateGrid({
               }  mt-8 lg:mt-0  flex`}
             >
               <div className="flex flex-col font-isidorasans_regular justify-center -mb-4 lg:mb-0 ">
-                <h4
+                <div
                   dangerouslySetInnerHTML={{
                     __html: DOMPurify.sanitize(content?.information?.heading),
                   }}

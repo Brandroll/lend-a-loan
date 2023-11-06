@@ -5,7 +5,7 @@ import { useModalAction } from "../UI/modal/modal.context";
 const Section = ({ heading, info }: { heading: string; info: string }) => {
   return (
     <div>
-      <h2
+      <div
         className="text-24px text-center font-isidorasans_semi_bold mb-4"
         dangerouslySetInnerHTML={{ __html: heading }}
       />
