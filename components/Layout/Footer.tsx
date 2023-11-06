@@ -161,14 +161,14 @@ export default function Footer() {
           </div>
           <div className="flex flex-col gap-2 sm:max-w-[300px]">
             <p className="  text-white text-18px font-isidorasans_regular">
-              {" "}
+         
               Get updates in your inbox!
             </p>
 
             <FooterForm />
           </div>
         </div>
-        <div className="my-8   md:px-0">
+        <div className="my-8 md:px-0 px-4">
           <div className="flex gap-1 text-footer-link">
             <Link className="hover:text-gray-200" href="/terms-and-conditions">
               Terms & Conditions{" "}

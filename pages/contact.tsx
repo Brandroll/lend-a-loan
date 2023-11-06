@@ -30,7 +30,7 @@ export default function ContactUsPage(props: any) {
           </div>
         </div>
       </div>
-      <div className="max-w-site-full mx-auto">
+      <div className="max-w-site-full mx-auto md:px-0 px-4">
         <div className=" ">
           <div className="text-center  ">
             <h2 className="text-36px  my-4 font-isidorasans_semi_bold">
