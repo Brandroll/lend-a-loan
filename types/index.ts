@@ -178,6 +178,7 @@ export interface HomePage {
   acf: {
     heading?: string;
     video?: string;
+    image?: string;
     content: {
       information: {
         heading: string;

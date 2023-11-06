@@ -13,8 +13,8 @@ interface Props {
 }
 export default function Home(props: Props) {
   const { homePageData } = props;
-  console.log('homePageData', homePageData);
-  
+
+  console.log('homePageData', homePageData)
 
   return (
     <>
@@ -26,7 +26,8 @@ export default function Home(props: Props) {
             ? homePageData.acf.heading
             : homePageData.title.rendered
         }
-        video={homePageData.acf.video}
+        video={homePageData.acf?.video}
+        image={homePageData.acf?.image}
       />
 
       <Testinominal />
