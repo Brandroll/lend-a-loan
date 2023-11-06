@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 export default function YoastNextSeo(props: YoastSeoData) {
   // console.log(props);
   const openGrap = {
-    locale: props.og_locale,
+    locale: props?.og_locale,
     type: props.og_type,
     title: props.og_title,
     description: props.og_description,
@@ -25,7 +25,7 @@ export default function YoastNextSeo(props: YoastSeoData) {
         description={props.description}
         openGraph={openGrap}
         canonical={
-          props.slug
+          props?.slug
             ? process.env.NEXT_PUBLIC_SITE_URL + `/${props.slug}`
             : process.env.NEXT_PUBLIC_SITE_URL
         }

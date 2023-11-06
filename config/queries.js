@@ -142,6 +142,14 @@ export const advanceService = gql`
       }
       seo {
         fullHead
+        canonical
+        title
+        metaDesc
+        opengraphTitle
+        opengraphUrl
+        opengraphSiteName
+        opengraphType
+        opengraphDescription
       }
       services {
         topSection {

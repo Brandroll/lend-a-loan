@@ -9,14 +9,27 @@ import Help from "@/components/HomeLoan/Help";
 import HomeLoanVideoHero from "@/components/HomeLoan/HomeLoanVideoHero";
 import YoastNextSeo from "@/components/UI/YoastNextSeo";
 
-interface Props {
-  homePageData: HomePage;
-}
-export default function Homeloans(props: any) {
+export default function Homeloans(props) {
   const { homePageData } = props;
+
+  
+  
+  const seoData = {
+    title: homePageData.seo?.title,
+    description: homePageData.seo?.metaDesc,
+    canonical: homePageData.seo?.canonical,
+    og_type: homePageData.seo?.opengraphType,
+    og_title: homePageData.seo?.opengraphTitle,
+    og_description: homePageData.seo?.opengraphDescription,
+    og_url: homePageData.seo?.opengraphUrl,
+    og_site_name: homePageData.seo?.opengraphSiteName,
+  }
+  console.log('seoData', seoData);
+
+
   return (
     <>
-      {/* <YoastNextSeo {...homePageData.yoast_head_json} /> */}
+      <YoastNextSeo {...seoData} />
      
       <HomeLoanVideoHero
         heading={homePageData?.header?.heading}
