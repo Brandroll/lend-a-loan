@@ -32,9 +32,9 @@ export default function Homeloans(props: any) {
         <AlternateGrid content={homePageData?.services.topSection?.content} />
       </div>
       <Help />
-      <div className="my-9 mb-6 md:my-12">
+      {/* <div className="my-9 mb-6 md:my-12">
         <AlternateGrid content={homePageData?.services.bottomSection?.content} />
-      </div>
+      </div> */}
     </>
   );
 }

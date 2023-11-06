@@ -21,7 +21,7 @@ export default function AlternateGrid({
   content,
 }:any) {
   const [contentData, setContentData] = useState<any>([]);
- 
+   
   
   useEffect(() => {
     setContentData(content);
@@ -55,7 +55,7 @@ export default function AlternateGrid({
                 width={1000}
                 height={900}
               /> */}
-              <MaskImage src={content?.image?.mediaItemUrl}/>
+              <MaskImage src={content?.image?.mediaItemUrl || content?.image} id={i}/>
             </div>
 
             <div
