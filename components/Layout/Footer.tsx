@@ -13,7 +13,7 @@ export default function Footer() {
   return (
     <footer className="bg-footer">
       <div className="max-w-site-full mx-auto   text-18px font-isidorasans_regular text-footer-link px-0    py-16 md:py-20  ">
-        <div className="flex justify-center md:justify-start lg:px-0 px-4">
+        <div className="flex justify-center md:justify-start xl:px-0 px-4">
           <Image
             src={"/imgs/footer_logo.png"}
             loading="lazy"
@@ -23,7 +23,7 @@ export default function Footer() {
           />
         </div>
 
-        <div className="grid gap-4 justify-center text-center  md:text-justify md:grid-cols-2 lg:grid-cols-4 my-7 md:my-4 lg:px-0 px-4">
+        <div className="grid gap-4 justify-center text-center  md:text-justify md:grid-cols-2 lg:grid-cols-4 my-7 md:my-4 xl:px-0 px-4">
           <div className="flex flex-col gap-2">
             {data?.menuItems?.nodes?.map((s: any, idx: number) => (
               <Link
@@ -168,7 +168,7 @@ export default function Footer() {
             <FooterForm />
           </div>
         </div>
-        <div className="my-8 lg:px-0 px-4">
+        <div className="my-8 xl:px-0 px-4">
           <div className="flex gap-1 text-footer-link">
             <Link className="hover:text-gray-200" href="/terms-and-conditions">
               Terms & Conditions{" "}
