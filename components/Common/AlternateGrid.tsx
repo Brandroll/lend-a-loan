@@ -48,14 +48,14 @@ export default function AlternateGrid({
                   : " md:justify-center lg:justify-start"
               }   items-center    `}
             >
-              {/* <Image
+              <Image
                 className="  lg:rounded-tl-[128px] lg:rounded-br-[128px] lg:shadow-2xl "
-                src={content?.image?.mediaItemUrl }
+                src={content?.image?.mediaItemUrl || content?.image}
                 alt=""
                 width={1000}
                 height={900}
-              /> */}
-              <MaskImage src={content?.image?.mediaItemUrl || content?.image} id={i}/>
+              />
+              {/* <MaskImage src={content?.image?.mediaItemUrl || content?.image} id={i}/> */}
             </div>
 
             <div
