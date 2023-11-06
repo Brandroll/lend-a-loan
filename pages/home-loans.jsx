@@ -13,14 +13,14 @@ export default function Homeloans(props) {
   const { homePageData } = props;
   
   const seoData = {
-    title: homePageData.seo?.title,
-    description: homePageData.seo?.metaDesc,
-    canonical: homePageData.seo?.canonical,
-    og_type: homePageData.seo?.opengraphType,
-    og_title: homePageData.seo?.opengraphTitle,
-    og_description: homePageData.seo?.opengraphDescription,
-    og_url: homePageData.seo?.opengraphUrl,
-    og_site_name: homePageData.seo?.opengraphSiteName,
+    title: homePageData?.seo?.title,
+    description: homePageData?.seo?.metaDesc,
+    canonical: homePageData?.seo?.canonical,
+    og_type: homePageData?.seo?.opengraphType,
+    og_title: homePageData?.seo?.opengraphTitle,
+    og_description: homePageData?.seo?.opengraphDescription,
+    og_url: homePageData?.seo?.opengraphUrl,
+    og_site_name: homePageData?.seo?.opengraphSiteName,
   }
 
   return (
