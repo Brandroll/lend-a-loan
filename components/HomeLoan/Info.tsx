@@ -18,9 +18,9 @@ export default function Info({
   return (
     <>
       {heading && (
-        <h2 className="my-6 mt-6 text-24px font-isidorasans_semi_bold">
-          {heading} 
-        </h2>
+        <div className="my-6 mt-6 text-24px font-isidorasans_semi_bold">
+       <div className="my-6 mt-6 text-24px font-isidorasans_semi_bold" dangerouslySetInnerHTML={{__html:heading}}></div>
+        </div>
       )}
       {content && <Pagragraph info={content ? content : ""} />}
     </>
