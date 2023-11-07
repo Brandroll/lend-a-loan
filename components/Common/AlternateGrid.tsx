@@ -68,12 +68,12 @@ export default function AlternateGrid({
                   dangerouslySetInnerHTML={{
                     __html: DOMPurify.sanitize(content?.information?.heading),
                   }}
-                  className="text-dark  text-28px lg:text-2xl font-isidorasans_semi_bold  font-medium  "
+                  className="text-dark  text-28px lg:text-2xl font-isidorasans_semi_bold  font-medium mb-4  "
                 />
                 <WPHTMLContent html={content?.information?.info} />
                 {content?.cta && (
                   <Link legacyBehavior href={content.cta.value} className="">
-                    <a className="flex  transition-all hover:translate-x-3 delay-200   hover:text-brand-blue items-center gap-4">
+                    <a className="flex  transition-all hover:translate-x-3 delay-200   hover:text-brand-blue items-center gap-4 mt-4">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         fill="none"
