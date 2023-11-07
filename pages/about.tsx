@@ -77,10 +77,8 @@ export default function About(props: any) {
                 className=" lg:mr-12  "
               >
                 <div className="flex flex-col font-isidorasans_regular justify-center -mb-4 lg:mb-0 ">
-                  <h4 className="text-dark lg:mb-4 text-28px lg:text-2xl font-isidorasans_semi_bold  font-medium" >
-
-                    {pageData?.acf?.company_info?.title}
-
+                  <h4 className="text-dark lg:mb-4 text-28px lg:text-2xl font-isidorasans_semi_bold  font-medium" >                    
+                    <WPHTMLContent html={pageData?.acf?.company_info?.title} />
                   </h4>
                   <WPHTMLContent html={pageData?.acf.company_info?.details} />
                 </div>
