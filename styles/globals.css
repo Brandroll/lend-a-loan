@@ -46,7 +46,18 @@
 .about_us h1 {
   margin: 12px 0;
   font-weight: bolder;
-  font-size: 30px;
+  font-size: 32px;
+}
+
+.about_us h2 {
+  margin: 12px 0;
+  font-weight: bolder;
+  font-size: 26px;
+}
+.about_us h3 {
+  margin: 12px 0;
+  font-weight: bolder;
+  font-size: 24px;
 }
 
 .about_us h6 {
