@@ -57,34 +57,34 @@ export default function About(props: any) {
       />
       <YoastNextSeo {...pageData.yoast_head_json} />
       <div className="my-8">
-        <section className="grid lg:mt-8   md:my-10 alternate-grid md:gap-4 lg:gap-8 px-4   max-w-site-full mx-auto ">
+        <section className="grid lg:mt-8   md:my-10 alternate-grid md:gap-4 lg:gap-8 lg:px-0 px-4   max-w-site-full mx-auto ">
 
-        
-            <section className="grid lg:grid-cols-2  my-4 gap-16">
-              <div
-                className=" mt-4  lg:mt-0 md:justify-center lg:justify-start"
-              >
-                <Image
-                  className="lg:shadow-2xl "
-                  src={pageData?.acf?.company_info?.image?.url}
-                  alt=""
-                  width={1000}
-                  height={900}
-                />
-              </div>
 
-              <div
-                className=" lg:mr-12  "
-              >
-                <div className="flex flex-col font-isidorasans_regular justify-center -mb-4 lg:mb-0 ">
-                  <h4 className="text-dark lg:mb-4 text-28px lg:text-2xl font-isidorasans_semi_bold  font-medium" >                    
-                    <WPHTMLContent html={pageData?.acf?.company_info?.title} />
-                  </h4>
-                  <WPHTMLContent html={pageData?.acf.company_info?.details} />
-                </div>
+          <section className="grid lg:grid-cols-2  my-4 gap-16">
+            <div
+              className=" mt-4  lg:mt-0 md:justify-center lg:justify-start"
+            >
+              <Image
+                className="lg:shadow-2xl w-full"
+                src={pageData?.acf?.company_info?.image?.url}
+                alt=""
+                width={1000}
+                height={900}
+              />
+            </div>
+
+            <div
+              className=""
+            >
+              <div className="flex flex-col font-isidorasans_regular justify-center -mb-4 lg:mb-0 ">
+                <h4 className="text-dark lg:mb-4 text-28px lg:text-2xl font-isidorasans_semi_bold  font-medium" >
+                  <WPHTMLContent html={pageData?.acf?.company_info?.title} />
+                </h4>
+                <WPHTMLContent html={pageData?.acf.company_info?.details} />
               </div>
-            </section>
-       
+            </div>
+          </section>
+
 
         </section>
       </div>
@@ -93,12 +93,12 @@ export default function About(props: any) {
           <h3 className="text-30px font-isidorasans_semi_bold  lg:mb-4    text-center">
             Meet Our People
           </h3>
-          <div className="grid md:grid-cols-2 gap-8 px-4 py-4">
+          <div className="grid md:grid-cols-2 gap-8 lg:px-0 px-4 py-4">
             {pageData?.acf?.team_members.map((p: any) => (
               <div className="" key={Math.random()}>
                 <div className="mb-4">
                   <div className="my-4">
-                    <Image src={p.profile_photo} width={450} height={373} alt="" className=" lg:shadow-2xl h-[373px] object-cover " />
+                    <Image src={p.profile_photo} width={450} height={373} alt="" className=" lg:shadow-2xl h-[373px] object-cover w-full " />
 
                   </div>
                   <p className="text-30px font-isidorasans_semi_bold">
@@ -108,7 +108,7 @@ export default function About(props: any) {
                     {p.designation}
                   </p>
                 </div>
-                <div className="lg:pr-16 text-16px md:text-18px text-dark font-isidorasans_regular">
+                <div className=" text-16px md:text-18px text-dark font-isidorasans_regular">
                   <div dangerouslySetInnerHTML={{ __html: p.info }} />
                 </div>
               </div>
