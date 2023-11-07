@@ -73,7 +73,7 @@ export default function AlternateGrid({
                 <WPHTMLContent html={content?.information?.info} />
                 {content?.cta && (
                   <Link legacyBehavior href={content.cta.value} className="">
-                    <a className="flex md:my-[30px]     lg:-mt-8 transition-all hover:translate-x-3 delay-200   hover:text-brand-blue items-center gap-4">
+                    <a className="flex  transition-all hover:translate-x-3 delay-200   hover:text-brand-blue items-center gap-4">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         fill="none"
