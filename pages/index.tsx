@@ -14,7 +14,7 @@ interface Props {
 export default function Home(props: Props) {
   const { homePageData } = props;
 
-  console.log('homePageData', homePageData)
+  // console.log('homePageData', homePageData.acf.content)
 
   return (
     <>

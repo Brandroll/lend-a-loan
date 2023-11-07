@@ -4,6 +4,8 @@ import WPHTMLContent from "../UI/WPHTMLContent";
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import MaskImage from "./MaskImage";
+import OwnImage from '@/components/UI/OwnImage'
+
 interface Content {
   information: {
     heading: string;
@@ -21,7 +23,6 @@ export default function AlternateGrid({
   content,
 }:any) {
   const [contentData, setContentData] = useState<any>([]);
-   
   
   useEffect(() => {
     setContentData(content);
@@ -48,13 +49,8 @@ export default function AlternateGrid({
                   : " md:justify-center lg:justify-start"
               }   items-center    `}
             >
-              <Image
-                className="  lg:rounded-tl-[128px] lg:rounded-br-[128px] lg:shadow-2xl "
-                src={content?.image?.mediaItemUrl || content?.image}
-                alt=""
-                width={1000}
-                height={900}
-              />
+              {/* lg:rounded-tl-[128px] lg:rounded-br-[128px] lg:shadow-2xl */}
+              <OwnImage linkForDT={content?.image?.mediaItemUrl || content?.image} linkForMB={content?.imageForMobile?.mediaItemUrl || content?.image_for_mobile} id={i}/>
               {/* <MaskImage src={content?.image?.mediaItemUrl || content?.image} id={i}/> */}
             </div>
 

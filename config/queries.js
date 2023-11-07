@@ -158,6 +158,9 @@ export const advanceService = gql`
             value
             label
           }
+          imageForMobile {
+            mediaItemUrl
+          }
           image {
             mediaItemUrl
           }
@@ -178,6 +181,9 @@ export const advanceService = gql`
             label
           }
           image {
+            mediaItemUrl
+          }
+          imageForMobile {
             mediaItemUrl
           }
           information {
