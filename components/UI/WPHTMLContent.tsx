@@ -7,7 +7,7 @@ export default function WPHTMLContent({ html }: { html: string }) {
     setHtmlData(html);
   }, [html]);
   return (
-    <div className="  post-content">
+    <div className="about_us">
       <div
         dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(htmlData) }}
       ></div>
