@@ -2,9 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-
-
-
 .box {
   position: relative;
 }
@@ -42,12 +39,26 @@
   left: 44px;
 }
 
+.main {
+  width: 80%;
+}
 
-.main { width: 80%;}
+.about_us h1 {
+  margin: 12px 0;
+  font-weight: bolder;
+  font-size: 30px;
+}
 
-.about_us h1 { margin: 12px 0; font-weight:bolder; font-size: 30px;}
+.about_us h6 {
+  margin: 12px 0;
+  font-weight: bolder;
+}
+.about_us p {
+  margin-bottom: 12px;
+}
 
-.about_us h6 { margin: 12px 0; font-weight:bolder;}
-.about_us p { margin-bottom: 12px }
-
-.about_us ul { list-style: disc; padding-left: 20px; margin-bottom: 10px;}
+.about_us ul {
+  list-style: disc;
+  padding-left: 20px;
+  margin-bottom: 10px;
+}
