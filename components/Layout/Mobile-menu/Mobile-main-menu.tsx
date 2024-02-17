@@ -7,6 +7,9 @@ import { useState } from "react";
 import headerLinks from "@/seed/headerLink";
 import { useQuery } from "@apollo/client";
 import { AdvanceService, CalcMenu } from "@/config/queries";
+import {MenuItems} from '../megaMenu'
+import Link from "next/link";
+
 export default function MobileMainMenu() {
   const [showSubItems, setShowSubItems] = useState(false);
   const router = useRouter();
@@ -63,16 +66,27 @@ export default function MobileMainMenu() {
               showSubItems &&
               subItems &&
               label === "Solutions" &&
-              data.menuItems.nodes.map((item:any) => (
-                <li
-                  onClick={() => handleClick(item.label.replace(' ' , '-').toLowerCase(), idx)}
-                  className="flex text-black   cursor-pointer font-isidorasans_regular items-center py-3 px-8 text-sm  font-semibold capitalize text-heading transition duration-200 hover:text-accent  "
-                >
-                  {item.label}
-                </li>
-              ))
-              
-              
+                MenuItems?.map((item:any, idx:number) => (
+                     <ul className="col-span-2 md:col-span-1 text-gray-700" key={idx}>
+                          {
+                               item.column.map((l:any, i:number) => (
+                                    <li key={i}>
+                                         <Link href={l.href} className="flex p-3 px-8 hover:bg-gray-100 justify-between">
+                                         <div className="font-medium">{l.label}</div>
+                                              <svg className="mr-2 w-6 h-6" fill="currentColor" viewBox="0 0 20 20"
+                                                   xmlns="http://www.w3.org/2000/svg">
+                                                   <path fill-rule="evenodd"
+                                                        d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
+                                                        clip-rule="evenodd"></path>
+                                              </svg>
+                                              
+                                         </Link>
+                                    </li>
+                               ))
+                          }
+
+                     </ul>
+                ))
               }
                {currentSubMenu === idx &&
               showSubItems &&

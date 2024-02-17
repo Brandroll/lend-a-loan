@@ -26,11 +26,12 @@ export default function bookconsultation() {
           <section className="grid lg:grid-cols-12">
             <section className="col-span-12">
               <iframe
-                src="https://app.squarespacescheduling.com/schedule.php?owner=29084236"
-                title="Schedule Appointment"
+                src="https://calendar.google.com/calendar/appointments/AcZssZ1gcHQ_H4LzTWaEzYl3vKDWqZ1ADw2VlXOkzMk=?gv=true"
+                style={{ border: '0' }}
                 width="100%"
-                height="1080"
-                frameBorder="0"
+                height="600"
+                // frameborder="0"
+                // allowFullScreen
               ></iframe>
               <script
                 src="https://embed.acuityscheduling.com/js/embed.js"

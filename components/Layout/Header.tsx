@@ -5,10 +5,11 @@ import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { useAtom } from "jotai";
 import { drawerAtom } from "@/store/drawer-atom";
-import navLinks from "@/seed/headerLink";
+import navLinks, { calculatorsItem } from "@/seed/headerLink";
 import { useModalAction } from "../UI/modal/modal.context";
 import { useQuery } from "@apollo/client";
 import { AdvanceService, CalcMenu, advanceServices } from "@/config/queries";
+import MegaMenu from "./megaMenu";
 
 interface NavLink {
   href: string;
@@ -20,6 +21,7 @@ export default function Header() {
   const [currentSubMenu, setCurrentSubMenu] = useState<any>();
   const [isSubMenuOpen, setIsSubMenuOpen] = useState(false);
   const [isGetStartedVisible, setIsGetStartedVisible] = useState(false);
+  const [megaMenu, setMegaMenu] = useState(false)
   //   const [navLinks, setNavLinks] = useState<NavLink[]>([]);
   const [_, setDrawerView] = useAtom(drawerAtom);
   const { openModal } = useModalAction();
@@ -38,6 +40,7 @@ export default function Header() {
 
   return (
     <div className="  ">
+      {megaMenu && <MegaMenu setMegaMenu={setMegaMenu}/>}
       <nav className=" w-full top-0 fixed shadow-2xl z-40    lg:py-3 py-3 px-5   lg:px-8     bg-white    ">
         <div className="max-w-site-full mx-auto flex gap-3 md:gap-0 justify-between items-center">
           <Link className="lg:block hidden" href={"/"}>
@@ -206,6 +209,7 @@ export default function Header() {
                       <p
                         className={`font-isidorasans_regular ${router.asPath === i.href ? "text-brand-blue-dark" : ""
                           }  hover:text-brand-blue  flex items-center gap-1 p-3 text-18px cursor-pointer relative`}
+                          onClick={()=>setMegaMenu( i.label === 'Solutions' ? !megaMenu : false)}
                       >
                         {i.label}
                         {i.subItems && i.subItems?.length > 0 && (
@@ -244,13 +248,12 @@ export default function Header() {
                               className="lg:absolute bg-white z-50  top-[52px] bg-navbar"
                             >
                               <div className="flex flex-col font-isidorasans_regular     pt-3 pb-2">
-                                {i.label === "Calculators" && CalNav?.data?.menuItems?.nodes.map((l:any) => (
+                                {i.label === "Calculators" && calculatorsItem?.map((l:any) => (
                                   <>
                                     {
-                                      l.label !== "Home Loans test" &&
                                       <Link
                                         className="hover:text-white hover:bg-brand-blue p-2  px-5  "
-                                        href={l.uri}
+                                        href={l.href}
                                       >
                                         {l.label}
                                       </Link>
@@ -267,6 +270,7 @@ export default function Header() {
                                         className="hover:text-white hover:bg-brand-blue p-2 capitalize px-5  "
                                         href={s.label.replace(' ' , '-').toLowerCase()}
                                         key={idx}
+                                        onClick={()=>setMegaMenu(!megaMenu)}
                                       >
                                         {s.label}
                                       </Link>
