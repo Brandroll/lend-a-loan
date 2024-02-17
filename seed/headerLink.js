@@ -5,8 +5,76 @@ export default [
     services: true,
     subItems: [
       {
-        href: "/home-loans",
-        label: "Home Loans test",
+        label: 'Residential Lending',
+        href: "home-loans"
+      },
+      {
+        label: 'First Home Buyer',
+        href: "first-home-buyer"
+      },
+      {
+        label: 'Home Loan Refinance',
+        href: "refinancing"
+      },
+      {
+        label: 'Investment Loans',
+        href: "investment-loans"
+      },
+      {
+        label: 'Construction Loans',
+        href: "construction-loans"
+      },
+      {
+        label: 'Moving Home Loans',
+        href: "moving-home-loan"
+      },
+      {
+        label: 'Business Lending',
+        href: "business-loans"
+      },
+      {
+        label: 'Commercial Property Loan',
+        href: "commercial-loans"
+      },
+      {
+        label: 'Equipment and Asset Finance',
+        href: "asset-finance"
+      },
+      {
+        label: 'Development Loans',
+        href: "development-loans"
+      },
+      {
+        label: 'Unsecured Business Loans',
+        href: "unsecured-business-loans"
+      },
+      {
+        label: 'Private Lending',
+        href: "private-lending"
+      },
+      {
+        label: 'Consumer Lending',
+        href: "personal-loans"
+      },
+      {
+        label: 'Car Loans',
+        href: "car-loans"
+      },
+      {
+        label: 'Renovation Loans',
+        href: "renovation-loans"
+      },
+      {
+        label: 'Debt Consolidation',
+        href: "debt-consolidation"
+      },
+      {
+        label: 'Leisure Finance',
+        href: "leisure-finance"
+      },
+      {
+        label: 'Medical',
+        href: "medical-loans"
       }
     ],
   },
@@ -79,7 +147,7 @@ export default [
 
 
 
-export const calculatorsItem =  [
+export const calculatorsItem = [
   {
     href: "/calculator/borrowing-power-calculator",
     label: "Borrowing Power Calculator",

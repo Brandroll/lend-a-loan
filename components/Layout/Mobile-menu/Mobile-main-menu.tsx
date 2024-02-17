@@ -5,20 +5,11 @@ import { useAtom } from "jotai";
 import { drawerAtom } from "@/store/drawer-atom";
 import { useState } from "react";
 import headerLinks from "@/seed/headerLink";
-import { useQuery } from "@apollo/client";
-import { AdvanceService, CalcMenu } from "@/config/queries";
-import {MenuItems} from '../megaMenu'
-import Link from "next/link";
-
 export default function MobileMainMenu() {
   const [showSubItems, setShowSubItems] = useState(false);
   const router = useRouter();
   const [_, closeSidebar] = useAtom(drawerAtom);
   const [currentSubMenu, setCurrentSubMenu] = useState<any>();
-
-  const { loading, error, data } = useQuery(AdvanceService);
-  const CalNav = useQuery(CalcMenu);
-
 
   function handleClick(path: string, idx: any) {
     const hasSubItems = headerLinks.find((hed) => hed.href === path)?.subItems;
@@ -41,7 +32,7 @@ export default function MobileMainMenu() {
           <li key={`${href}${label}`}>
             <button
               onClick={() => handleClick(href, idx)}
-              className="flex   text-15px text-black justify-between cursor-pointer font-isidorasans_regular items-center py-3 px-5 text-sm font-semibold capitalize text-heading transition duration-200 hover:text-accent md:px-8"
+              className="flex w-full text-15px text-black justify-between cursor-pointer font-isidorasans_regular items-center py-3 px-5 text-sm font-semibold capitalize text-heading transition duration-200 hover:text-accent md:px-8"
             >
               {label}
 
@@ -65,44 +56,14 @@ export default function MobileMainMenu() {
             {currentSubMenu === idx &&
               showSubItems &&
               subItems &&
-              label === "Solutions" &&
-                MenuItems?.map((item:any, idx:number) => (
-                     <ul className="col-span-2 md:col-span-1 text-gray-700" key={idx}>
-                          {
-                               item.column.map((l:any, i:number) => (
-                                    <li key={i}>
-                                         <Link href={l.href} className="flex p-3 px-8 hover:bg-gray-100 justify-between">
-                                         <div className="font-medium">{l.label}</div>
-                                              <svg className="mr-2 w-6 h-6" fill="currentColor" viewBox="0 0 20 20"
-                                                   xmlns="http://www.w3.org/2000/svg">
-                                                   <path fill-rule="evenodd"
-                                                        d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
-                                                        clip-rule="evenodd"></path>
-                                              </svg>
-                                              
-                                         </Link>
-                                    </li>
-                               ))
-                          }
-
-                     </ul>
-                ))
-              }
-               {currentSubMenu === idx &&
-              showSubItems &&
-              subItems &&
-              label === "Calculators" &&
-              CalNav?.data?.menuItems?.nodes?.map((item:any) => (
+              subItems.map((item) => (
                 <li
-                  onClick={() => handleClick(item.uri, idx)}
-                  className="flex text-black   cursor-pointer font-isidorasans_regular items-center py-3 px-8 text-sm  font-semibold capitalize text-heading transition duration-200 hover:text-accent  "
+                  onClick={() => handleClick(item.href, idx)}
+                  className="flex text-black pl-12 cursor-pointer font-isidorasans_regular items-center py-3 px-8 text-sm  font-semibold capitalize text-heading transition duration-200 hover:text-accent  "
                 >
                   {item.label}
                 </li>
-              ))
-              
-              
-              }
+              ))}
           </li>
         ))}
         <li>

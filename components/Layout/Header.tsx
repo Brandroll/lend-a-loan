@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { useAtom } from "jotai";
 import { drawerAtom } from "@/store/drawer-atom";
@@ -35,7 +35,17 @@ export default function Header() {
   const advanceServicesNav = useQuery(advanceServices);
   const CalNav = useQuery(CalcMenu);
 
+  useEffect(() => {
+    function handleScroll() {
+      setMegaMenu(false)
+    }
 
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
 
 
   return (
@@ -210,6 +220,10 @@ export default function Header() {
                         className={`font-isidorasans_regular ${router.asPath === i.href ? "text-brand-blue-dark" : ""
                           }  hover:text-brand-blue  flex items-center gap-1 p-3 text-18px cursor-pointer relative`}
                           onClick={()=>setMegaMenu( i.label === 'Solutions' ? !megaMenu : false)}
+                          onMouseEnter={()=> {
+                            i.label === "Calculators" &&
+                            setMegaMenu( false )
+                          }}
                       >
                         {i.label}
                         {i.subItems && i.subItems?.length > 0 && (
@@ -247,7 +261,7 @@ export default function Header() {
                               }}
                               className="lg:absolute bg-white z-50  top-[52px] bg-navbar"
                             >
-                              <div className="flex flex-col font-isidorasans_regular     pt-3 pb-2">
+                              <div className="flex flex-col font-isidorasans_regular pt-3 pb-2">
                                 {i.label === "Calculators" && calculatorsItem?.map((l:any) => (
                                   <>
                                     {
@@ -293,7 +307,7 @@ export default function Header() {
                 onMouseLeave={() => {
                   setIsGetStartedVisible(false);
                 }}
-                className="w-56 flex justify-center items-center gap-1 text-18px   py-3 bg-brand-blue  text-white font-isidorasans_regular"
+                className="w-56 flex justify-center items-center gap-1 text-18px py-3 bg-brand-blue  text-white font-isidorasans_regular"
               >
                 Get Started
                 <svg

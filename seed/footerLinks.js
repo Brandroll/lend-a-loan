@@ -1,19 +1,19 @@
 export const nav1 = [
   {
-    name: "Home Loans",
-    slug: "/home-loans",
+    name: "Residential Lending",
+    slug: "#",
   },
   {
-    name: "Property Finance",
-    slug: "/property-finance",
+    name: "Business Lending",
+    slug: "#",
   },
   {
-    name: "Private Finance",
-    slug: "/private-finance",
+    name: "Consumer Lending",
+    slug: "#",
   },
   {
-    name: "Asset Finance",
-    slug: "/asset-finance",
+    name: "Private Lending",
+    slug: "#",
   },
 ];
 

@@ -25,20 +25,15 @@ export default function Footer() {
 
         <div className="grid gap-4 justify-center text-center  md:text-justify md:grid-cols-2 lg:grid-cols-4 my-7 md:my-4 xl:px-0 px-4">
           <div className="flex flex-col gap-2">
-            {data?.menuItems?.nodes?.map((s: any, idx: number) => (
+            {nav1?.map((s: any, idx: number) => (
               <Link
                 className="text-footer-link text-18px hover:text-white font-isidorasans_regular"
                 key={Math.random()}
-                href={s.label.replace(' ', '-').toLowerCase()}
+                href={s.slug}
               >
-                {s.label}
+                {s.name}
               </Link>
             ))}
-
-
-
-
-
           </div>
           <div className="flex flex-col gap-2">
             {nav2.map((l: any) => (
