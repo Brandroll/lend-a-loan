@@ -26,13 +26,14 @@ export default function bookconsultation() {
           <section className="grid lg:grid-cols-12">
             <section className="col-span-12">
               <iframe
-                src="https://calendar.google.com/calendar/appointments/AcZssZ1gcHQ_H4LzTWaEzYl3vKDWqZ1ADw2VlXOkzMk=?gv=true"
+                src="https://calendar.google.com/calendar/appointments/schedules/AcZssZ1aQXqPVf-ZvK8Lq6XLVVMasg7hxYGdWtAxqcpvcdOTpOn1BdvkoDShss19H2dpflvGpbJAL87i?gv=true"
                 style={{ border: '0' }}
                 width="100%"
                 height="600"
                 // frameborder="0"
                 // allowFullScreen
               ></iframe>
+
               <script
                 src="https://embed.acuityscheduling.com/js/embed.js"
                 type="text/javascript"

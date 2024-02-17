@@ -5,8 +5,9 @@ import React from 'react'
 const MegaMenu = ({setMegaMenu}:any) => {
      return (
           <>
-               <section>
-                    <nav id="megamenu" className="border-b border-t z-50 fixed lg:mt-2.5 right-0 left-0 bg-white border-gray-100 lg:shadow-xl">
+               <section className=''>
+                    <nav id="megamenu" className="border-b pt-4 z-50 fixed top-[60px] right-0 left-0 bg-white border-gray-100 lg:shadow-xl">
+                         <div className='border-t-[1px] border-gray-100'/>
                          <div
                               className="grid py-4 px-4 mx-auto max-w-screen-xl text-gray-800 md:grid-cols-3 lg:grid-cols-4 md:px-6">
                               {
@@ -14,7 +15,7 @@ const MegaMenu = ({setMegaMenu}:any) => {
                                         <ul className="col-span-2 md:col-span-1" key={idx}>
                                              {
                                                   item.column.map((l, i) => (
-                                                       <li key={i} onClick={()=>setMegaMenu(false)}>
+                                                       <li key={i} onClick={()=>setMegaMenu(false)} >
                                                             <Link href={l.href} className="flex p-3 rounded-lg hover:bg-[#61C0CD] hover:text-white">
                                                                  <svg className="mr-2 w-6 h-6" fill="currentColor" viewBox="0 0 20 20"
                                                                       xmlns="http://www.w3.org/2000/svg">

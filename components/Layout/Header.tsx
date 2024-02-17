@@ -1,14 +1,14 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { useAtom } from "jotai";
 import { drawerAtom } from "@/store/drawer-atom";
-import navLinks, { calculatorsItem } from "@/seed/headerLink";
+import navLinks from "@/seed/headerLink";
 import { useModalAction } from "../UI/modal/modal.context";
 import { useQuery } from "@apollo/client";
-import { AdvanceService, CalcMenu, advanceServices } from "@/config/queries";
+import { AllServices } from "@/config/queries";
 import MegaMenu from "./megaMenu";
 
 interface NavLink {
@@ -21,8 +21,8 @@ export default function Header() {
   const [currentSubMenu, setCurrentSubMenu] = useState<any>();
   const [isSubMenuOpen, setIsSubMenuOpen] = useState(false);
   const [isGetStartedVisible, setIsGetStartedVisible] = useState(false);
-  const [megaMenu, setMegaMenu] = useState(false)
   //   const [navLinks, setNavLinks] = useState<NavLink[]>([]);
+  const [megaMenu, setMegaMenu] = useState(false)
   const [_, setDrawerView] = useAtom(drawerAtom);
   const { openModal } = useModalAction();
   //   const { data } = useQuery(GET_HEADER_MENU);
@@ -31,30 +31,20 @@ export default function Header() {
     setDrawerView({ display: true, view });
   }
 
-  const { loading, error, data } = useQuery(AdvanceService);
-  const advanceServicesNav = useQuery(advanceServices);
-  const CalNav = useQuery(CalcMenu);
-
-  useEffect(() => {
-    function handleScroll() {
-      setMegaMenu(false)
-    }
-
-    window.addEventListener('scroll', handleScroll);
-
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, []);
+  const { loading, error, data } = useQuery(AllServices);
 
 
   return (
-    <div className="  ">
-      {megaMenu && <MegaMenu setMegaMenu={setMegaMenu}/>}
+<>
+    {
+      isSubMenuOpen &&  <div className="bg-black/50 fixed z-[11] top-0 inset-0" onMouseEnter={() => setIsSubMenuOpen(false)} />
+    }
+     
+    <div className="relative">
       <nav className=" w-full top-0 fixed shadow-2xl z-40    lg:py-3 py-3 px-5   lg:px-8     bg-white    ">
         <div className="max-w-site-full mx-auto flex gap-3 md:gap-0 justify-between items-center">
           <Link className="lg:block hidden" href={"/"}>
-            <Image alt="logo" src={"/imgs/logo.svg"} width={160} height={20} />
+            <Image alt="logo" src={"/imgs/logo.svg"} width={160} height={180} />
           </Link>
           <div className="lg:hidden ">
             <Link href={"/"}>
@@ -217,13 +207,8 @@ export default function Header() {
                   >
                     <div>
                       <p
-                        className={`font-isidorasans_regular ${router.asPath === i.href ? "text-brand-blue-dark" : ""
-                          }  hover:text-brand-blue  flex items-center gap-1 p-3 text-18px cursor-pointer relative`}
-                          onClick={()=>setMegaMenu( i.label === 'Solutions' ? !megaMenu : false)}
-                          onMouseEnter={()=> {
-                            i.label === "Calculators" &&
-                            setMegaMenu( false )
-                          }}
+                        className={`font-isidorasans_regular  ${router.asPath === i.href ? "text-brand-blue-dark" : ""
+                          }  hover:text-brand-blue flex items-center gap-1 p-3 text-18px cursor-pointer relative`}
                       >
                         {i.label}
                         {i.subItems && i.subItems?.length > 0 && (
@@ -246,8 +231,13 @@ export default function Header() {
                       {currentSubMenu === idx &&
                         i.subItems &&
                         i.subItems?.length > 0 &&
-                        isSubMenuOpen &&    (
+                        isSubMenuOpen && (
                           <>
+                            {
+                              i.subItems[0].label === 'Residential Lending' && <>
+                                <MegaMenu />
+                              </>
+                            }
                             <div
                               onMouseOver={() => {
                                 if (i.subItems) {
@@ -259,34 +249,29 @@ export default function Header() {
                                   setIsSubMenuOpen(false);
                                 }
                               }}
-                              className="lg:absolute bg-white z-50  top-[52px] bg-navbar"
+                              className="lg:absolute bg-white z-50 top-[52px] bg-navbar"
                             >
-                              <div className="flex flex-col font-isidorasans_regular pt-3 pb-2">
-                                {i.label === "Calculators" && calculatorsItem?.map((l:any) => (
+                              <div className={`flex flex-col font-isidorasans_regular pt-3 pb-2 ${i.label === 'Solutions' && 'hidden'}`}>
+                                {i.subItems.map((l) => (
                                   <>
-                                    {
-                                      <Link
-                                        className="hover:text-white hover:bg-brand-blue p-2  px-5  "
-                                        href={l.href}
-                                      >
-                                        {l.label}
-                                      </Link>
-                                    }
+                                    <Link
+                                      className="hover:text-white hover:bg-brand-blue p-2  px-5  "
+                                      href={l.href}
+                                    >
+                                      {l.label} 111
+                                    </Link>
                                   </>
                                 ))}
-                                
-                                
                                 {
-                                  i.label === "Solutions" && i?.services === true && 
-                                  data?.menuItems?.nodes?.map((s: any, idx: number) => (
+                                  i.services === true &&
+                                  data?.services?.nodes?.map((s: any, idx: number) => (
                                     <>
                                       <Link
                                         className="hover:text-white hover:bg-brand-blue p-2 capitalize px-5  "
-                                        href={s.label.replace(' ' , '-').toLowerCase()}
+                                        href={s.slug}
                                         key={idx}
-                                        onClick={()=>setMegaMenu(!megaMenu)}
                                       >
-                                        {s.label}
+                                        {s.title}
                                       </Link>
                                     </>
                                   ))
@@ -307,7 +292,7 @@ export default function Header() {
                 onMouseLeave={() => {
                   setIsGetStartedVisible(false);
                 }}
-                className="w-56 flex justify-center items-center gap-1 text-18px py-3 bg-brand-blue  text-white font-isidorasans_regular"
+                className="w-56 flex justify-center items-center gap-1 text-18px   py-3 bg-brand-blue  text-white font-isidorasans_regular"
               >
                 Get Started
                 <svg
@@ -428,5 +413,6 @@ export default function Header() {
         </div>
       </nav>
     </div>
+    </>
   );
 }
