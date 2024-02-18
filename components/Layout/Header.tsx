@@ -52,7 +52,7 @@ export default function Header() {
                 alt="logo"
                 src={"/imgs/logo.svg"}
                 width={200}
-                height={100}
+                height={22}
               />
             </Link>
           </div>
@@ -258,7 +258,7 @@ export default function Header() {
                                       className="hover:text-white hover:bg-brand-blue p-2  px-5  "
                                       href={l.href}
                                     >
-                                      {l.label} 111
+                                      {l.label}
                                     </Link>
                                   </>
                                 ))}
