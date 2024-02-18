@@ -17,14 +17,15 @@ const MegaMenu = ({setMegaMenu}:any) => {
                                                   item.column.map((l, i) => (
                                                        <li key={i} onClick={()=>setMegaMenu(false)} >
                                                             <Link href={l.href} className="flex p-3 rounded-lg hover:bg-[#61C0CD] hover:text-white">
-                                                                 {/* <svg className="mr-2 w-6 h-6" fill="currentColor" viewBox="0 0 20 20"
+                                                                 <svg className="mr-2 w-6 h-6" fill="currentColor" viewBox="0 0 20 20"
                                                                       xmlns="http://www.w3.org/2000/svg">
                                                                       <path fill-rule="evenodd"
                                                                            d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
                                                                            clip-rule="evenodd"></path>
-                                                                 </svg> */}
+                                                                 </svg>
                                                                  <div>
-                                                                      <div className="font-isidorasans_regular">{l.label}</div>
+                                                                      <div className={`${l.bold ? 'font-semibold' : 'font-isidorasans_regular'}`}>{l.label}</div>
+                                                                      
                                                                  </div>
                                                             </Link>
                                                        </li>
@@ -53,7 +54,8 @@ export const MenuItems = [
           column: [
                {
                     label: 'Residential Lending',
-                    href: "home-loans"
+                    href: "home-loans",
+                    bold: true
                },
                {
                     label: 'First Home Buyer',
@@ -81,7 +83,8 @@ export const MenuItems = [
           column: [
                {
                     label: 'Business Lending',
-                    href: "business-loans"
+                    href: "business-loans",
+                    bold: true
                },
                {
                     label: 'Commercial Property Loan',
@@ -109,7 +112,8 @@ export const MenuItems = [
           column: [
                {
                     label: 'Consumer Lending',
-                    href: "personal-loans"
+                    href: "personal-loans",
+                    bold: true
                },
                {
                     label: 'Car Loans',
