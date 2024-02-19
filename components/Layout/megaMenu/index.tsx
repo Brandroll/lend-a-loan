@@ -16,7 +16,7 @@ const MegaMenu = ({setMegaMenu}:any) => {
                                              {
                                                   item.column.map((l, i) => (
                                                        <li key={i} onClick={()=>setMegaMenu(false)} >
-                                                            <Link href={l.href} className="flex p-3 rounded-lg hover:bg-[#61C0CD] hover:text-white">
+                                                            <Link href={'/'+l.href} className="flex p-3 rounded-lg hover:bg-[#61C0CD] hover:text-white">
                                                                  <svg className="mr-2 w-6 h-6" fill="currentColor" viewBox="0 0 20 20"
                                                                       xmlns="http://www.w3.org/2000/svg">
                                                                       <path fill-rule="evenodd"
