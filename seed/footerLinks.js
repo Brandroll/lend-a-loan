@@ -1,7 +1,7 @@
 export const nav1 = [
   {
     name: "Residential Lending",
-    slug: "https://www.lendaloan.com.au/home-loans",
+    slug: "https://www.lendaloan.com.au/residential-lending",
   },
   {
     name: "Business Lending",

@@ -54,7 +54,7 @@ export const MenuItems = [
           column: [
                {
                     label: 'Residential Lending',
-                    href: "home-loans",
+                    href: "residential-lending",
                     bold: true
                },
                {

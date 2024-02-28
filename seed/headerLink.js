@@ -6,7 +6,7 @@ export default [
     subItems: [
       {
         label: 'Residential Lending',
-        href: "home-loans"
+        href: "residential-lending"
       },
       {
         label: 'First Home Buyer',
