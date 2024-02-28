@@ -1,19 +1,19 @@
 export const nav1 = [
   {
     name: "Residential Lending",
-    slug: "#",
+    slug: "https://www.lendaloan.com.au/home-loans",
   },
   {
     name: "Business Lending",
-    slug: "#",
+    slug: "https://www.lendaloan.com.au/business-loans",
   },
   {
     name: "Consumer Lending",
-    slug: "#",
+    slug: "https://www.lendaloan.com.au/personal-loans",
   },
   {
     name: "Private Lending",
-    slug: "#",
+    slug: "https://www.lendaloan.com.au/private-lending",
   },
 ];
 
